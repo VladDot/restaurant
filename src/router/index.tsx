@@ -1,48 +1,76 @@
-import {createBrowserRouter} from "react-router-dom";
-import {Layout} from "../pages";
-import {routes} from "../constants/routes";
+import { createBrowserRouter } from "react-router-dom";
+
+import { routes } from "../constants/routes";
+import {
+    Bar,
+    Blog,
+    Home,
+    Menu,
+    About,
+    Admin,
+    Login,
+    Layout,
+    Banquet,
+    Gallery,
+    Contacts,
+    Registration,
+    PrivateOffice,
+} from "../pages";
 
 export const router = createBrowserRouter([
     {
         path: routes.home,
-        element: <Layout/>,
+        element: <Layout />,
         children: [
             {
                 index: true,
-                element: <h2>Home main</h2>
+                element: <Home />,
             },
             {
                 path: routes.menu,
-                element: <h2>menu</h2>,
+                element: <Menu />,
             },
             {
-                path: routes.gallery,
-                element: <h2>gallery</h2>,
+                path: routes.bar,
+                element: <Bar />,
+            },
+            {
+                path: routes.blog,
+                element: <Blog />,
             },
             {
                 path: routes.about,
-                element: <h2>about</h2>,
+                element: <About />,
+            },
+            {
+                path: routes.contacts,
+                element: <Contacts />,
+            },
+
+            {
+                path: routes.login,
+                element: <Login />,
+            },
+            {
+                path: routes.gallery,
+                element: <Gallery />,
             },
             {
                 path: routes.banquet,
-                element: <h2>banquet</h2>,
-            },
-            {
-                path: routes.login,
-                element: <h2>login</h2>,
+                element: <Banquet />,
             },
             {
                 path: routes.registration,
-                element: <h2>registration</h2>,
+                element: <Registration />,
             },
             {
                 path: routes.privateOffice,
-                element: <h2>privateOffice</h2>,
-            }
-        ]
+                element: <PrivateOffice />,
+            },
+        ],
     },
     {
         path: routes.admin,
-        element:<h2>admin</h2>
-    }
+        element: <Admin />,
+    },
 ]);
