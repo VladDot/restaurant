@@ -5,15 +5,6 @@ interface ListMenuProps extends NavBarLink {
     idx: number;
 }
 
-export const ListMenu: React.FC<ListMenuProps> = ({ name, url, idx }) => {
-    return (
-        <ul>
-            <Link
-                key={`${name}_${idx}`}
-                to={url}
-            >
-                {name}
-            </Link>
-        </ul>
-    );
+export const DropDownMenu: React.FC<ListMenuProps> = ({ name, url,title }) => {
+    return <Link to={url}>{title}</Link>;
 };
