@@ -6,20 +6,15 @@ import Fff from '../../assets/img/house.jpg';
 import { Up } from '../../assets/svg';
 import { useScroll } from '../../hook';
 import { scrollToTop } from '../../helpers';
-import { Button, Footer, GoogleMaps, Header } from '../../components';
-import { Banner } from '../../components/banner/inedx';
+import { Banner, Button, Footer, GoogleMaps, Header } from '../../components';
 
 export const Layout = () => {
   const { scrollY } = useScroll();
-
-  console.log(Fff);
-
   const isBtn = scrollY > 100;
 
   return (
     <>
       <Header />
-
       <Banner src={Fff} />
       <Outlet />
       {isBtn && (
@@ -32,7 +27,7 @@ export const Layout = () => {
           <Up className='w-full' />
         </button>
       )}
-      {/* <Button name='text' route='/asdasdasd' /> */}
+      <Button name='text' type='submit' />
       <div className='photo-gallery'></div>
       <GoogleMaps />
       <Footer />
