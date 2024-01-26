@@ -6,7 +6,7 @@ import Fff from '../../assets/img/house.jpg';
 import { Up } from '../../assets/svg';
 import { useScroll } from '../../hook';
 import { scrollToTop } from '../../helpers';
-import { Banner, Button, Footer, GoogleMaps, Header } from '../../components';
+import { Banner, Button, CreateForm, Footer, GoogleMaps, Header } from '../../components';
 
 export const Layout = () => {
   const { scrollY } = useScroll();
@@ -14,8 +14,9 @@ export const Layout = () => {
 
   return (
     <>
-      <Header />
-      <Banner src={Fff} />
+      {/* <Header />
+      <Banner src={Fff} /> */}
+      <CreateForm />
       <Outlet />
       {isBtn && (
         <button
@@ -27,7 +28,8 @@ export const Layout = () => {
           <Up className='w-full' />
         </button>
       )}
-      <Button name='text' type='submit' />
+
+      <Button textName='text' type='submit' />
       <div className='photo-gallery'></div>
       <GoogleMaps />
       <Footer />
