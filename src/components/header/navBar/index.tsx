@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+
 import { navBar } from "../config";
-import { DropDownMenu } from "../linksMenu";
+import { DropDownMenu } from "../dropDownMenu";
 
 export const NavBar = () => {
     return (
@@ -11,7 +12,7 @@ export const NavBar = () => {
                         key={`${items.name}_${idx}`}
                         className="w-fit text-center "
                     >
-                        {!items.category && (
+                        {!items.categories && (
                             <Link
                                 className="  w-fit p-1 px-2"
                                 to={items.url}
@@ -20,7 +21,7 @@ export const NavBar = () => {
                             </Link>
                         )}
 
-                        {items.category && (
+                        {items.categories && (
                             <div className="w-fit text-center  hover:text-red">
                                 <Link
                                     className="w-fit p-1 px-2"
@@ -28,18 +29,12 @@ export const NavBar = () => {
                                 >
                                     {items.title}
                                 </Link>
-                                <ul className="absolute flex flex-wrap flex-col w-fit max-h-[280px] whitespace-nowrap text-start   bg-blue-400 overflow-hidden h-0 ">
-                                    {items.category?.map((item, idx) => (
+                                <ul className="absolute flex flex-wrap flex-col w-fit max-h-[280px] whitespace-nowrap text-start bg-blue-400 overflow-hidden h-0 ">
+                                    {items.categories?.map((item, idx) => (
                                         <li
                                             className="p-1"
                                             key={`drop_down_${item.name}_${idx}`}
-                                        >
-                                            <DropDownMenu
-                                                {...item}
-                                                key={idx}
-                                                idx={idx}
-                                            />
-                                        </li>
+                                        ></li>
                                     ))}
                                 </ul>
                             </div>

@@ -4,7 +4,7 @@ export interface NavBarLink {
     name: string;
     url: string;
     title: string;
-    category?: NavBarLink[];
+    categories?: NavBarLink[];
 }
 
 export const navBar: NavBarLink[] = [
@@ -14,7 +14,7 @@ export const navBar: NavBarLink[] = [
         name: "menu",
         url: routes.menu,
         title: "MENU",
-        category: [
+        categories: [
             {
                 name: "wok",
                 url: routes.menuCategory.wok,
@@ -97,7 +97,7 @@ export const navBar: NavBarLink[] = [
         name: "banquet",
         url: routes.banquet,
         title: "BANQUET",
-        category: [
+        categories: [
             {
                 name: "menuBanquet",
                 url: routes.banquetCategory.banquetMenu,
@@ -109,7 +109,7 @@ export const navBar: NavBarLink[] = [
         name: "gallery",
         url: routes.gallery,
         title: "GALLERY",
-        category: [
+        categories: [
             {
                 name: "restaurantMenu",
                 url: routes.galleryCategory.restaurantMenu,
