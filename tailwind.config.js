@@ -16,7 +16,7 @@ module.exports = {
       },
       screens: {
         mobile: '430px',
-        desktop: '1420px',
+        desktop: '1440px',
         desktopLg: '1480px',
       },
     },

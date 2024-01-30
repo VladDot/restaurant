@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from 'react';
-import { Field, FieldProps, FormikFormProps, FormikProps } from 'formik';
+import { Field, FieldProps } from 'formik';
 import { EyeClose, EyeOpen } from '../../../assets/svg';
 
 interface IInputFieldProps {
@@ -13,57 +13,64 @@ export const InputField = ({ name, type, placeholder }: IInputFieldProps) => {
 
   const handleChange = (
     event: ChangeEvent<HTMLInputElement>,
-    form: {
-      setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void;
-    }
+    setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void,
+    typeInput: string
   ) => {
-    form.setFieldValue(name, event.target.value);
+    typeInput === 'text' && setFieldValue(name, event.target.value.slice(0, 13));
+    typeInput === 'password' && setFieldValue(name, event.target.value.slice(0, 17));
   };
 
   return (
-    <>
-      {type === 'text' && (
-        <Field name={name}>
-          {({ form, field, meta }: FieldProps) => {
-            return (
-              <div className=' border-gray-400 border-2 w-fit'>
+    <Field name={name}>
+      {({ form: { setFieldValue }, field, meta }: FieldProps) => {
+        return (
+          <>
+            {type === 'text' && (
+              <div className=' border-[#A78963] border-2 rounded w-full px-3 py-1 relative'>
                 <input
                   name={name}
                   type={type}
                   value={field.value}
-                  onChange={(event) => handleChange(event, form)}
                   placeholder={placeholder}
+                  className='w-full bg-transparent focus:outline-none'
+                  onChange={(event) => handleChange(event, setFieldValue, type)}
                 />
+                {meta.touched && meta.error && (
+                  <span className='absolute left-2 top-8  select-none'>{meta.error}</span>
+                )}
               </div>
-            );
-          }}
-        </Field>
-      )}
-
-      {type === 'password' && (
-        <Field name={name}>
-          {({ form, field, meta }: FieldProps) => {
-            return (
-              <div className='relative pr-3 flex items-center border-gray-400 border-2 w-fit gap-1'>
+            )}
+            {type === 'password' && (
+              <div className='relative px-3 py-1 flex items-center border-[#A78963] border-2 rounded w-full gap-1'>
                 <input
                   name={name}
+                  autoComplete='off'
                   type={changeType}
                   value={field.value}
                   placeholder={placeholder}
-                  onChange={(event) => handleChange(event, form)}
+                  className='w-full bg-transparent focus:outline-none'
+                  onChange={(event) => handleChange(event, setFieldValue, type)}
                 />
                 <span
                   className='w-3 h-3 '
-                  onMouseDown={() => setChangeType('text')}
+                  onMouseMove={() => setChangeType('text')}
                   onMouseOut={() => setChangeType('password')}
                 >
-                  {changeType === 'password' ? <EyeClose className=' w-4' /> : <EyeOpen />}
+                  {changeType === 'password' ? (
+                    <EyeClose className='w-5' />
+                  ) : (
+                    <EyeOpen className='w-5' />
+                  )}
                 </span>
+
+                {meta.touched && meta.error && (
+                  <span className='absolute left-2 top-8  select-none'>{meta.error}</span>
+                )}
               </div>
-            );
-          }}
-        </Field>
-      )}
-    </>
+            )}
+          </>
+        );
+      }}
+    </Field>
   );
 };
