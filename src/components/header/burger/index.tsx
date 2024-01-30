@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import "./style.css";
-
-import { BurgerMenuItems } from "./burgerMenu";
 import { BurgerIcon } from "./burgerIcon";
+import { BurgerMenuItems } from "./burgerMenu";
+
+import "./style.css";
 
 export const BurgerMenu = () => {
     const [isActiveBurger, setActiveBurger] = useState<boolean>(false);
@@ -15,8 +15,8 @@ export const BurgerMenu = () => {
                 setActive={setActiveBurger}
             />
             <BurgerMenuItems
-                isActive={isActiveBurger}
-                setActive={setActiveBurger}
+                isActiveMenu={isActiveBurger}
+                setIsActiveMenu={setActiveBurger}
             />
         </>
     );

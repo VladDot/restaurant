@@ -1,62 +1,44 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 
 import { navBar } from "../../config";
+import { SocialMenu } from "../../social-menu";
+import { DropDownMenu } from "../../dropDownMenu";
 
 import { getStyles } from "../style";
 
-import { DropDownMenu } from "../../dropDownMenu";
-import { SocialMenu } from "../../social-menu";
-
 interface MyComponentProps {
-    isActive: boolean;
-    setActive: React.Dispatch<React.SetStateAction<boolean>>;
+    isActiveMenu: boolean;
+    setIsActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const BurgerMenuItems: React.FC<MyComponentProps> = ({
-    isActive,
-    setActive,
+    isActiveMenu,
+    setIsActiveMenu,
 }) => {
-    const { burgerMenu, burgerItems } = getStyles(isActive);
-    console.log(isActive);
+    const { burgerMenu } = getStyles(isActiveMenu);
+
+    const [activeIdx, setActiveIdx] = useState(-1);
 
     return (
         <div
             className={`${burgerMenu}  desktop:hidden text-black overflow-y-auto`}
         >
             <div className="flex flex-wrap gap-y-5 mb-10 pt-4">
-                {navBar.map((items, idx) => {
-                    return (
-                        <div
-                            id={`main_menu_${idx}`}
-                            key={`${items.name}_${idx}`}
-                            className={burgerItems}
-                        >
-                            {!items.categories && (
-                                <Link
-                                    className="hover:text-secondTextHover w-full text-left"
-                                    onClick={() => setActive(!isActive)}
-                                    to={items.url}
-                                >
-                                    {items.title}
-                                </Link>
-                            )}
-
-                            {items.categories && (
-                                <DropDownMenu
-                                    idx={idx}
-                                    {...items}
-                                    isActive={isActive}
-                                    setIsActive={setActive}
-                                />
-                            )}
-                        </div>
-                    );
-                })}
+                {navBar.map((link, idx) => (
+                    <DropDownMenu
+                        idx={idx}
+                        {...link}
+                        activeIdx={activeIdx}
+                        setActiveIdx={setActiveIdx}
+                        setIsActiveMenu={setIsActiveMenu}
+                        key={`menu_burger-mobile-${idx}`}
+                    />
+                ))}
             </div>
 
             <SocialMenu
-                isActive={isActive}
-                setIsActive={setActive}
+                isActive={isActiveMenu}
+                setIsActive={setIsActiveMenu}
                 className="minSm:flex w-fit mx-auto"
             />
         </div>

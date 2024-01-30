@@ -1,80 +1,88 @@
 import { Link } from "react-router-dom";
 
 import { NavBarLink } from "../config";
-import { useState } from "react";
 import { getMenuStyles } from "../burger/style";
 
 interface ListMenuProps {
+    url: string;
     idx: number;
     name: string;
-    url: string;
     title: string;
     height?: string;
+    activeIdx: number;
     categories?: NavBarLink[];
-    isActive: boolean;
-    setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
+    setActiveIdx: React.Dispatch<React.SetStateAction<number>>;
+    setIsActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const DropDownMenu = ({
     url,
+    idx,
     title,
+    activeIdx,
     categories,
-    isActive,
-    setIsActive,
+    setActiveIdx,
+    setIsActiveMenu,
 }: ListMenuProps) => {
-    const [isActiveDropdown, setIsActiveDropdown] = useState(false);
-    const { dropdown, btn, link } = getMenuStyles(isActiveDropdown);
+    const isActive = idx === activeIdx;
 
-    const [active, setActive] = useState("");
+    const { dropdown, btn, link } = getMenuStyles(isActive);
+
+    const heightUl = isActive
+        ? `${categories && categories?.length * 28}px`
+        : "0";
 
     const handlerClick = () => {
-        setIsActiveDropdown(!isActiveDropdown);
-
-        setActive(active === title ? "" : title);
+        if (isActive) {
+            setActiveIdx(-1);
+            return;
+        }
+        setActiveIdx(idx);
     };
 
     return (
-        <div className="w-[90%]">
-            <div className="flex justify-between">
+        <li className="list-none w-full flex flex-col gap-2">
+            <div className="flex w-full justify-between">
                 <Link
-                    onClick={() => setIsActive(!isActive)}
                     to={url}
                     className={link}
+                    onClick={() => setIsActiveMenu(false)}
                 >
                     {title}
                 </Link>
-
-                <span
-                    onClick={() => handlerClick()}
-                    className={btn}
-                >
-                    {isActiveDropdown ? "-" : "+"}
-                </span>
+                {categories && (
+                    <span
+                        className={btn}
+                        onClick={() => handlerClick()}
+                    >
+                        {isActive ? "-" : "+"}
+                    </span>
+                )}
             </div>
 
-            <ul
-                className={dropdown}
-                style={{
-                    height: isActiveDropdown
-                        ? `${categories && categories?.length * 28}px`
-                        : "0",
-                }}
-            >
-                {categories?.map((category, idx) => (
-                    <li
-                        className="w-full"
-                        key={`drop_down_${category.name}_${idx}`}
-                    >
-                        <Link
-                            onClick={() => setIsActive(!isActive)}
-                            className="w-full block hover:text-secondTextHover  duration-150"
-                            to={category.url}
+            {categories && (
+                <ul
+                    className={dropdown}
+                    style={{
+                        height: heightUl,
+                    }}
+                >
+                    {categories?.map((category, idx) => (
+                        <li
+                            className="w-full"
+                            key={`drop_down_${category.name}_${idx}`}
                         >
-                            {category.title}
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </div>
+                            <Link
+                                to={category.url}
+                                onClick={() => setIsActiveMenu(false)}
+                                className="w-full block hover:text-secondTextHover  duration-150"
+                            >
+                                {category.title}
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </li>
     );
 };
