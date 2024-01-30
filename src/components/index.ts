@@ -1,2 +1,6 @@
-export {Header} from './header'
-export {Footer} from './footer'
+export { Footer } from './footer';
+export { GoogleMaps } from './google-maps';
+export { Header } from './header';
+export { Button } from './button';
+export { Banner } from './banner';
+export { CreateForm } from './all-forms/form-login';
