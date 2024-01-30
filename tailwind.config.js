@@ -11,6 +11,7 @@ module.exports = {
                 secondText: "#A78963",
                 thirdText: "#FFFFFF",
                 fourth: "#A1A1A1",
+                bannerContent: "rgb(161, 161, 161)",
 
                 mainTextHover: "#674F31",
                 secondTextHover: "#A78963",
@@ -23,7 +24,9 @@ module.exports = {
                 aqua: "#23D5AE",
             },
             screens: {
+                mobile: "430px",
                 minSm: "520px",
+                desktopLg: "1480px",
                 desktop: "1504px",
             },
             keyframes: {
@@ -33,7 +36,7 @@ module.exports = {
                 },
             },
             animation: {
-                fadeIn: "fadeIn 1s ease-in-out forwards",
+                fadeIn: "fadeIn 600ms ease-in-out forwards",
                 fadeInDropMenu: "fadeIn 1s ease-out forwards",
             },
         },
