@@ -14,8 +14,8 @@ export const Layout = () => {
 
   return (
     <>
-      {/* <Header />
-      <Banner src={Fff} /> */}
+      <Header />
+      <Banner src={Fff} content='asdasdasd' title='ALSDasdas' className='mb-[200px]' />
       <CreateForm />
       <Outlet />
       {isBtn && (
@@ -29,7 +29,7 @@ export const Layout = () => {
         </button>
       )}
 
-      <Button textName='text' type='submit' />
+      <Button textContent='text' type='submit' className='max-w-[260px]' />
       <div className='photo-gallery'></div>
       <GoogleMaps />
       <Footer />

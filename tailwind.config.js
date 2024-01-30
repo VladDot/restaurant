@@ -19,6 +19,9 @@ module.exports = {
         desktop: '1440px',
         desktopLg: '1480px',
       },
+      colors: {
+        bannerContent: 'rgb(161, 161, 161)',
+      },
     },
   },
   plugins: [],

@@ -7,7 +7,7 @@ import { initialValues, validationSchema } from './config';
 export const CreateForm = () => {
   return (
     <div className='w-full p-3 flex flex-col gap-2 text-white bg-black mobile:flex-row flex-wrap mobile:justify-center mobile:items-center'>
-      <h3 className='text-center w-full select-none'>Login-in</h3>
+      <h3 className='text-center w-full select-none'>LogIn</h3>
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
@@ -19,7 +19,7 @@ export const CreateForm = () => {
           <InputField name='login' type='text' placeholder='enter' />
           <InputField name='password' type='password' placeholder='enter' />
 
-          <Button textName='submit' type='submit' />
+          <Button textContent='Submit' type='submit' className='max-w-[260px] ml-auto' />
         </Form>
       </Formik>
     </div>
