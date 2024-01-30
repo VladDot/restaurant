@@ -1,25 +1,45 @@
 import { Link } from "react-router-dom";
-import { Instagram } from "../../../assets/svg";
+
 import { routes } from "../../../constants/routes";
 
-export const SocialMenu = () => {
-    return (
-        <div className=" minSm:flex gap-5 sm:gap-8 md:gap-[100px] lg:gap-3 w-fit items-center ">
-            <div className="hidden minSm:flex   border-2 rounded-full">
-                <div className="  p-2 border-r-2 w-[100px] sm:w-[100px]  md:w-[120px] lg:w-[80px] xl:w-[120px]">
-                    <span className=" w-full  ">
-                        <Link to={routes.registration}>SIGN IN</Link>
-                    </span>
-                </div>
-                <div className="  p-2 w-[100px] sm:w-[100px] md:w-[120px] lg:w-[80px] xl:w-[120px]">
-                    <span className="w-full ">
-                        <Link to={routes.login}>SIGN UP</Link>
-                    </span>
-                </div>
-            </div>
+interface MyComponentProps {
+    isActive?: boolean;
+    setIsActive?: React.Dispatch<React.SetStateAction<boolean>>;
+    className?: string;
+}
 
-            <div className=" w-[40px] hover:text-red-500  xl:w-[50px]">
-                <Instagram />
+export const SocialMenu = ({
+    className,
+    isActive,
+    setIsActive,
+}: MyComponentProps) => {
+    return (
+        <div className={`gap-5 items-center ${className ? className : ""}`}>
+            <div className="hidden minSm:flex   border-2 rounded-full ">
+                <div className=" text-base p-2 hover:bg-secondText rounded-l-full lg:p-2 lg:text-[14px] border-r-2 w-[100px] sm:w-[100px]  md:w-[120px] lg:w-[120px] xl:w-[120px] xl:p-2 xl:text-[14px]">
+                    <span className=" w-full  ">
+                        <Link
+                            onClick={() => {
+                                setIsActive && setIsActive(!isActive);
+                            }}
+                            to={routes.registration}
+                        >
+                            SIGN IN
+                        </Link>
+                    </span>
+                </div>
+                <div className=" text-base p-2 hover:bg-secondText rounded-r-full lg:p-2  lg:text-[14px] w-[100px] sm:w-[100px] md:w-[120px] lg:w-[120px] xl:w-[120px] xl:p-2 xl:text-[14px]">
+                    <span className="w-full ">
+                        <Link
+                            onClick={() => {
+                                setIsActive && setIsActive(!isActive);
+                            }}
+                            to={routes.login}
+                        >
+                            SIGN UP
+                        </Link>
+                    </span>
+                </div>
             </div>
         </div>
     );

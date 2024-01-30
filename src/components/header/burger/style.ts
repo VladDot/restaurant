@@ -2,14 +2,14 @@ import clsx from "clsx";
 
 export const getStyles = (isActiveBurger: boolean) => ({
     burgerMenu: clsx(
-        "fixed top-0 right-0 transition-all duration-[320ms] h-screen p-5 pt-14",
+        "fixed top-0 right-0 transition-all duration-[440ms] h-screen  pt-14",
         {
-            "w-[320px] bg-blue-500": isActiveBurger,
+            " p-5 w-full sm:w-[320px] bg-mainBg": isActiveBurger,
         },
         { "w-0": !isActiveBurger }
     ),
     burgerItems: clsx(
-        " flex flex-wrap text-green-500 gap-y-5 overflow-hidden delay-[120ms]",
+        " flex flex-wrap gap-y-5 text-black overflow-hidden delay-[120ms] ",
         { "w-[95%] ": isActiveBurger },
         { "w-0": !isActiveBurger }
     ),
@@ -17,8 +17,16 @@ export const getStyles = (isActiveBurger: boolean) => ({
 
 export const getMenuStyles = (isActiveDropdown: boolean) => ({
     dropdown: clsx(
-        "items-start  flex flex-col ",
-        { "h-fit text-black": isActiveDropdown },
-        { hidden: !isActiveDropdown }
+        "items-start text-start flex flex-col transform transition-all duration-500 ease-custom overflow-hidden gap-[8px] pt-[12px] pl-[12px]",
+        {
+            "": isActiveDropdown,
+        },
+        { "": !isActiveDropdown }
     ),
+
+    btn: " cursor-pointer text-white text-[18px] font-bold items-center  flex justify-center w-5 h-5 rounded-full bg-black ",
+    link: clsx("hover:text-secondTextHover ", {
+        "text-secondText ": isActiveDropdown,
+        "text-text-black ": !isActiveDropdown,
+    }),
 });

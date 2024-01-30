@@ -1,3 +1,3 @@
 export const Menu = () => {
-    return <>Menu</>;
+    return <div className="pt-[300px]">Menu</div>;
 };

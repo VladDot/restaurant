@@ -9,48 +9,69 @@ interface ListMenuProps {
     name: string;
     url: string;
     title: string;
+    height?: string;
     categories?: NavBarLink[];
+    isActive: boolean;
+    setIsActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const DropDownMenu = ({
-    name,
     url,
     title,
-    idx,
     categories,
+    isActive,
+    setIsActive,
 }: ListMenuProps) => {
     const [isActiveDropdown, setIsActiveDropdown] = useState(false);
-    const { dropdown } = getMenuStyles(isActiveDropdown);
+    const { dropdown, btn, link } = getMenuStyles(isActiveDropdown);
+
+    const [active, setActive] = useState("");
 
     const handlerClick = () => {
         setIsActiveDropdown(!isActiveDropdown);
+
+        setActive(active === title ? "" : title);
     };
 
     return (
-        <div className=" w-full">
-            <div className="flex justify-between w-[95%]">
+        <div className="w-[90%]">
+            <div className="flex justify-between">
                 <Link
+                    onClick={() => setIsActive(!isActive)}
                     to={url}
-                    className="text-yellow-500 "
+                    className={link}
                 >
                     {title}
                 </Link>
+
                 <span
-                    id={`main_menu_${idx}`}
                     onClick={() => handlerClick()}
-                    className=" cursor-pointer text-white text-[18px] font-bold items-center  flex justify-center w-5 h-5 rounded-full bg-black"
+                    className={btn}
                 >
-                    +
+                    {isActiveDropdown ? "-" : "+"}
                 </span>
             </div>
 
-            <ul className={dropdown}>
+            <ul
+                className={dropdown}
+                style={{
+                    height: isActiveDropdown
+                        ? `${categories && categories?.length * 28}px`
+                        : "0",
+                }}
+            >
                 {categories?.map((category, idx) => (
                     <li
-                        className="p-1"
+                        className="w-full"
                         key={`drop_down_${category.name}_${idx}`}
                     >
-                        <Link to={category.url}>{category.title}</Link>
+                        <Link
+                            onClick={() => setIsActive(!isActive)}
+                            className="w-full block hover:text-secondTextHover  duration-150"
+                            to={category.url}
+                        >
+                            {category.title}
+                        </Link>
                     </li>
                 ))}
             </ul>

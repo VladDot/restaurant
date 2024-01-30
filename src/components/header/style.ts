@@ -1,12 +1,19 @@
 import clsx from "clsx";
 
-export const getStyles = (isActiveBurger: boolean) => ({
-    burger: clsx(
-        " relative  w-[25px] left-[3.5px] bg-black  h-[3px] block after:origin-top-left before:origin-bottom-left transition-transform duration-300 transition-opacity after:bg-black after:ease-in-out after:absolute after:block after:w-full after:h-full  after:content-content-[''] after:-top-[7px] before:ease-in-out before:absolute before:block before:bg-black before:w-full before:h-full  before:content-[''] before:top-[7px] ",
+export const getStyles = (isActive: boolean) => ({
+    arrow: clsx(
+        " w-[10px] h-[10px]  transition-all duration-300 right-0  border-b-[4px] border-r-[4px] bg-transparent top-[39%] -mt-[7px]",
         {
-            " bg-white before:origin-right  after:origin-right after:rotate-[-45deg] before:rotate-[45deg] after:bg-white before:bg-white w-0 left-[9px] after:w-[22px] before:w-[22px] top-1/5 after:rotate-45 before:-rotate-45":
-                isActiveBurger,
+            "rotate-[225deg] mt-[4px]  group-hover:border-secondTextHover":
+                isActive,
         },
-        { "bg-white after:bg-white before:bg-white": !isActiveBurger }
+        { "rotate-[45deg]": !isActive }
+    ),
+    drop: clsx(
+        "absolute top-[100%] flex flex-wrap  flex-col justify-between w-fit max-h-[290px] whitespace-nowrap text-start bg-mainBg overflow-hidden p-[20px]",
+        {
+            "": isActive,
+        },
+        { hidden: !isActive }
     ),
 });

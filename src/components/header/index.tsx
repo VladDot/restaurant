@@ -3,37 +3,23 @@ import { NavBar } from "./navBar";
 import { SocialMenu } from "./social-menu";
 
 import { BurgerMenu } from "./burger";
+import { Instagram } from "../../assets/svg";
 
 export const Header = () => {
-    /*     console.log(isActiveBurger);
-
-    const { burger } = getStyles(isActiveBurger); */
     return (
-        <header className="w-full text-white text-center font-serif font-bold text-sm xl:text-[14px] fixed z-[999]">
-            <div className=" bg-black absolute w-full h-full opacity-80 z-[1]"></div>
-            <div className="relative px-5 py-4 z-[3] flex sm:px-5 lg:px-2 minSm:w-full lg:w-full justify-between lg:justify-around lg:max-w-full m-auto items-center ">
-                <div className="max-w-[140px] md:max-w-[210px] lg:max-w-[150px] xl:max-w-[300px]">
-                    <Logo />
-                </div>
+        <header className=" w-full text-white text-center font-serif  text-sm xl:text-[16px] fixed z-[10000] h-[80px]">
+            <div className="  bg-black absolute w-full h-full opacity-80 z-[1]"></div>
 
-                <div className=" md:flex items-center ">
-                    <NavBar />
-                </div>
-                <div>
-                    <SocialMenu />
-                </div>
-                <div className="lg:hidden">
-                    <BurgerMenu />
-                </div>
+            <div className="container relative z-[3] flex  justify-between items-center h-full">
+                <Logo />
 
-                {/* <button
-                    className="border-2 h-8 w-9 rounded-lg border-white lg:hidden"
-                    onClick={() => {
-                        setActiveBurger(!isActiveBurger);
-                    }}
-                >
-                    <span className={burger}></span>
-                </button> */}
+                <NavBar />
+
+                <SocialMenu className="hidden lg:block" />
+
+                <Instagram className=" w-[40px] hover:text-secondTextHover  xl:w-[50px]" />
+
+                <BurgerMenu />
             </div>
         </header>
     );

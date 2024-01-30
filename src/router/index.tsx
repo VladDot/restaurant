@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
                     { index: true, element: <Menu /> },
                     {
                         path: routes.menuCategory.banquetMenu,
-                        element: <h1> BANQUET MENU</h1>,
+                        element: <h1 className=""> BANQUET MENU</h1>,
                     },
                 ],
             },

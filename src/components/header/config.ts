@@ -4,6 +4,7 @@ export interface NavBarLink {
     name: string;
     url: string;
     title: string;
+    height?: string;
     categories?: NavBarLink[];
 }
 

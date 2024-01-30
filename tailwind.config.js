@@ -24,6 +24,17 @@ module.exports = {
             },
             screens: {
                 minSm: "520px",
+                desktop: "1504px",
+            },
+            keyframes: {
+                fadeIn: {
+                    from: { opacity: "0" },
+                    to: { opacity: "1" },
+                },
+            },
+            animation: {
+                fadeIn: "fadeIn 1s ease-in-out forwards",
+                fadeInDropMenu: "fadeIn 1s ease-out forwards",
             },
         },
     },
