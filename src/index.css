@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.container {
+    @apply px-4 max-w-[1440px] mx-auto w-full md:px-8 desktop:px-0;
+}

@@ -28,8 +28,16 @@ export const router = createBrowserRouter([
             },
             {
                 path: routes.menu,
-                element: <Menu />,
+
+                children: [
+                    { index: true, element: <Menu /> },
+                    {
+                        path: routes.menuCategory.banquetMenu,
+                        element: <h1 className=""> BANQUET MENU</h1>,
+                    },
+                ],
             },
+
             {
                 path: routes.bar,
                 element: <Bar />,

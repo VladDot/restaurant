@@ -1,1 +1,1 @@
-export { scrollToTop } from './scrollToTop';
+export { scrollToTop } from "./scrollToTop";
