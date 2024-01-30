@@ -17,15 +17,15 @@ export const getStyles = (isActiveBurger: boolean) => ({
 
 export const getMenuStyles = (isActiveDropdown: boolean) => ({
     dropdown: clsx(
-        "items-start text-start flex flex-col transform transition-all duration-500 ease-custom overflow-hidden gap-[8px] pt-[12px] pl-[12px]",
+        "items-start text-start flex flex-col transform transition-all duration-500 ease-custom overflow-hidden gap-[8px] pl-[12px]",
         {
-            "": isActiveDropdown,
+            "pt-[12px] ": isActiveDropdown,
         },
-        { "": !isActiveDropdown }
+        { "pt-0 ": !isActiveDropdown }
     ),
 
     btn: " cursor-pointer text-white text-[18px] font-bold items-center  flex justify-center w-5 h-5 rounded-full bg-black ",
-    link: clsx("hover:text-secondTextHover ", {
+    link: clsx("hover:text-secondTextHover w-full text-left", {
         "text-secondText ": isActiveDropdown,
         "text-text-black ": !isActiveDropdown,
     }),

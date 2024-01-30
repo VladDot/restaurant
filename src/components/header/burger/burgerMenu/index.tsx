@@ -33,7 +33,7 @@ export const BurgerMenuItems: React.FC<MyComponentProps> = ({
                         >
                             {!items.categories && (
                                 <Link
-                                    className="hover:text-secondTextHover "
+                                    className="hover:text-secondTextHover w-full text-left"
                                     onClick={() => setActive(!isActive)}
                                     to={items.url}
                                 >
