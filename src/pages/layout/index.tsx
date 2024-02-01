@@ -13,6 +13,7 @@ import {
     Footer,
     GoogleMaps,
     Header,
+    MainGallery,
 } from "../../components";
 
 export const Layout = () => {
@@ -46,7 +47,7 @@ export const Layout = () => {
                 type="submit"
                 className="max-w-[260px]"
             />
-            <div className="photo-gallery"></div>
+            <MainGallery />
             <GoogleMaps />
             <Footer />
         </>
