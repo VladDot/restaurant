@@ -16,8 +16,8 @@ export const InputField = ({ name, type, placeholder }: IInputFieldProps) => {
     setFieldValue: (field: string, value: any, shouldValidate?: boolean) => void,
     typeInput: string
   ) => {
-    typeInput === 'text' && setFieldValue(name, event.target.value.trim().slice(0, 13));
-    typeInput === 'password' && setFieldValue(name, event.target.value.trim().slice(0, 17));
+    typeInput === 'text' && setFieldValue(name, event.target.value);
+    typeInput === 'password' && setFieldValue(name, event.target.value);
   };
 
   return (

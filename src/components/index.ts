@@ -7,5 +7,6 @@ export { GoogleMaps } from './google-maps';
 export { Header } from './header';
 export { InputDate } from './input-date';
 export { InputField } from './input-field';
-export { InputTel } from './input-field-tel';
+export { InputTel } from './input-tel';
+export { InputTextarea } from './input-textarea';
 export { Logo } from './header/logo/index';
