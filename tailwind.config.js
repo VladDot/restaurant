@@ -34,10 +34,20 @@ module.exports = {
                     from: { opacity: "0" },
                     to: { opacity: "1" },
                 },
+                blurBlack: {
+                    from: { opacity: "0" },
+                    to: { opacity: "0.55" },
+                },
+                scalePluse: {
+                    from: { transform: "scale(0)" },
+                    to: { transform: "scale(1)" },
+                },
             },
             animation: {
                 fadeIn: "fadeIn 600ms ease-in-out forwards",
                 fadeInDropMenu: "fadeIn 1s ease-out forwards",
+                blurBlack: "blurBlack 330ms ease-in-out forwards",
+                scalePluse: "scalePluse 330ms linear forwards",
             },
         },
     },
