@@ -22,7 +22,7 @@ export const FormBooking = () => {
           <InputTel name='phone' type='tel' placeholder='your phone' />
           <InputTel name='numberPersons' type='number' placeholder='Persons' />
           <InputDate name='date' type='date' />
-          <InputTextarea name='postContent' placeholder='your comment' />
+          <InputTextarea name='comment' placeholder='your comment' />
           <Button textContent='Submit' type='submit' className='max-w-[220px]' />
         </Form>
       </Formik>

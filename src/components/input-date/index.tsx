@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 import './style.css';
 import { formatDateToString } from '../../helpers';
+import clsx from 'clsx';
 interface IInputDateProps {
   name: string;
   type: 'date';
@@ -29,10 +30,6 @@ export const InputDate = ({ name, type }: IInputDateProps) => {
         nextMonth.setMonth(currentDate.getMonth() + 6);
 
         const handleChange = (date: any) => {
-          console.log(formatDateToString(date));
-          if (date < new Date()) {
-            console.log(1);
-          }
           setFieldValue(name, date);
         };
 
@@ -42,7 +39,14 @@ export const InputDate = ({ name, type }: IInputDateProps) => {
               className='px-3 cursor-pointer py-1 w-full border-solid border-secondText border-[2px] rounded flex items-center relative gap-1'
               onClick={onClick}
             >
-              <span className='w-[95%] text-fourth'>{formatDateToString(field.value)}</span>
+              <span
+                className={clsx('w-[95%]', {
+                  'text-fourth': formatDateToString(field.value) === 'дд.мм.рррр',
+                  'text-secondText': formatDateToString(field.value) !== 'дд.мм.рррр',
+                })}
+              >
+                {formatDateToString(field.value)}
+              </span>
 
               <DatePicker
                 minDate={currentDate}

@@ -11,8 +11,24 @@ export const InputTel = ({ name, type, placeholder }: IInputTelProps) => {
   return (
     <Field name={name}>
       {({ form, field, meta }: FieldProps) => {
+        // console.log(meta.error);
+
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-          if (Number(event.target.value) < 0) return;
+          // if (type === 'tel') {
+          //   console.log(1);
+          // }
+          if (type === 'number' && Number(event.target.value) < 1) {
+            form.setFieldError(name, 'min persons 1');
+            form.setFieldTouched(name, true, false);
+            form.setFieldValue(name, '');
+            return;
+          }
+
+          if (type === 'number' && Number(event.target.value) > 60) {
+            form.setFieldError(name, 'Value must be 60 or less');
+            form.setFieldTouched(name, true, false);
+            return;
+          }
 
           form.setFieldValue(name, event.target.value.trim());
         };

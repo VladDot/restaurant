@@ -37,16 +37,6 @@ export const Layout = () => {
           <Up className='w-full' />
         </button>
       )}
-      <div className='w-full h-[40vh] my-10 bg-black flex gap-1 flex-col flex-wrap justify-center items-center'>
-        <div className='w-[47%] h-[calc(100%*0.3)] bg-red'></div>
-        <div className='w-[47%] h-[calc(100%*0.1)] bg-red'></div>
-        <div className='w-[47%] h-[calc(100%*0.34)] bg-red'></div>
-        <div className='w-[47%] h-[calc(100%*0.2)] bg-red'></div>
-        <div className='w-[47%] h-[calc(100%*0.2)] bg-red'></div>
-        <div className='w-[47%] h-[calc(100%*0.34)] bg-red'></div>
-        <div className='w-[47%] h-[calc(100%*0.1)] bg-red'></div>
-        <div className='w-[47%] h-[calc(100%*0.3)] bg-red'></div>
-      </div>
       <Button textContent='text' type='submit' disabled className='max-w-[260px]' />
       <div className='photo-gallery'></div>
       <GoogleMaps />
