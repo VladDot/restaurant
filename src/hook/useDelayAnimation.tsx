@@ -1,22 +1,23 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export const useDelayAnimation = (delay: number) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isAnimation, setIsAnimation] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
-  const setOpen = (open?: boolean) => {
-    open = open === undefined ? !isOpen : open;
+    const [isAnimation, setIsAnimation] = useState(false);
 
-    if (open) {
-      setIsOpen(true);
-      setTimeout(() => setIsAnimation(true), 1);
-    }
+    const setOpen = (open?: boolean) => {
+        open = open === undefined ? !isOpen : open;
 
-    if (!open) {
-      setIsAnimation(false);
-      setTimeout(() => setIsOpen(false), delay);
-    }
-  };
+        if (open) {
+            setIsOpen(true);
+            setIsAnimation(false);
+        }
 
-  return { isOpen, isAnimation, setOpen };
+        if (!open) {
+            setIsAnimation(true);
+            setTimeout(() => setIsOpen(false), delay);
+        }
+    };
+
+    return { isOpen, isAnimation, setOpen };
 };

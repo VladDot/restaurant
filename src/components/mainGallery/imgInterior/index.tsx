@@ -29,14 +29,9 @@ export const ImgInterior: React.FC<IImgInteriorProps> = ({
                 onClose={setIsOpen}
             >
                 <div
-                    className={`max-w-[70%] max-h-[80vh] flex justify-center items-center aspect-[${aspect}] mx-auto`}
-                >
-                    <img
-                        alt={id}
-                        src={url}
-                        className="block w-full object-contain"
-                    />
-                </div>
+                    style={{ backgroundImage: `url(${url})` }}
+                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] max-h-[70vh] ${aspect} bg-cover bg-center`}
+                />
             </Modal>
         </>
     );

@@ -34,6 +34,10 @@ module.exports = {
                     from: { opacity: "0" },
                     to: { opacity: "1" },
                 },
+                fadeOut: {
+                    from: { opacity: "1" },
+                    to: { opacity: "0" },
+                },
                 blurBlack: {
                     from: { opacity: "0" },
                     to: { opacity: "0.55" },
@@ -45,6 +49,7 @@ module.exports = {
             },
             animation: {
                 fadeIn: "fadeIn 600ms ease-in-out forwards",
+                fadeOut: "fadeIn 300ms ease-in-out forwards",
                 fadeInDropMenu: "fadeIn 1s ease-out forwards",
                 blurBlack: "blurBlack 330ms ease-in-out forwards",
                 scalePluse: "scalePluse 330ms linear forwards",
