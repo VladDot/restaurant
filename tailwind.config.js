@@ -12,6 +12,7 @@ module.exports = {
                 thirdText: "#FFFFFF",
                 fourth: "#A1A1A1",
                 bannerContent: "rgb(161, 161, 161)",
+                disabled: "#aaabad",
 
                 mainTextHover: "#674F31",
                 secondTextHover: "#A78963",

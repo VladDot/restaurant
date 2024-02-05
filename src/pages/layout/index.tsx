@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Outlet } from "react-router-dom";
 
-import Fff from "../../assets/img/house.jpg";
+import ImgBanner from "../../assets/img/house.jpg";
 
 import { Up } from "../../assets/svg";
 import { useScroll } from "../../hook";
@@ -9,11 +9,12 @@ import { scrollToTop } from "../../helpers";
 import {
     Banner,
     Button,
-    CreateForm,
     Footer,
     GoogleMaps,
     Header,
     MainGallery,
+    FormBooking,
+    FormLogin,
 } from "../../components";
 
 export const Layout = () => {
@@ -24,12 +25,13 @@ export const Layout = () => {
         <>
             <Header />
             <Banner
-                src={Fff}
+                src={ImgBanner}
                 content="asdasdasd"
                 title="ALSDasdas"
                 className="mb-[200px]"
             />
-            <CreateForm />
+            <FormLogin />
+            <FormBooking />
             <Outlet />
             {isBtn && (
                 <button
@@ -41,12 +43,13 @@ export const Layout = () => {
                     <Up className="w-full" />
                 </button>
             )}
-
             <Button
                 textContent="text"
                 type="submit"
+                disabled
                 className="max-w-[260px]"
             />
+            <div className="photo-gallery"></div>
             <MainGallery />
             <GoogleMaps />
             <Footer />
