@@ -12,11 +12,21 @@ export const InputTel = ({ name, type, placeholder }: IInputTelProps) => {
     <Field name={name}>
       {({ form, field, meta }: FieldProps) => {
         // console.log(meta.error);
+        const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+          if (
+            (event.key >= '0' && event.key <= '9') ||
+            event.key === '+' ||
+            event.key === 'Backspace' ||
+            event.key === 'Delete'
+          ) {
+            return;
+          } else {
+            event.preventDefault();
+          }
+        };
 
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-          // if (type === 'tel') {
-          //   console.log(1);
-          // }
+          if (type === 'tel' && event.target.value.length - 1 > 12) return;
           if (type === 'number' && Number(event.target.value) < 1) {
             form.setFieldError(name, 'min persons 1');
             form.setFieldTouched(name, true, false);
@@ -41,6 +51,7 @@ export const InputTel = ({ name, type, placeholder }: IInputTelProps) => {
                 value={field.value}
                 onChange={handleChange}
                 placeholder={placeholder}
+                onKeyPress={handleKeyPress}
                 className='w-full bg-transparent focus:outline-none'
               />
             </div>
