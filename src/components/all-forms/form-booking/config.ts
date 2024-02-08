@@ -28,7 +28,14 @@ export const validationSchema = Yup.object().shape({
     .max(16, 'max 16 symbols')
     .required("the field can't be empty."),
   phone: Yup.string()
-    .matches(/^\+\d{10,}$/, 'The phone number must be in the format +1234567890')
+    // .matches(/^((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}$/, {
+    //   message: 'Invalid phone number',
+    //   excludeEmptyString: false,
+    // })
+    .matches(/^\+\d{12,}$/, {
+      message: 'The phone number must be in the format +1234567890',
+      excludeEmptyString: false,
+    })
     .required('Required Phone'),
   numberPersons: Yup.number().max(60, 'max 60 Persons').integer().required('Required Persons'),
   date: Yup.date().required('Required Date'),
