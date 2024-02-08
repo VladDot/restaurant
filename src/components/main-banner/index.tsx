@@ -8,13 +8,14 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { tmpSrc } from './config';
+import { tmpSrc } from '../../mock';
 
 interface IMainBannerProps {
   className?: string;
 }
 
 export const MainBanner = ({ className }: IMainBannerProps) => {
+  console.log(tmpSrc);
   return (
     <>
       <div className='w-full '>
