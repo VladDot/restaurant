@@ -15,7 +15,6 @@ interface IMainBannerProps {
 }
 
 export const MainBanner = ({ className }: IMainBannerProps) => {
-  console.log(tmpSrc);
   return (
     <>
       <div className='w-full '>
