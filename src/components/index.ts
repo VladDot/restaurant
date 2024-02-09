@@ -11,6 +11,7 @@ export { Header } from './header';
 export { InputDate } from './input-date';
 export { InputField } from './input-field';
 export { InputTel } from './input-tel';
+export { ImgInterior } from './mainGallery/imgInterior';
 export { InputTextarea } from './input-textarea';
 export { Logo } from './header/logo/index';
 export { MainBanner } from './main-banner';

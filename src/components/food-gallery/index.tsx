@@ -1,7 +1,7 @@
 import { Button } from '../button';
 import { tmpSrcFood } from '../../mock';
 import { routes } from '../../constants/routes';
-import { ImgInterior } from '../mainGallery/imgInterior';
+import { ImgInterior } from '../../components';
 
 import './style.css';
 
