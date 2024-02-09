@@ -13,3 +13,4 @@ export { InputTextarea } from './input-textarea';
 export { Logo } from './header/logo/index';
 export { MainBanner } from './main-banner';
 export { MainGallery } from './mainGallery';
+export { EventsPromotions } from './events-promotions';

@@ -7,7 +7,12 @@ import Img6 from '../assets/img/mainList/restaurant-seti-06.jpg';
 import Img7 from '../assets/img/mainList/restaurant-seti-16.jpg';
 import Img8 from '../assets/img/mainList/restaurant-seti-17.jpg';
 
+import { routes } from '../constants/routes';
+
+import * as Images from '../assets/img';
+
 const imgSrs = [Img, Img2, Img3, Img4, Img5, Img6, Img7, Img8];
+
 const aspectGallery = [
   'aspect-[1.91]',
   'aspect-[1]',
@@ -49,3 +54,23 @@ export const tmpSrc = imgSrs.map((imgUrl, index) => {
     content: content[index],
   };
 });
+
+interface IEventsLink {
+  id: string;
+  link: string;
+  srcImg: string;
+}
+
+export const eventsLink: IEventsLink[] = [
+  {
+    id: 'menu',
+    link: routes.menu,
+    srcImg: Images.Menu,
+  },
+
+  {
+    id: 'bar',
+    link: routes.bar,
+    srcImg: Images.Bar,
+  },
+];
