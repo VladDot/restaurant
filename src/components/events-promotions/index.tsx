@@ -9,7 +9,7 @@ export const EventsPromotions = () => {
       <div className='max-w-[1110px] w-full flex flex-wrap justify-around m-auto gap-2'>
         {eventsLink.map(({ id, link, srcImg }) => {
           return (
-            <Link key={`card-${id}`} to={link} className='max-w-[310px]'>
+            <Link key={`event-prom-card-${id}`} to={link} className='max-w-[310px]'>
               <img className='w-full max-w-[310px]' src={srcImg} alt='img menu' />
             </Link>
           );
