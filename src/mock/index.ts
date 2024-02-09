@@ -13,6 +13,7 @@ import * as Images from '../assets/img';
 
 const imgSrs = [Img, Img2, Img3, Img4, Img5, Img6, Img7, Img8];
 
+const imgSrsFood = [Img, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img8, Img8, Img8, Img8];
 const aspectGallery = [
   'aspect-[1.91]',
   'aspect-[1]',
@@ -24,12 +25,16 @@ const aspectGallery = [
   'aspect-[1.5]',
 ];
 const aspectMenu = [
+  'aspect-[1.499]',
+  'aspect-[1.499]',
   'aspect-[1]',
   'aspect-[1]',
-  'aspect-[1.91]',
-  'aspect-[1.91]',
-  'aspect-[1.91]',
-  'aspect-[1.91]',
+  'aspect-[1]',
+  'aspect-[1]',
+  'aspect-[1.499]',
+  'aspect-[1.499]',
+  'aspect-[1]',
+  'aspect-[1]',
   'aspect-[1]',
   'aspect-[1]',
 ];
@@ -52,6 +57,13 @@ export const tmpSrc = imgSrs.map((imgUrl, index) => {
     aspectGallery: aspectGallery[index],
     aspectMenu: aspectMenu[index],
     content: content[index],
+  };
+});
+
+export const tmpSrcFood = imgSrsFood.map((imgUrl, index) => {
+  return {
+    imgUrl,
+    aspectMenu: aspectMenu[index],
   };
 });
 

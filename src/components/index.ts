@@ -1,5 +1,7 @@
 export { Banner } from './banner';
 export { Button } from './button';
+export { EventsPromotions } from './events-promotions';
+export { FoodGallery } from './food-gallery';
 export { Footer } from './footer';
 export { FormBooking } from './all-forms/form-booking';
 export { FormLogin } from './all-forms/form-login';
@@ -13,4 +15,3 @@ export { InputTextarea } from './input-textarea';
 export { Logo } from './header/logo/index';
 export { MainBanner } from './main-banner';
 export { MainGallery } from './mainGallery';
-export { EventsPromotions } from './events-promotions';

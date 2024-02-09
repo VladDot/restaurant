@@ -1,24 +1,29 @@
 import { useState } from "react";
 import { Modal } from "../../modal";
+import clsx from "clsx";
 
 interface IImgInteriorProps {
-    id: string;
     url: string;
     aspect: string;
+    className?: string;
 }
 
 export const ImgInterior: React.FC<IImgInteriorProps> = ({
-    id,
     url,
     aspect,
+    className,
 }) => {
     const [isOpen, setIsOpen] = useState(false);
     return (
         <>
             <li
                 onClick={() => setIsOpen(true)}
-                className={` ${aspect} relative bg-cover mb-6 items-center  flex  justify-center   transition-all duration-300 easy-in-out group cursor-pointer before:content-['] before:block before:w-full before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:bg-black hover:before:animate-blurBlack overflow-hidden`}
                 style={{ backgroundImage: `url(${url})` }}
+                className={clsx(
+                    `relative bg-cover mb-6 items-center flex justify-center transition-all duration-300 easy-in-out group cursor-pointer before:content-['] before:block before:w-full before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:bg-black hover:before:animate-blurBlack overflow-hidden`,
+                    className,
+                    aspect
+                )}
             >
                 <div className="relative w-[80%] group-hover:w-[80%] h-[100%] before:border-secondTextHover group-hover:border-2 border-secondTextHover group-hover:before:border-2 group-hover:before:border-secondTextHover before:w-[130%]  before:h-[90%] before:contents-'' before:absolute  before:-left-[15%] before:top-[5%] group-hover:before:top-[5%] group-hover:before:-right-[10%]  transition-all easy-in-out before:transition-all group-hover:before:duration-300 group-hover:duration-300 before:easy-in-out group-hover:before:delay-[100ms] duration-0 before:duration-0 group-hover:scale-90 group-hover:before:scale-90 "></div>
 
