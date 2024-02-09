@@ -1,23 +1,17 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { BurgerIcon } from "./burgerIcon";
-import { BurgerMenuItems } from "./burgerMenu";
+import { BurgerIcon } from './burgerIcon';
+import { BurgerMenuItems } from './burgerMenu';
 
-import "./style.css";
+import './style.scss';
 
 export const BurgerMenu = () => {
-    const [isActiveBurger, setActiveBurger] = useState<boolean>(false);
+  const [isActiveBurger, setActiveBurger] = useState<boolean>(false);
 
-    return (
-        <>
-            <BurgerIcon
-                isActive={isActiveBurger}
-                setActive={setActiveBurger}
-            />
-            <BurgerMenuItems
-                isActiveMenu={isActiveBurger}
-                setIsActiveMenu={setActiveBurger}
-            />
-        </>
-    );
+  return (
+    <>
+      <BurgerIcon isActive={isActiveBurger} setActive={setActiveBurger} />
+      <BurgerMenuItems isActiveMenu={isActiveBurger} setIsActiveMenu={setActiveBurger} />
+    </>
+  );
 };
