@@ -10,13 +10,14 @@ import {
   Banner,
   Button,
   Footer,
-  FormBooking,
-  FormLogin,
-  GoogleMaps,
-  Greetings,
   Header,
+  FormLogin,
+  Greetings,
+  GoogleMaps,
   MainBanner,
+  FormBooking,
   MainGallery,
+  EventsPromotions,
 } from '../../components';
 
 export const Layout = () => {
@@ -31,6 +32,7 @@ export const Layout = () => {
       <FormBooking />
       <MainBanner />
       <Greetings />
+      <EventsPromotions />
       <Outlet />
       {isBtn && (
         <button
