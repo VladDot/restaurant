@@ -1,0 +1,3 @@
+.gallery-dishes {
+    @apply lg:[&>li]:w-[49%] lg:[&>*:nth-child(6n+3)]:w-[23.5%] lg:[&>*:nth-child(6n+4)]:w-[23.5%] lg:[&>*:nth-child(6n+5)]:w-[23.5%] lg:[&>*:nth-child(6n+6)]:w-[23.5%];
+}

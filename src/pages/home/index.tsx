@@ -1,3 +1,9 @@
+import { FoodGallery } from "../../components";
+
 export const Home = () => {
-    return <>Home</>;
+    return (
+        <>
+            <FoodGallery />
+        </>
+    );
 };
