@@ -13,6 +13,7 @@ import {
   FormBooking,
   FormLogin,
   GoogleMaps,
+  Greetings,
   Header,
   MainBanner,
   MainGallery,
@@ -29,6 +30,7 @@ export const Layout = () => {
       <FormLogin />
       <FormBooking />
       <MainBanner />
+      <Greetings />
       <Outlet />
       {isBtn && (
         <button
