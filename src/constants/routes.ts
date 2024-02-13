@@ -25,6 +25,7 @@ export const routes = {
         desserts: "/menu/desserts",
         pastries: "/menu/pastries",
         grillMenu: "/menu/grill-menu",
+        garnishes: "/menu/garnishes",
         meatDishes: "/menu/meat-dishes",
         fishDishes: "/menu/fish-dishes",
         sideDishes: "/menu/side-dishes",

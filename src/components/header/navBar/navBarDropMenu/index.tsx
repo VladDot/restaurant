@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getStyles } from '../../style';
-import { NavBarLink } from '../../config';
+import { NavBarLink } from '../../../../mock';
 
 interface IMenuProps {
   idx: number;

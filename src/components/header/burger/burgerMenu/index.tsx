@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { navBar } from "../../config";
 import { SocialMenu } from "../../social-menu";
 import { DropDownMenu } from "../../dropDownMenu";
 
 import { getStyles } from "../style";
+import { navBar } from "../../../../mock";
 
 interface MyComponentProps {
     isActiveMenu: boolean;

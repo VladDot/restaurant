@@ -11,7 +11,6 @@ export const InputTel = ({ name, type, placeholder }: IInputTelProps) => {
   return (
     <Field name={name}>
       {({ form, field, meta }: FieldProps) => {
-        // console.log(meta.error);
         const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
           if (
             (event.key >= '0' && event.key <= '9') ||

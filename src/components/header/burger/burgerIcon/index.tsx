@@ -10,7 +10,6 @@ export const BurgerIcon: React.FC<MyComponentProps> = ({
     const blockScroll = () => {
         setActive(!isActive);
         document.body.style.overflow = isActive ? "auto" : "hidden";
-        console.log(isActive);
     };
     return (
         <div
