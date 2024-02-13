@@ -17,6 +17,7 @@ import {
   MainBanner,
   FormBooking,
   MainGallery,
+  DishesCategory,
   EventsPromotions,
 } from '../../components';
 
@@ -31,6 +32,7 @@ export const Layout = () => {
       <FormLogin />
       <FormBooking />
       <MainBanner />
+      <DishesCategory />
       <Greetings />
       <EventsPromotions />
       <Outlet />
