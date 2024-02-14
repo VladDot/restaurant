@@ -7,27 +7,27 @@ export const DishesCategory = () => {
         return (
           <div
             key={`${id}-${indexCardCategory}`}
-            className='min-w-[300px] px-2 flex flex-col sm:flex-row gap-3 lg:gap-6 items-center even:flex-row-reverse '
+            className='min-w-[300px] w-full px-2 flex flex-col items-center gap-3 even:flex-row-reverse mobile:px-5 sm:px-6 sm:flex-row lg:gap-6 lg:px-9 lg:max-w-[1320px] lg:justify-between xl:px-16 xl:gap-10  desktopLg:gap-9 desktopLg:px-0 desktopLg:m-auto 2xl:max-w-[1440px]'
           >
-            <div className='max-w-[500px] bg-transparent'>
-              <img src={imgCategory} alt='img' />
+            <div className='max-w-[500px] bg-transparent w-full'>
+              <img src={imgCategory} alt='img' className='select-none' />
             </div>
-            <div className='flex flex-col gap-y-3 min-w-[300px] w-full '>
+            <div className='flex flex-col gap-y-3 min-w-[300px] w-full max-w-[700px]'>
               {dishes.map(({ id, nameDish, prise, weight }, indexDishes) => {
                 return (
                   <div
                     key={`${id}-${indexCardCategory}-${indexDishes}`}
                     className='border-b border-black sm:border-0 bg-transparent '
                   >
-                    <div className='flex items-center'>
-                      <p className='max-w-[200px] sm:max-w-max'>{nameDish}</p>
-                      <span className=' border-black sm:border-b border-dotted flex-[1_1] -mb-[5px] mx-2'></span>
-                      <span className=''>
+                    <div className='flex items-center '>
+                      <p className='max-w-[200px] sm:max-w-max select-none'>{nameDish}</p>
+                      <span className='border-black sm:border-b border-dotted flex-[1_1] select-none -mb-[5px] mx-2'></span>
+                      <span className='select-none'>
                         {prise}
-                        <span>грн.</span>
+                        <span className='select-none'>грн.</span>
                       </span>
                     </div>
-                    <span>{weight}</span>
+                    <span className='select-none'>{weight}</span>
                   </div>
                 );
               })}
