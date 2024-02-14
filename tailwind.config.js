@@ -43,6 +43,10 @@ module.exports = {
                     from: { opacity: "0" },
                     to: { opacity: "0.55" },
                 },
+                blurBlackFoodMenu: {
+                    from: { opacity: "0" },
+                    to: { opacity: "0.4" },
+                },
                 scalePluse: {
                     from: { transform: "scale(0)" },
                     to: { transform: "scale(1)" },
@@ -54,6 +58,7 @@ module.exports = {
                 fadeInDropMenu: "fadeIn 1s ease-out forwards",
                 blurBlack: "blurBlack 330ms ease-in-out forwards",
                 scalePluse: "scalePluse 330ms linear forwards",
+                blurBlackFoodMenu: "blurBlackFoodMenu 500ms ease-in forwards",
             },
         },
     },

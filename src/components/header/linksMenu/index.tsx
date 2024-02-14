@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { NavBarLink } from '../config';
+import { NavBarLink } from '../../../mock';
 
 interface ListMenuProps extends NavBarLink {
   idx: number;

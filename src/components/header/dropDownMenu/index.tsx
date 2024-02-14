@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-import { NavBarLink } from "../config";
+
+import { NavBarLink } from "../../../mock";
 import { getMenuStyles } from "../burger/style";
 
 interface ListMenuProps {
