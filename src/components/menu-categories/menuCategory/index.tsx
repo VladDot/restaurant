@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+
 import { Button } from "../../button";
 
 interface IMenuCategoryProps {
@@ -13,11 +14,11 @@ export const MenuCategory: FC<IMenuCategoryProps> = ({ img, title, url }) => {
         <li
             onMouseEnter={() => setIsDisabled(true)}
             onMouseLeave={() => setIsDisabled(false)}
-            className="relative md:max-w-[50%] w-full h-[290px] md:h-[390px] overflow-hidden group/item [&>span:odd:bg-rose-500]"
+            className="relative md:max-w-[50%] w-full h-[230px] md:h-[390px] overflow-hidden group/item "
         >
             <span
-                className="relative flex bg-cover h-full w-full transition-all duration-500  easy-in-out  group-hover/item:translate-x-0 bg-transparent"
-                // style={{ backgroundImage: `url(${img})` }}
+                className="relative scale-[1.5] lg:scale-[1.3] flex bg-cover h-full transition-all duration-500  easy-in-out group-hover/item:-translate-x-0 bg-transparent -translate-x-[60px]"
+                style={{ backgroundImage: `url(${img})` }}
             ></span>
 
             <div className="absolute transition-all duration-500 easy-in-out  cursor-pointer w-full h-full  top-0 left-0 opacity-0 bg-black group-hover/item:animate-blurBlackFoodMenu overflow-hidden" />
