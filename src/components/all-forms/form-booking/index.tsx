@@ -1,6 +1,6 @@
 import { Form, Formik } from 'formik';
 import { Button } from '../../button';
-import { InputField, InputTel, InputDate, InputTextarea } from '../../index';
+import { InputField, InputNumbers, InputDate, InputTextarea } from '../../index';
 import { initialValues, validationSchema } from './config';
 
 export const FormBooking = () => {
@@ -19,8 +19,8 @@ export const FormBooking = () => {
       >
         <Form className='w-full h-full flex flex-col gap-6 justify-center items-center max-w-[568px]'>
           <InputField name='firstName' type='text' placeholder='firstName' />
-          <InputTel name='phone' type='tel' placeholder='your phone' />
-          <InputTel name='numberPersons' type='number' placeholder='Persons' />
+          <InputNumbers name='phone' type='tel' placeholder='your phone' />
+          <InputNumbers name='numberPersons' type='number' placeholder='Persons' />
           <InputDate name='date' type='date' />
           <InputTextarea name='comment' placeholder='your comment' />
           <Button textContent='Submit' type='submit' className='max-w-[220px]' />
