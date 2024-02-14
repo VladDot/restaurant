@@ -1,6 +1,8 @@
 export { Banner } from "./banner";
 export { Button } from "./button";
+export { DishesCategory } from "./dishes-category";
 export { EventsPromotions } from "./events-promotions";
+export { ExpandingElement } from "./expanding-element";
 export { FoodGallery } from "./food-gallery";
 export { Footer } from "./footer";
 export { FormBooking } from "./all-forms/form-booking";
@@ -18,4 +20,3 @@ export { MainBanner } from "./main-banner";
 export { MainGallery } from "./mainGallery";
 export { MenuCategories } from "./menu-categories";
 export { MenuCategory } from "./menu-categories/menuCategory";
-export { DishesCategory } from "./dishes-category";
