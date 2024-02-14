@@ -1,5 +1,4 @@
-import { navBar } from "../config";
-
+import { navBar } from "../../../mock";
 import { NavBarDropMenu } from "./navBarDropMenu";
 
 export const NavBar = () => {
