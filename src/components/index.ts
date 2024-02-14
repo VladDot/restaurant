@@ -18,3 +18,4 @@ export { MainBanner } from "./main-banner";
 export { MainGallery } from "./mainGallery";
 export { MenuCategories } from "./menu-categories";
 export { MenuCategory } from "./menu-categories/menuCategory";
+export { DishesCategory } from "./dishes-category";

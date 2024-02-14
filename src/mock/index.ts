@@ -308,3 +308,168 @@ export const navBar: NavBarLink[] = [
     { name: "blog", url: routes.blog, title: "BLOG" },
     { name: "contacts", url: routes.contacts, title: "CONTACTS" },
 ];
+
+export const cardCategory = [
+  {
+    id: 'card-dish',
+    imgCategory: Images.Menu,
+    dishes: [
+      {
+        id: 'dish-1',
+        nameDish: 'Бельгійські вафлі з мусом з лососем та авокадо',
+        prise: '249',
+        weight: '215',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+    ],
+  },
+  {
+    id: 'card-dish',
+    imgCategory: Images.Menu,
+    dishes: [
+      {
+        id: 'dish-1',
+        nameDish: 'Бельгійські вафлі з мусом з лососем та авокадо',
+        prise: '249',
+        weight: '215',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+    ],
+  },
+  {
+    id: 'card-dish',
+    imgCategory: Images.Menu,
+    dishes: [
+      {
+        id: 'dish-1',
+        nameDish: 'Бельгійські вафлі з мусом з лососем та авокадо',
+        prise: '249',
+        weight: '215',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+      {
+        id: 'dish-2',
+        nameDish: 'Ікра щуки з тостами',
+        prise: '650',
+        weight: '150',
+      },
+    ],
+  },
+];
