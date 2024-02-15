@@ -1,22 +1,19 @@
-import { FC } from "react";
-import { Instagram } from "../../assets/svg";
-import { ExpandingElement } from "../../components";
 import { IsvgBanquet, svgBanquet } from "./config";
-import { IExpandingElement } from "../../components/expanding-element";
+
+import { ExpandingElement } from "../../components";
 
 export const Banquet = () => {
     return (
-        <div className="w-full ">
-            <div className="flex flex-wrap w-full">
+        <section className="w-full ">
+            <div className="lg:flex lg:flex-wrap w-full lg:[&>div:last-child>div>h2]:max-w-[350px]">
                 {svgBanquet.map(({ svg, text }: IsvgBanquet) => (
                     <ExpandingElement
-                        className=""
-                        text={text}
                         Svg={svg}
+                        text={text}
                         key={`ExpandingElement_${text}_1`}
                     />
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
