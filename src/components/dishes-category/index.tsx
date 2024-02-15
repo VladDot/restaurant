@@ -3,14 +3,20 @@ import { cardCategory } from '../../mock';
 export const DishesCategory = () => {
   return (
     <section className='py-12 w-full flex flex-col gap-10 '>
+      <p className='text-center select-none'>ОСНОВНЕ МЕНЮ</p>
+      <h2 className='text-center select-none'>Холодні закуски</h2>
       {cardCategory.map(({ idCategory, dishes, imgCategory }, indexCardCategory) => {
         return (
           <div
             key={`${idCategory}-${indexCardCategory}`}
-            className='min-w-[300px] w-full px-2 flex flex-col items-center gap-3 even:flex-row-reverse mobile:px-5 sm:px-6 sm:flex-row lg:gap-6 lg:px-9 lg:max-w-[1320px] lg:justify-between xl:px-16 xl:gap-10  desktopLg:gap-9 desktopLg:px-0 desktopLg:m-auto 2xl:max-w-[1440px]'
+            className='w-full flex flex-col items-center justify-center sm:gap-4 sm:even:flex-row-reverse md:gap-12  sm:flex-row desktop:justify-between desktop:even:pr-14 desktop:odd:pl-14 container'
           >
-            <div className='max-w-[500px] bg-transparent w-full'>
-              <img src={imgCategory} alt='img' className='select-none' />
+            <div className='max-w-[500px] bg-transparent w-full '>
+              <img
+                alt={idCategory}
+                src={imgCategory}
+                className='select-none aspect-square object-contain '
+              />
             </div>
 
             <div className='flex flex-col gap-y-3 min-w-[300px] w-full max-w-[700px]'>
@@ -42,3 +48,4 @@ export const DishesCategory = () => {
     </section>
   );
 };
+// w-full px-2 flex flex-col items-center gap-3 sm:even:flex-row-reverse mobile:px-5 sm:px-6 sm:flex-row lg:gap-6 lg:px-6 lg:m-auto lg:justify-between xl:gap-10 2xl:p-0 desktopLg:gap-9 desktopLg:m-auto 2xl:max-w-[1440px] md:[&>div:nth-child(odd)]:ml-6 md:[&>div:nth-child(odd)]:mr-6 lg:[&>div:nth-child(odd)]:ml-10 lg:[&>div:nth-child(odd)]:mr-10 xl:[&>div:nth-child(odd)]:ml-20 xl:[&>div:nth-child(odd)]:mr-20

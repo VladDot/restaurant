@@ -14,19 +14,6 @@ export const InputNumbers = ({ name, type, placeholder }: IInputTelProps) => {
   return (
     <Field name={name}>
       {({ form, field, meta }: FieldProps) => {
-        const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
-          if (
-            (event.key >= '0' && event.key <= '9') ||
-            event.key === 'Enter' ||
-            event.key === 'Backspace' ||
-            event.key === 'Delete'
-          ) {
-            return;
-          } else {
-            event.preventDefault();
-          }
-        };
-
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
           console.log(event.target.value);
           if (type === 'number' && Number(event.target.value) < 1) {
@@ -55,7 +42,6 @@ export const InputNumbers = ({ name, type, placeholder }: IInputTelProps) => {
                   value={field.value}
                   onChange={handleChange}
                   placeholder={placeholder}
-                  onKeyDown={handleKeyPress}
                   className='w-full bg-transparent focus:outline-none'
                 />
               )}
@@ -64,7 +50,6 @@ export const InputNumbers = ({ name, type, placeholder }: IInputTelProps) => {
                   onChange={handleChange}
                   placeholder={placeholder}
                   mask={'+38(999)999 99 99'}
-                  onKeyDown={handleKeyPress}
                   className='w-full bg-transparent focus:outline-none'
                 />
               )}

@@ -27,7 +27,7 @@ export const InputTextarea = ({ name, placeholder }: IInputTextareaProps) => {
               />
             </div>
             {countValue !== 0 && (
-              <span className='text-fourth'>max symbols: {130 - countValue} out of 130</span>
+              <span className='text-fourth'>symbols left: {130 - countValue} out of 130</span>
             )}
             {meta.error && meta.touched && (
               <span className='absolute left-2 top-8 select-none'>{meta.error}</span>
