@@ -40,7 +40,7 @@ export const InputDate = ({ name, type }: IInputDateProps) => {
               onClick={onClick}
             >
               <span
-                className={clsx('w-[95%]', {
+                className={clsx('w-[50%]', {
                   'text-fourth': formatDateToString(field.value) === 'дд.мм.рррр',
                   'text-secondText': formatDateToString(field.value) !== 'дд.мм.рррр',
                 })}

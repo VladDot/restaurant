@@ -2,7 +2,7 @@ import { cardCategory } from '../../mock';
 
 export const DishesCategory = () => {
   return (
-    <section className='py-12 w-full flex flex-col gap-10 '>
+    <section className='w-full flex flex-col gap-6 '>
       <p className='text-center select-none'>ОСНОВНЕ МЕНЮ</p>
       <h2 className='text-center select-none'>Холодні закуски</h2>
       {cardCategory.map(({ idCategory, dishes, imgCategory }, indexCardCategory) => {
