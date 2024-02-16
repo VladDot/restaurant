@@ -1,8 +1,8 @@
 import { Form, Formik } from 'formik';
-import { InputField } from '../../input-field';
 
-import { Button } from '../../button';
+import { Button, InputField } from '../../index';
 import { initialValues, validationSchema } from './config';
+
 export const FormLogin = () => {
   return (
     <div className='w-full p-3 flex flex-col gap-2 text-secondText bg-black mobile:flex-row flex-wrap mobile:justify-center mobile:items-center'>

@@ -1,11 +1,13 @@
-import { Field, FieldProps } from 'formik';
 import { useRef } from 'react';
 import DatePicker from 'react-datepicker';
+
+import { Field, FieldProps } from 'formik';
 import 'react-datepicker/dist/react-datepicker.css';
 
 import './style.css';
-import { formatDateToString } from '../../helpers';
 import clsx from 'clsx';
+import { formatDateToString } from '../../helpers';
+
 interface IInputDateProps {
   name: string;
   type: 'date';
@@ -49,9 +51,9 @@ export const InputDate = ({ name, type }: IInputDateProps) => {
               </span>
 
               <DatePicker
-                minDate={currentDate}
-                maxDate={nextMonth}
                 ref={refPicker}
+                maxDate={nextMonth}
+                minDate={currentDate}
                 selected={field.value}
                 onChange={handleChange}
               />

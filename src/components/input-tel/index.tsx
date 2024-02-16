@@ -15,7 +15,6 @@ export const InputNumbers = ({ name, type, placeholder }: IInputTelProps) => {
     <Field name={name}>
       {({ form, field, meta }: FieldProps) => {
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-          console.log(event.target.value);
           if (type === 'number' && Number(event.target.value) < 1) {
             form.setFieldError(name, 'min persons 1');
             form.setFieldTouched(name, true, false);
