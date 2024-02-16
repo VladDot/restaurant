@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import { Field, FieldProps } from 'formik';
+
 import { EyeClose, EyeOpen } from '../../assets/svg';
 
 interface IInputFieldProps {
