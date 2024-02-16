@@ -12,8 +12,6 @@ export const FormBooking = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log(values);
-
           resetForm();
         }}
       >

@@ -1,5 +1,7 @@
+export { AboutUsInfo } from "./about-us-info";
 export { Banner } from "./banner";
 export { Button } from "./button";
+export { CollapsibleWindow } from "./collapsible-window";
 export { DishesCategory } from "./dishes-category";
 export { EventsPromotions } from "./events-promotions";
 export { ExpandingElement } from "./expanding-element";

@@ -11,6 +11,7 @@ module.exports = {
                 secondText: "#A78963",
                 thirdText: "#FFFFFF",
                 fourth: "#A1A1A1",
+
                 bannerContent: "rgb(161, 161, 161)",
                 disabled: "#aaabad",
 
@@ -60,6 +61,13 @@ module.exports = {
                 blurBlack: "blurBlack 330ms ease-in-out forwards",
                 scalePluse: "scalePluse 330ms linear forwards",
                 blurBlackFoodMenu: "blurBlackFoodMenu 500ms ease-in forwards",
+            },
+            backgroundImage: {
+                bottomShadow:
+                    "linear-gradient(180deg, rgba(255,255,255,0.07046568627450978) 0%, rgba(255,255,255,0.2721463585434174) 35%, rgba(255,255,255,1) 95%)",
+            },
+            backgroundSize: {
+                "100/200": "100% 20%",
             },
         },
     },
