@@ -1,6 +1,6 @@
 import { Form, Formik } from 'formik';
 
-import { Button, InputField } from '../../index';
+import { Button, InputField } from '../../../components';
 import { initialValues, validationSchema } from './config';
 
 export const FormLogin = () => {

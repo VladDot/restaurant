@@ -8,8 +8,6 @@ interface IInputTelProps {
   placeholder: string;
 }
 
-//TODO : 30 string
-
 export const InputNumbers = ({ name, type, placeholder }: IInputTelProps) => {
   return (
     <Field name={name}>
