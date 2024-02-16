@@ -1,2 +1,2 @@
-export { scrollToTop } from './scrollToTop';
-export { formatDateToString } from './formatedDate';
+export { scrollToTop } from "./scrollToTop";
+export { formatDateToString } from "./formatedDate";

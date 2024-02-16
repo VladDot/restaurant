@@ -20,6 +20,7 @@ module.exports = {
                 mainBg: "#FFFFFF",
                 secondBg: "#05090E",
                 thirdBg: "#856842",
+                bgA78963: "#A78963",
                 bgInputForm: "#F9EF9F",
                 red: "#be123c",
                 aqua: "#23D5AE",
