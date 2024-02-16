@@ -17,6 +17,7 @@ import {
   MainBanner,
   FormBooking,
   MainGallery,
+  FormCallback,
   DishesCategory,
   EventsPromotions,
 } from '../../components';
@@ -30,6 +31,7 @@ export const Layout = () => {
       <Header />
       <Banner src={ImgBanner} content='asdasdasd' title='ALSDasdas' />
       <FormLogin />
+      <FormCallback />
       <FormBooking />
       <MainBanner />
       <DishesCategory />

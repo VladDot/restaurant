@@ -5,7 +5,7 @@ export { EventsPromotions } from './events-promotions';
 export { ExpandingElement } from './expanding-element';
 export { FoodGallery } from './food-gallery';
 export { Footer } from './footer';
-export { FormBooking, FormLogin } from './all-forms/index';
+export { FormBooking, FormLogin, FormCallback } from './all-forms';
 export { GoogleMaps } from './google-maps';
 export { Greetings } from './greetings';
 export { Header } from './header';
