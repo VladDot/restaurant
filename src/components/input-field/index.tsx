@@ -2,7 +2,6 @@ import { ChangeEvent, useState } from 'react';
 import { Field, FieldProps } from 'formik';
 
 import { EyeClose, EyeOpen } from '../../assets/svg';
-import { spawn } from 'child_process';
 
 interface IInputFieldProps {
   name: string;
