@@ -5,9 +5,10 @@ import { useWindowWidth } from "../../hook";
 import { CollapsibleWindow } from "../collapsible-window";
 
 import { getStyles } from "./style";
-import { textInfo } from "../../mock/textMock";
 import { Up } from "../../assets/svg";
-import { tmpSrcFood } from "../../mock";
+import { interiorGallery } from "../../mock";
+import { textInfo } from "../../mock/textMock";
+import { AboutUsGallery } from "./about-us-gallery";
 
 export const AboutUsInfo = () => {
     const { width } = useWindowWidth();
@@ -39,22 +40,13 @@ export const AboutUsInfo = () => {
                     ))}
                 </CollapsibleWindow>
                 {!isActive && (
-                    <span
+                    <Up
                         onClick={() => setIsActive(true)}
                         className="absolute rotate-180 flex justify-center items-center top-[90%] left-1/2 -translate-x-1/2 w-8 h-8 border-2 border-black rounded-full md:hidden"
-                    >
-                        <Up />
-                    </span>
+                    />
                 )}
             </div>
-            <div className="mt-6 min-w-[50%] flex flex-wrap [&>div:first-child]:w-full [&>div:first-child]:aspect-[0.75/1] [&>div:first-child]:mb-4">
-                {tmpSrcFood.map(({ imgUrl, aspectMenu }) => (
-                    <div
-                        className={`${aspectMenu} w-10 `}
-                        style={{ backgroundImage: `url(${imgUrl})` }}
-                    />
-                ))}
-            </div>
+            <AboutUsGallery data={interiorGallery} />
         </section>
     );
 };
