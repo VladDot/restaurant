@@ -1,13 +1,21 @@
 import { Form, Formik } from 'formik';
 import { Button } from '../../button';
-import { InputField, InputNumbers, InputDate, InputTextarea } from '../../index';
+import {
+  InputField,
+  InputNumbers,
+  InputDate,
+  InputTextarea,
+  FormTitle,
+  FormSubTitle,
+} from '../../../components';
 import { initialValues, validationSchema } from './config';
 
+//TODO добавить <legend> на все input
 export const FormBooking = () => {
   return (
     <div className='w-full py-3 flex flex-col gap-2 text-secondText bg-black mobile:flex-row flex-wrap mobile:justify-center mobile:items-center'>
-      <p className='text-secondText w-full text-center'>RESERVATION</p>
-      <h2 className='text-secondText w-full text-center'>Reserve a table or banquet</h2>
+      <FormTitle uppercase text='reservation' />
+      <FormSubTitle text='Order a table or banquet' />
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}

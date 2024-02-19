@@ -36,11 +36,12 @@ export const InputDate = ({ name, type }: IInputDateProps) => {
         };
 
         return (
-          <div className='w-full'>
-            <div
+          <label className='w-full'>
+            <fieldset
               className='px-3 cursor-pointer py-1 w-full border-solid border-secondText border-[2px] rounded flex items-center relative gap-1'
               onClick={onClick}
             >
+              <legend className='px-2'>your {name}</legend>
               <span
                 className={clsx('w-[50%]', {
                   'text-fourth': formatDateToString(field.value) === 'дд.мм.рррр',
@@ -57,11 +58,11 @@ export const InputDate = ({ name, type }: IInputDateProps) => {
                 selected={field.value}
                 onChange={handleChange}
               />
-            </div>
+            </fieldset>
             {meta.error && meta.touched && (
               <span className='w-full text-rose-400 pl-3'>{meta.error}</span>
             )}
-          </div>
+          </label>
         );
       }}
     </Field>

@@ -19,7 +19,7 @@ export const DishesCategory = () => {
               />
             </div>
 
-            <div className='flex flex-col gap-y-3 min-w-[300px] w-full max-w-[700px]'>
+            <div className='flex flex-col gap-y-3 w-full max-w-[700px]'>
               {dishes.map(({ idDishes, nameDish, prise, weight }, indexDishes) => {
                 return (
                   <div

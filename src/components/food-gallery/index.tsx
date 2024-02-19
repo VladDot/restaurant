@@ -1,7 +1,7 @@
 import './style.css';
 
 import { tmpSrcFood } from '../../mock';
-import { Button, ImgInterior } from '../index';
+import { Button, ImgInterior } from '../../components';
 import { routes } from '../../constants/routes';
 
 export const FoodGallery = () => {

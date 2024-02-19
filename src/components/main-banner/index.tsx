@@ -20,10 +20,11 @@ export const MainBanner = ({ className }: IMainBannerProps) => {
       <div className='w-full '>
         <Swiper
           loop={true}
-          speed={5000}
+          speed={6000}
           effect={'fade'}
+          allowTouchMove={false}
           autoplay={{
-            delay: 6000,
+            delay: 1500,
             disableOnInteraction: false,
           }}
           modules={[Autoplay, EffectFade]}
