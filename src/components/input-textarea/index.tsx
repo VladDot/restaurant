@@ -16,8 +16,9 @@ export const InputTextarea = ({ name, placeholder }: IInputTextareaProps) => {
           await form.setFieldValue(name, event.target.value.slice(0, 129));
         };
         return (
-          <div className='w-full'>
-            <div className='px-3 py-1 w-full h-[110px] border-secondText border-2 rounded flex relative gap-1'>
+          <label className='w-full'>
+            <fieldset className='px-3 py-1 w-full h-[110px] border-secondText border-2 rounded flex relative gap-1'>
+              <legend className='px-2'>your {name}</legend>
               <textarea
                 name={name}
                 placeholder={placeholder}
@@ -25,14 +26,14 @@ export const InputTextarea = ({ name, placeholder }: IInputTextareaProps) => {
                 onChange={handleChange}
                 className='w-full bg-transparent focus:outline-none resize-none '
               />
-            </div>
+            </fieldset>
             {countValue !== 0 && (
               <span className='text-fourth'>symbols left: {130 - countValue} out of 130</span>
             )}
             {meta.error && meta.touched && (
               <span className='absolute left-2 top-8 select-none'>{meta.error}</span>
             )}
-          </div>
+          </label>
         );
       }}
     </Field>

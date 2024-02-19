@@ -9,7 +9,7 @@ export const RequestCallback = () => {
         <div className='max-w-[600px] w-full flex justify-end lg:items-center lg:w-auto'>
           <div className='w-[50px] h-[50px] rounded-full bg-secondText'></div>
         </div>
-        <div className='max-w-[400px] text-center text-white flex flex-col items-center gap-3'>
+        <div className='max-w-[400px] text-center text-white flex flex-col items-center gap-5'>
           <h2 className='select-none'>PHONE NUMBER FOR ORDERING:</h2>
           <Link to='tel:9876543210' className='hover:text-secondText duration-300 select-none'>
             +38 (068) 118-15-15

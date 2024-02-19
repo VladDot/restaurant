@@ -30,8 +30,9 @@ export const InputNumbers = ({ name, type, placeholder }: IInputTelProps) => {
           form.setFieldValue(name, event.target.value.trim());
         };
         return (
-          <div className='w-full'>
-            <div className='px-3 py-1 w-full border-secondText border-2 rounded flex items-center relative gap-1'>
+          <label className='w-full'>
+            <fieldset className='px-3 py-1 w-full border-secondText border-2 rounded flex items-center relative gap-1'>
+              <legend className='px-2'>{placeholder}</legend>
               {type !== 'tel' && (
                 <input
                   name={name}
@@ -50,11 +51,11 @@ export const InputNumbers = ({ name, type, placeholder }: IInputTelProps) => {
                   className='w-full bg-transparent focus:outline-none'
                 />
               )}
-            </div>
+            </fieldset>
             {meta.error && meta.touched && (
               <span className='w-full text-rose-400 pl-3'>{meta.error}</span>
             )}
-          </div>
+          </label>
         );
       }}
     </Field>
