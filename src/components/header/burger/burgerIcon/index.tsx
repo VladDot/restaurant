@@ -4,10 +4,6 @@ interface MyComponentProps {
 }
 
 export const BurgerIcon: React.FC<MyComponentProps> = ({ isActive, setActive }) => {
-  const blockScroll = () => {
-    setActive(!isActive);
-    document.body.style.overflow = isActive ? 'auto' : 'hidden';
-  };
   return (
     <div
       onClick={() => setActive(!isActive)}
