@@ -140,6 +140,22 @@ export const interiorGallery: IInteriorGallery[] = [
         imgUrl: Img,
         id: "9",
     },
+    {
+        imgUrl: Img,
+        id: "10",
+    },
+    {
+        imgUrl: Img,
+        id: "11",
+    },
+    {
+        imgUrl: Img,
+        id: "12",
+    },
+    {
+        imgUrl: Img,
+        id: "13",
+    },
 ];
 
 export const tmpSrcFood = imgSrsFood.map((imgUrl, index) => {
