@@ -6,8 +6,9 @@ interface IFormSubTitleProps {
   uppercase?: boolean;
 }
 
+//TODO change the name and exports ...
+
 export const FormSubTitle = ({ text, uppercase, className }: IFormSubTitleProps) => {
-  console.log(text[0].toUpperCase() + text.slice(1));
   return (
     <h2
       className={clsx(

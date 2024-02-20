@@ -1,6 +1,3 @@
-.react-datepicker-wrapper {
-}
-
 .react-datepicker-wrapper input {
   @apply cursor-pointer bg-transparent outline-none w-[0];
 }

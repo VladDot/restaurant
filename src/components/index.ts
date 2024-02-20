@@ -20,3 +20,4 @@ export { MainGallery } from './mainGallery';
 export { MenuCategories } from './menu-categories';
 export { MenuCategory } from './menu-categories/menuCategory';
 export { RequestCallback } from './request-callback';
+export { Spinner } from './spinner';

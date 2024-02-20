@@ -45,6 +45,7 @@ export const InputNumbers = ({ name, type, placeholder }: IInputTelProps) => {
               )}
               {type === 'tel' && (
                 <ReactInputMask
+                  value={field.value}
                   onChange={handleChange}
                   placeholder={placeholder}
                   mask={'+38(999)999 99 99'}

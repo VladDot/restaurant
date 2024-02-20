@@ -33,6 +33,14 @@ module.exports = {
         desktop: '1504px',
       },
       keyframes: {
+        rotate: {
+          from: { transform: 'rotate(0deg) translate(-50%,-50%)' },
+          to: { transform: 'rotate(360deg) translate(-50%,-50%)' },
+        },
+        '-rotate': {
+          from: { transform: 'rotate(360deg) translate(-50%,-50%)' },
+          to: { transform: 'rotate(0deg) translate(-50%,-50%)' },
+        },
         fadeIn: {
           from: { opacity: '0' },
           to: { opacity: '1' },
@@ -55,6 +63,8 @@ module.exports = {
         },
       },
       animation: {
+        rotateBigSpinner: 'rotate 2500ms linear infinite',
+        rotateSmallSpinner: '-rotate 2300ms linear infinite',
         fadeIn: 'fadeIn 600ms ease-in-out forwards',
         fadeOut: 'fadeIn 300ms ease-in-out forwards',
         fadeInDropMenu: 'fadeIn 1s ease-out forwards',

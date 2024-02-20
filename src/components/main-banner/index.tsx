@@ -36,11 +36,11 @@ export const MainBanner = ({ className }: IMainBannerProps) => {
                 <div
                   style={{ backgroundImage: `url(${imgUrl})` }}
                   className={clsx(
-                    `w-full h-full mobile:bg-cover bg-[center] aspect-[0.9] md:aspect-[2.42] relative flex items-center justify-center`,
+                    `w-full mobile:bg-cover bg-[center] aspect-[0.9] md:aspect-[2.42] relative flex items-center justify-center`,
                     className
                   )}
                 >
-                  <div className='w-full h-full absolute z-0 bg-black opacity-30 top-0'></div>
+                  <div className='w-full absolute z-0 bg-black opacity-30 top-0'></div>
 
                   <div className='container relative z-10 mx-auto p-5p flex flex-col gap-[20px] md:gap-[45px] text-white translate-y-[80px]'>
                     <p className='text-xl text-bannerContent text-[16px] md:text-2xl'>{content}</p>

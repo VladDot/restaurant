@@ -1,22 +1,21 @@
 import { useRef } from 'react';
+import { Field, FieldProps } from 'formik';
 import DatePicker from 'react-datepicker';
 
-import { Field, FieldProps } from 'formik';
-import 'react-datepicker/dist/react-datepicker.css';
+import { formatDateToString } from '../../helpers';
+
+import { getStyles } from './styles';
 
 import './style.css';
-import clsx from 'clsx';
-import { formatDateToString } from '../../helpers';
+import 'react-datepicker/dist/react-datepicker.css';
 
 interface IInputDateProps {
   name: string;
-  type: 'date';
+  disabled?: boolean;
 }
 
-export const InputDate = ({ name, type }: IInputDateProps) => {
+export const InputDate = ({ name, disabled }: IInputDateProps) => {
   const refPicker = useRef<DatePicker>(null);
-
-  if (type !== 'date') return null;
 
   const onClick = () => {
     if (refPicker.current) {
@@ -31,28 +30,23 @@ export const InputDate = ({ name, type }: IInputDateProps) => {
         const nextMonth = new Date(currentDate);
         nextMonth.setMonth(currentDate.getMonth() + 6);
 
+        const isValue = formatDateToString(field.value) === 'дд.мм.рррр';
+
+        const { fieldset, span, legend } = getStyles({ disabled: disabled, isValue: isValue });
+
         const handleChange = (date: any) => {
           setFieldValue(name, date);
         };
 
         return (
-          <label className='w-full'>
-            <fieldset
-              className='px-3 cursor-pointer py-1 w-full border-solid border-secondText border-[2px] rounded flex items-center relative gap-1'
-              onClick={onClick}
-            >
-              <legend className='px-2'>your {name}</legend>
-              <span
-                className={clsx('w-[50%]', {
-                  'text-fourth': formatDateToString(field.value) === 'дд.мм.рррр',
-                  'text-secondText': formatDateToString(field.value) !== 'дд.мм.рррр',
-                })}
-              >
-                {formatDateToString(field.value)}
-              </span>
+          <label className='w-full' onClick={onClick}>
+            <fieldset className={fieldset}>
+              <legend className={legend}>{name}</legend>
+              <span className={span}>{formatDateToString(field.value)}</span>
 
               <DatePicker
                 ref={refPicker}
+                disabled={disabled}
                 maxDate={nextMonth}
                 minDate={currentDate}
                 selected={field.value}
@@ -60,7 +54,7 @@ export const InputDate = ({ name, type }: IInputDateProps) => {
               />
             </fieldset>
             {meta.error && meta.touched && (
-              <span className='w-full text-rose-400 pl-3'>{meta.error}</span>
+              <span className='w-full text-rose-400 pl-3 select-none'>{meta.error}</span>
             )}
           </label>
         );

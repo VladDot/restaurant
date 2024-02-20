@@ -1,6 +1,6 @@
 import * as Yup from 'yup';
 
-interface IValuesProps {
+export interface IValuesProps {
   date: string;
   time: string;
   phone: string;
