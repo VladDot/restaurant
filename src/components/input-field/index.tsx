@@ -1,5 +1,6 @@
 import { ChangeEvent, useState } from 'react';
 import { Field, FieldProps } from 'formik';
+
 import { EyeClose, EyeOpen } from '../../assets/svg';
 
 interface IInputFieldProps {
@@ -24,8 +25,12 @@ export const InputField = ({ name, type, placeholder }: IInputFieldProps) => {
     <Field name={name}>
       {({ form: { setFieldValue }, field, meta }: FieldProps) => {
         return (
-          <div className='w-full'>
-            <div className='px-3 py-1 w-full border-secondText border-2 rounded flex items-center relative gap-1'>
+          <label className='w-full'>
+            <fieldset className='px-3 py-1 w-full border-secondText border-2 rounded flex items-center relative gap-1'>
+              <legend>
+                {type === 'text' && <span className='px-2 select-none'>{name}</span>}
+                {type === 'password' && <span className='px-2 select-none'>{name}</span>}
+              </legend>
               <input
                 name={name}
                 type={changeType}
@@ -48,11 +53,11 @@ export const InputField = ({ name, type, placeholder }: IInputFieldProps) => {
                   )}
                 </span>
               )}
-            </div>
+            </fieldset>
             {meta.touched && meta.error && (
               <span className='w-full text-rose-400 pl-3'>{meta.error}</span>
             )}
-          </div>
+          </label>
         );
       }}
     </Field>

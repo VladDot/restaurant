@@ -1,0 +1,7 @@
+.form-title {
+  font-size: 12px;
+}
+
+.form-title.upper {
+  text-transform: uppercase;
+}

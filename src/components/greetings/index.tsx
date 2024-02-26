@@ -1,4 +1,3 @@
-import React from 'react';
 import GreetingsImg from '../../assets/img/greetings-image.png';
 
 export const Greetings = () => {

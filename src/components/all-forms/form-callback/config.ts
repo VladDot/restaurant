@@ -1,21 +1,13 @@
 import * as Yup from 'yup';
 
-export interface IValuesProps {
-  date: string;
-  time: string;
+interface IValuesProps {
   phone: string;
-  comment: string;
   firstName: string;
-  numberPersons: number | '';
 }
 
 export const initialValues: IValuesProps = {
-  time: '',
-  date: '',
   phone: '',
-  comment: '',
   firstName: '',
-  numberPersons: '',
 };
 
 export const validationSchema = Yup.object().shape({
@@ -33,8 +25,4 @@ export const validationSchema = Yup.object().shape({
       // excludeEmptyString: false,
     })
     .required('Required Phone'),
-  numberPersons: Yup.number().max(60, 'max 60 Persons').integer().required('Required Persons'),
-  date: Yup.date().required('Required Date'),
-
-  comment: Yup.string(),
 });

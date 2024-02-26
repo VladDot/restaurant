@@ -11,20 +11,19 @@ module.exports = {
                 secondText: "#A78963",
                 thirdText: "#FFFFFF",
                 fourth: "#A1A1A1",
-
                 bannerContent: "rgb(161, 161, 161)",
                 disabled: "#aaabad",
 
                 mainTextHover: "#674F31",
                 secondTextHover: "#A78963",
-
+                aqua: "#23D5AE",
+                bgA78963: "#A78963",
+                bgFormRequestCallback: "#323439",
+                bgInputForm: "#F9EF9F",
                 mainBg: "#FFFFFF",
+                red: "#be123c",
                 secondBg: "#05090E",
                 thirdBg: "#856842",
-                bgA78963: "#A78963",
-                bgInputForm: "#F9EF9F",
-                red: "#be123c",
-                aqua: "#23D5AE",
             },
             screens: {
                 mobile: "430px",
@@ -33,6 +32,14 @@ module.exports = {
                 desktop: "1504px",
             },
             keyframes: {
+                rotate: {
+                    from: { transform: "rotate(0deg) translate(-50%,-50%)" },
+                    to: { transform: "rotate(360deg) translate(-50%,-50%)" },
+                },
+                "-rotate": {
+                    from: { transform: "rotate(360deg) translate(-50%,-50%)" },
+                    to: { transform: "rotate(0deg) translate(-50%,-50%)" },
+                },
                 fadeIn: {
                     from: { opacity: "0" },
                     to: { opacity: "1" },
@@ -61,6 +68,8 @@ module.exports = {
                 blurBlack: "blurBlack 330ms ease-in-out forwards",
                 scalePluse: "scalePluse 330ms linear forwards",
                 blurBlackFoodMenu: "blurBlackFoodMenu 500ms ease-in forwards",
+                rotateBigSpinner: "rotate 2500ms linear infinite",
+                rotateSmallSpinner: "-rotate 2300ms linear infinite",
             },
             backgroundImage: {
                 bottomShadow:

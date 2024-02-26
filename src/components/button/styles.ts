@@ -19,9 +19,15 @@ export const getStyles = (disabled: boolean, className?: string) => ({
     }
   ),
   span: clsx(
-    ' px-2 w-full select-none relative z-50 text-grey-600  delay-[220ms] line-clamp-1 text-ellipsis',
+    'flex gap-1 justify-center px-4 w-full select-none relative z-50 delay-[220ms] line-clamp-1 text-ellipsis',
     {
-      'group-hover:text-white': !disabled,
+      'group-hover:text-white text-bgA78963': !disabled,
+      'text-disabled': disabled,
     }
+  ),
+
+  link: clsx(
+    "w-full min-h-[50px] group bg-transparent text-center flex items-center relative before:border-2 before:border-bgA78963 before:w-[100%] before:h-[70%] before:content-[''] before:block before:absolute before:top-[15%] before:bg-transparent",
+    className
   ),
 });
