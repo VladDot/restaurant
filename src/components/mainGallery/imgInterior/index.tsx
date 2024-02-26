@@ -37,7 +37,7 @@ export const ImgInterior: React.FC<IImgInteriorProps> = ({
                 <div
                     style={{ backgroundImage: `url(${url})` }}
                     className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[70vw]
-                      ${aspect} lg:w-[60vw] lg:aspect-[0.9] bg-cover bg-center`}
+                      ${aspect}  lg:w-[80vw] sm:aspect-[1] lg:aspect-[0.5] xl:aspect-[1.8] bg-cover bg-center`}
                 />
             </Modal>
         </>

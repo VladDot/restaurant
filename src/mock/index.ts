@@ -121,35 +121,35 @@ export const interiorGallery: IInteriorGallery[] = [
         id: "4",
     },
     {
-        imgUrl: Img,
+        imgUrl: Img4,
         id: "5",
     },
     {
-        imgUrl: Img,
+        imgUrl: Img5,
         id: "6",
     },
     {
-        imgUrl: Img,
+        imgUrl: Img6,
         id: "7",
     },
     {
-        imgUrl: Img,
+        imgUrl: Img7,
         id: "8",
     },
     {
-        imgUrl: Img,
+        imgUrl: Img8,
         id: "9",
     },
     {
-        imgUrl: Img,
+        imgUrl: Img8,
         id: "10",
     },
     {
-        imgUrl: Img,
+        imgUrl: Img2,
         id: "11",
     },
     {
-        imgUrl: Img,
+        imgUrl: Img3,
         id: "12",
     },
     {

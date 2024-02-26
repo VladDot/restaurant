@@ -5,7 +5,6 @@ import { useWindowWidth } from "../../hook";
 import { CollapsibleWindow } from "../collapsible-window";
 
 import { getStyles } from "./style";
-import { Up } from "../../assets/svg";
 import { interiorGallery } from "../../mock";
 import { textInfo } from "../../mock/textMock";
 import { AboutUsGallery } from "./about-us-gallery";
@@ -22,12 +21,13 @@ export const AboutUsInfo = () => {
                 <h2 className="mb-3  text-secondText text-[18px]">
                     ЗАТИШНИЙ СІМЕЙНИЙ ЗАКЛАД
                 </h2>
+
                 <h1 className="mb-5 text-[26px]">Ресторан "СЕТИ"</h1>
                 <CollapsibleWindow
                     closingHeight={0.5}
                     isActive={isActive}
-                    disabled={width > 767}
                     className="relative"
+                    disabled={width > 767}
                     onClick={() => setIsActive(!isActive)}
                 >
                     {textInfo.map(({ text }, idx) => (
@@ -42,6 +42,7 @@ export const AboutUsInfo = () => {
                 {!isActive && (
                     <>
                         <span className={continueText}></span>
+
                         <span
                             onClick={() => setIsActive(true)}
                             className={`absolute top-[90%] right-0 text-[13px] w-fit transition-all duration-300 easy-in-out text-secondText  md:hidden cursor-pointer `}

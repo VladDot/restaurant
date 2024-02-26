@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
-
-import { IInteriorGallery } from "../../../mock";
+import { Zoom, Navigation, Pagination } from "swiper/modules";
 
 import { Modal } from "../../modal";
 
+import { IInteriorGallery } from "../../../mock";
+
 import "swiper/css";
-import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+
+import "./style.css";
 
 interface IAboutUsGallery {
     data: IInteriorGallery[];
@@ -26,6 +28,7 @@ export const AboutUsGallery: React.FC<IAboutUsGallery> = ({ data }) => {
     };
 
     const imgInModal = data.find(({ id }) => id === openId);
+    console.log(imgInModal?.id);
 
     return (
         <>
@@ -45,23 +48,22 @@ export const AboutUsGallery: React.FC<IAboutUsGallery> = ({ data }) => {
                 isOpen={isOpen && !!imgInModal?.imgUrl}
             >
                 <Swiper
-                    loop={true}
+                    zoom={true}
                     speed={1000}
-                    spaceBetween={30}
-                    pagination={true}
-                    effect={"fade"}
-                    grabCursor
-                    modules={[Navigation, Pagination]}
                     navigation={true}
-                    className="relative top-1/2 -translate-y-1/2 mySwiper max-w-[90vw]"
+                    spaceBetween={15}
+                    pagination={true}
+                    modules={[Zoom, Navigation, Pagination]}
+                    initialSlide={imgInModal ? +imgInModal?.id - 1 : 1}
+                    className="relative top-1/2  -translate-y-1/2 flex justify-center items-center max-w-[90vw] mySwiper"
                 >
                     {data.map(({ imgUrl, id }, index) => {
                         return (
                             <SwiperSlide key={`img-url-${index}`}>
                                 <img
-                                    src={imgUrl}
                                     alt={id}
-                                    className="block w-full aspect-square lg:aspect-video object-contain"
+                                    src={imgUrl}
+                                    className="w-[80vw] aspect-[1.5] xl:aspect-[1] object-contain"
                                 />
                             </SwiperSlide>
                         );
