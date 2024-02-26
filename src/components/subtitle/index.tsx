@@ -8,7 +8,7 @@ interface IFormSubTitleProps {
 
 //TODO change the name and exports ...
 
-export const FormSubTitle = ({ text, uppercase, className }: IFormSubTitleProps) => {
+export const SubTitle = ({ text, uppercase, className }: IFormSubTitleProps) => {
   return (
     <h2
       className={clsx(
