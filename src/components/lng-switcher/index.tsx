@@ -6,8 +6,6 @@ export const LngSwitcher = ({}) => {
     const activeLanguage = Cookies.get("i18next");
 
     const changeLng = (lng: string) => {
-        console.log(1);
-
         i18n.changeLanguage(activeLanguage === "ua" ? "en" : "ua");
 
         window.location.reload();

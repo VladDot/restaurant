@@ -1,22 +1,21 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { Autoplay, EffectFade } from 'swiper/modules';
-import { clsx } from 'clsx';
+import { Autoplay, EffectFade } from "swiper/modules";
+import { clsx } from "clsx";
 
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import { tmpSrc } from '../../mock';
+import { tmpSrc } from "../../mock";
 
 interface IMainBannerProps {
-  className?: string;
+    className?: string;
 }
 
 export const MainBanner = ({ className }: IMainBannerProps) => {
   return (
-    <>
       <div className='w-full '>
         <Swiper
           loop={true}
@@ -42,18 +41,19 @@ export const MainBanner = ({ className }: IMainBannerProps) => {
                 >
                   <div className='w-full absolute z-0 bg-black opacity-30 top-0'></div>
 
-                  <div className='container relative z-10 mx-auto p-5p flex flex-col gap-[20px] md:gap-[45px] text-white translate-y-[80px]'>
-                    <p className='text-xl text-bannerContent text-[16px] md:text-2xl'>{content}</p>
-                    <h2 className='text-4xl md:text-7xl'>
-                      {title}, {index + 1}
-                    </h2>
-                  </div>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
-      </div>
-    </>
-  );
+                                <div className="container relative z-10 mx-auto p-5p flex flex-col gap-[20px] md:gap-[45px] text-white translate-y-[80px]">
+                                    <p className="text-xl text-bannerContent text-[16px] md:text-2xl">
+                                        {content}
+                                    </p>
+                                    <h2 className="text-4xl md:text-7xl">
+                                        {title}, {index + 1}
+                                    </h2>
+                                </div>
+                            </div>
+                        </SwiperSlide>
+                    );
+                })}
+            </Swiper>
+        </div>
+    );
 };
