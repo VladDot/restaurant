@@ -46,4 +46,11 @@ export const validationSchema = Yup.object().shape({
       // excludeEmptyString: false,
     })
     .required('Required Phone'),
+  password: Yup.string()
+    .min(6, 'minimum of 6 symbols')
+    .max(12, 'maximum length 12 symbols')
+    .required('please specify at least 6 symbols'),
+  subPassword: Yup.string()
+    .required('req')
+    .oneOf([Yup.ref('password')], ' the password doesn`t come up'),
 });
