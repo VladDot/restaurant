@@ -32,3 +32,4 @@ export { RestaurantAreas } from "./restaurant-areas";
 export { Spinner } from "./spinner";
 export { SubTitle } from "./subtitle";
 export { Title } from "./title";
+export { OrganizationOfBanquet } from "./organization-banquets";
