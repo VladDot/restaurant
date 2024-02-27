@@ -76,6 +76,66 @@ export const tmpSrc = imgSrs.map((imgUrl, index) => {
   };
 });
 
+export interface IInteriorGallery {
+    imgUrl: string;
+    id: string;
+}
+
+export const interiorGallery: IInteriorGallery[] = [
+    {
+        imgUrl: Img,
+        id: "1",
+    },
+    {
+        imgUrl: Img,
+        id: "2",
+    },
+    {
+        imgUrl: Img2,
+        id: "3",
+    },
+    {
+        imgUrl: Img3,
+        id: "4",
+    },
+    {
+        imgUrl: Img4,
+        id: "5",
+    },
+    {
+        imgUrl: Img5,
+        id: "6",
+    },
+    {
+        imgUrl: Img6,
+        id: "7",
+    },
+    {
+        imgUrl: Img7,
+        id: "8",
+    },
+    {
+        imgUrl: Img8,
+        id: "9",
+    },
+    {
+        imgUrl: Img8,
+        id: "10",
+    },
+    {
+        imgUrl: Img2,
+        id: "11",
+    },
+    {
+        imgUrl: Img3,
+        id: "12",
+    },
+    {
+        imgUrl: Img,
+        id: "13",
+    },
+];
+
 export const tmpSrcFood = imgSrsFood.map((imgUrl, index) => {
   return {
     imgUrl,
