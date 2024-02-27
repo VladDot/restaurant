@@ -21,6 +21,7 @@ import {
   RequestCallback,
   EventsPromotions,
   FormRegistration,
+  OrganizationBanquets,
 } from '../../components';
 
 export const Layout = () => {
@@ -38,6 +39,8 @@ export const Layout = () => {
       <FormRegistration />
 
       <RequestCallback />
+
+      <OrganizationBanquets />
 
       <FormBooking />
 
