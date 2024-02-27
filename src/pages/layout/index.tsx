@@ -20,6 +20,7 @@ import {
   DishesCategory,
   RequestCallback,
   EventsPromotions,
+  FormRegistration,
 } from '../../components';
 
 export const Layout = () => {
@@ -29,15 +30,27 @@ export const Layout = () => {
   return (
     <>
       <Header />
+
       <Banner src={ImgBanner} content='asdasdasd' title='ALSDasdas' />
+
       <FormLogin />
+
+      <FormRegistration />
+
       <RequestCallback />
+
       <FormBooking />
+
       <MainBanner />
+
       <DishesCategory />
+
       <Greetings />
+
       <EventsPromotions />
+
       <Outlet />
+
       {isBtn && (
         <button
           onClick={scrollToTop}
@@ -48,9 +61,13 @@ export const Layout = () => {
           <Up className='w-full' />
         </button>
       )}
+
       <Button textContent='text' type='submit' disabled className='max-w-[260px]' />
+
       <MainGallery />
+
       <GoogleMaps />
+
       <Footer />
     </>
   );

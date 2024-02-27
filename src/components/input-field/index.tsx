@@ -2,14 +2,16 @@ import { ChangeEvent, useState } from 'react';
 import { Field, FieldProps } from 'formik';
 
 import { EyeClose, EyeOpen } from '../../assets/svg';
+import { getStyles } from './styles';
 
 interface IInputFieldProps {
   name: string;
   type: string;
   placeholder: string;
+  disabled?: boolean;
 }
 
-export const InputField = ({ name, type, placeholder }: IInputFieldProps) => {
+export const InputField = ({ name, type, placeholder, disabled }: IInputFieldProps) => {
   const [changeType, setChangeType] = useState(type);
 
   const handleChange = (
@@ -19,27 +21,35 @@ export const InputField = ({ name, type, placeholder }: IInputFieldProps) => {
   ) => {
     typeInput === 'text' && setFieldValue(name, event.target.value.trim().slice(0, 12));
     typeInput === 'password' && setFieldValue(name, event.target.value.trim().slice(0, 16));
+    typeInput === 'email' && setFieldValue(name, event.target.value.trim().slice(0, 30));
   };
 
   return (
     <Field name={name}>
       {({ form: { setFieldValue }, field, meta }: FieldProps) => {
+        const isValue = field.value === '';
+        const { fieldset, legend, fieldValue } = getStyles({
+          disabled: disabled,
+          isValue: isValue,
+        });
         return (
           <label className='w-full'>
-            <fieldset className='px-3 py-1 w-full border-secondText border-2 rounded flex items-center relative gap-1'>
-              <legend>
-                {type === 'text' && <span className='px-2 select-none'>{name}</span>}
-                {type === 'password' && <span className='px-2 select-none'>{name}</span>}
+            <fieldset className={fieldset}>
+              <legend className={legend}>
+                <span>{name}</span>
               </legend>
+
               <input
                 name={name}
                 type={changeType}
                 value={field.value}
                 placeholder={placeholder}
+                disabled={disabled}
                 autoComplete={type === 'password' ? 'on' : 'off'}
-                className='w-full bg-transparent focus:outline-none'
+                className={fieldValue}
                 onChange={(event) => handleChange(event, setFieldValue, type)}
               />
+
               {type === 'password' && (
                 <span
                   className='w-3 h-3 '
