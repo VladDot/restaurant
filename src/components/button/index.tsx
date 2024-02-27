@@ -9,12 +9,14 @@ interface IButtonProps {
   className?: string;
   textContent: string;
   isSubmitting?: boolean;
+  onClick?: () => {} | void;
   type?: 'button' | 'submit' | 'reset';
 }
 
 export const Button = ({
   type,
   route,
+  onClick,
   disabled,
   className,
   textContent,
@@ -35,7 +37,7 @@ export const Button = ({
       )}
 
       {type && (
-        <button type={type} className={btn} disabled={disabled}>
+        <button type={type} className={btn} disabled={disabled} onClick={onClick}>
           <div className={squareFrame} />
 
           <div className={rectangularFrame} />

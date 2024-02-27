@@ -1,30 +1,34 @@
 import { ChangeEvent, useState } from 'react';
 import { Field, FieldProps } from 'formik';
+import { getStyles } from './styles';
 
 interface IInputTextareaProps {
   name: string;
   placeholder: string;
+  disabled?: boolean;
 }
 
-export const InputTextarea = ({ name, placeholder }: IInputTextareaProps) => {
+export const InputTextarea = ({ name, placeholder, disabled }: IInputTextareaProps) => {
   const [countValue, setCountValue] = useState(0);
   return (
     <Field name={name}>
       {({ form, field, meta }: FieldProps) => {
+        const { fieldset, legend, fieldValue } = getStyles({ disabled: disabled });
         const handleChange = async (event: ChangeEvent<HTMLTextAreaElement>) => {
           setCountValue(event.target.value.length);
           await form.setFieldValue(name, event.target.value.slice(0, 129));
         };
         return (
           <label className='w-full'>
-            <fieldset className='px-3 py-1 w-full h-[110px] border-secondText border-2 rounded flex relative gap-1'>
-              <legend className='px-2'>your {name}</legend>
+            <fieldset className={fieldset}>
+              <legend className={legend}>{name}</legend>
               <textarea
                 name={name}
-                placeholder={placeholder}
+                disabled={disabled}
                 value={field.value}
                 onChange={handleChange}
-                className='w-full bg-transparent focus:outline-none resize-none '
+                placeholder={placeholder}
+                className={fieldValue}
               />
             </fieldset>
             {countValue !== 0 && (

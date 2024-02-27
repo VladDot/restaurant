@@ -6,7 +6,7 @@ interface IFormTitleProps {
   uppercase?: boolean;
 }
 
-export const FormTitle = ({ text, uppercase, className }: IFormTitleProps) => {
+export const Title = ({ text, uppercase, className }: IFormTitleProps) => {
   return (
     <h3
       className={clsx(

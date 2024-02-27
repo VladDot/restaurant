@@ -1,17 +1,23 @@
 import { ChangeEvent } from 'react';
 import { Field, FieldProps } from 'formik';
 import ReactInputMask from 'react-input-mask';
+import { getStyles } from './styles';
 
 interface IInputTelProps {
   name: string;
   type: string;
   placeholder: string;
+  disabled?: boolean;
 }
 
-export const InputNumbers = ({ name, type, placeholder }: IInputTelProps) => {
+export const InputNumbers = ({ name, type, placeholder, disabled }: IInputTelProps) => {
   return (
     <Field name={name}>
       {({ form, field, meta }: FieldProps) => {
+        const { fieldset, legend, fieldValue } = getStyles({
+          disabled: disabled,
+        });
+
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
           if (type === 'number' && Number(event.target.value) < 1) {
             form.setFieldError(name, 'min persons 1');
@@ -31,25 +37,27 @@ export const InputNumbers = ({ name, type, placeholder }: IInputTelProps) => {
         };
         return (
           <label className='w-full'>
-            <fieldset className='px-3 py-1 w-full border-secondText border-2 rounded flex items-center relative gap-1'>
-              <legend className='px-2'>{placeholder}</legend>
+            <fieldset className={fieldset}>
+              <legend className={legend}>{placeholder}</legend>
               {type !== 'tel' && (
                 <input
                   name={name}
                   type={type}
                   value={field.value}
+                  disabled={disabled}
                   onChange={handleChange}
                   placeholder={placeholder}
-                  className='w-full bg-transparent focus:outline-none'
+                  className={fieldValue}
                 />
               )}
               {type === 'tel' && (
                 <ReactInputMask
                   value={field.value}
+                  disabled={disabled}
                   onChange={handleChange}
                   placeholder={placeholder}
                   mask={'+38(999)999 99 99'}
-                  className='w-full bg-transparent focus:outline-none'
+                  className={fieldValue}
                 />
               )}
             </fieldset>
