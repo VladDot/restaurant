@@ -1,33 +1,43 @@
-import { Title } from "../title";
-import { SubTitle } from "../subtitle";
-import { OrganizationСard } from "./organization-card";
-
-import Img8 from "../../assets/img/mainList/restaurant-seti-17.jpg";
-
-export const OrganizationOfBanquet = () => {
-    return (
-        <section className="py-5">
-            <Title
-                text=" ПРИВАТНІ ТА КОРПОРАТИВНІ ЗАХОДИ"
-                className="text-secondText md:text-lg mb-2.5 md:mb-5 text-[18px] px-1"
-            />
-
-            <SubTitle
-                text="Організація банкетів у ресторані"
-                className="text-[26px] md:text-[42px] mb-5 md:mb-8 text-black px-1"
-            />
-
-            <div className="lg:flex">
-                <OrganizationСard
-                    img={Img8}
-                    className="h-full"
+import { RequestCallback, SubTitle, Title } from '../../components';
+import { organizationBanquets } from './mock';
+export const OrganizationBanquets = () => {
+  return (
+    <section>
+      <div className='container'>
+        <div className='flex flex-col gap-6 py-8'>
+          <p className='text-center'>
+            Don't let the questions of how to organize a celebration scare you - we can take care of
+            most of the responsibilities.
+          </p>
+          <Title text='PROVIDE ADDITIONAL SERVICES' uppercase />
+          <SubTitle text='For organizing banquets' />
+        </div>
+      </div>
+      {/* //TODO color bg add tailwind */}
+      <div className='flex [&>*:nth-child(odd)>*:nth-child(2)]:bg-[#382201]'>
+        {organizationBanquets.map(({ id, imgUrl, altText, title, content }, index) => {
+          return (
+            <div
+              key={`${id}-${index}`}
+              className='w-full max-w-[475px] aspect-[1.3] relative flex items-center justify-center group/item'
+            >
+              <div className='w-[100%] absolute z-0 overflow-hidden h-full'>
+                <img
+                  src={imgUrl}
+                  alt={altText}
+                  className='scale-[1.5] translate-x-[60px] transition-all duration-300 group-hover/item:translate-x-0'
                 />
-
-                <OrganizationСard
-                    img={Img8}
-                    className="h-[90%]"
-                />
+              </div>
+              <div className='w-full h-full absolute z-10 bg-bgFormRequestCallback opacity-70 group-hover/item:opacity-[.95] transition-all ease-in-out duration-500 group/item' />
+              <div className='relative z-40 flex flex-col items-center justify-center gap-4 p-7 text-thirdText group/item'>
+                <h3 className='select-none cursor-auto text-center'>{title}</h3>
+                <p className='select-none cursor-auto text-center'>{content}</p>
+              </div>
             </div>
-        </section>
-    );
+          );
+        })}
+      </div>
+      <RequestCallback />
+    </section>
+  );
 };

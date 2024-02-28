@@ -1,9 +1,12 @@
-import { MenuCategories } from "../../components";
+import { Banner, MenuCategories } from '../../components';
+
+import ImgBanner from '../../assets/img/house.jpg';
 
 export const Menu = () => {
-    return (
-        <div className="pt-[30px]">
-            <MenuCategories />
-        </div>
-    );
+  return (
+    <>
+      <Banner title='title' content='content' src={ImgBanner} />
+      <MenuCategories />
+    </>
+  );
 };

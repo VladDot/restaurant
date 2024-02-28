@@ -8,12 +8,7 @@ export { EventsPromotions } from "./events-promotions";
 export { ExpandingElement } from "./expanding-element";
 export { FoodGallery } from "./food-gallery";
 export { Footer } from "./footer";
-export {
-    FormBooking,
-    FormCallback,
-    FormLogin,
-    FormRegistration,
-} from "./all-forms";
+export { GallerySwiper } from "./gallery-swiper";
 export { GoogleMaps } from "./google-maps";
 export { Greetings } from "./greetings";
 export { Header } from "./header";
@@ -27,10 +22,15 @@ export { MainBanner } from "./main-banner";
 export { MainGallery } from "./mainGallery";
 export { MenuCategories } from "./menu-categories";
 export { MenuCategory } from "./menu-categories/menuCategory";
+export { OrganizationBanquets } from "./organization-banquets";
 export { RequestCallback } from "./request-callback";
 export { RestaurantAreas } from "./restaurant-areas";
 export { Spinner } from "./spinner";
 export { SubTitle } from "./subtitle";
 export { Title } from "./title";
-export { OrganizationOfBanquet } from "./organization-banquets";
-export { GallerySwiper } from "./gallery-swiper";
+export {
+    FormBooking,
+    FormCallback,
+    FormLogin,
+    FormRegistration,
+} from "./all-forms";

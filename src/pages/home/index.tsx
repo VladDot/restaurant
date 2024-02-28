@@ -1,9 +1,14 @@
-import { FoodGallery } from "../../components";
+import { Greetings, MainBanner, FoodGallery, EventsPromotions } from '../../components';
 
 export const Home = () => {
-    return (
-        <>
-            <FoodGallery />
-        </>
-    );
+  return (
+    <>
+      <MainBanner />
+      <Greetings />
+
+      <EventsPromotions />
+
+      <FoodGallery />
+    </>
+  );
 };
