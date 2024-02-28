@@ -1,3 +1,5 @@
+import { GallerySwiper } from "../../components";
+
 export const Gallery = () => {
-    return <>Gallery</>;
+    return <><GallerySwiper/></>;
 };
