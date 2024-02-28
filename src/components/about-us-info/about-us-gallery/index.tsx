@@ -28,7 +28,6 @@ export const AboutUsGallery: React.FC<IAboutUsGallery> = ({ data }) => {
     };
 
     const imgInModal = data.find(({ id }) => id === openId);
-    console.log(imgInModal?.id);
 
     return (
         <>
