@@ -1,27 +1,27 @@
 import clsx from 'clsx';
 import { Outlet } from 'react-router-dom';
 
-import ImgBanner from '../../assets/img/house.jpg';
+// import ImgBanner from '../../assets/img/house.jpg';
 
 import { Up } from '../../assets/svg';
 import { useScroll } from '../../hook';
 import { scrollToTop } from '../../helpers';
 import {
-  Banner,
-  Button,
+  // Banner,
+  // Button,
   Footer,
   Header,
-  FormLogin,
-  Greetings,
+  // FormLogin,
+  // Greetings,
   GoogleMaps,
-  MainBanner,
-  FormBooking,
+  // MainBanner,
+  // FormBooking,
   MainGallery,
-  DishesCategory,
-  RequestCallback,
-  EventsPromotions,
-  FormRegistration,
-  OrganizationBanquets,
+  // DishesCategory,
+  // RequestCallback,
+  // EventsPromotions,
+  // FormRegistration,
+  // OrganizationBanquets,
 } from '../../components';
 
 export const Layout = () => {
@@ -32,8 +32,8 @@ export const Layout = () => {
     <>
       <Header />
 
-      <Banner src={ImgBanner} content='asdasdasd' title='ALSDasdas' />
-
+      {/* <Banner src={ImgBanner} content='asdasdasd' title='ALSDasdas' />
+      
       <FormLogin />
 
       <FormRegistration />
@@ -45,14 +45,16 @@ export const Layout = () => {
       <FormBooking />
 
       <MainBanner />
-
-      <DishesCategory />
-
+      
+      <Button textContent='text' type='submit' disabled className='max-w-[260px]' />
+      
       <Greetings />
 
       <EventsPromotions />
 
-      <Outlet />
+      <DishesCategory /> 
+
+       */}
 
       {isBtn && (
         <button
@@ -65,7 +67,7 @@ export const Layout = () => {
         </button>
       )}
 
-      <Button textContent='text' type='submit' disabled className='max-w-[260px]' />
+      <Outlet />
 
       <MainGallery />
 
