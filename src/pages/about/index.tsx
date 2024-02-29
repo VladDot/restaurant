@@ -1,5 +1,10 @@
-import { AboutUsInfo } from "../../components";
+import { AboutUsInfo, FoodGallery } from "../../components";
 
 export const About = () => {
-    return < ><AboutUsInfo/></>;
+    return (
+        <>
+            <AboutUsInfo />
+            <FoodGallery />
+        </>
+    );
 };
