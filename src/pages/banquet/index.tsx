@@ -1,28 +1,38 @@
 import {
-  Banner,
-  BanquetBenefits,
-  FormBooking,
-  OrganizationBanquets,
-  RequestCallback,
-  RestaurantAreas,
-} from '../../components';
+    Banner,
+    BanquetBenefits,
+    CorporateEvents,
+    FAQs,
+    FormBooking,
+    OrganizationBanquets,
+    RequestCallback,
+    RestaurantAreas,
+} from "../../components";
 
-import ImgBanner from '../../assets/img/house.jpg';
+import ImgBanner from "../../assets/img/house.jpg";
 
 export const Banquet = () => {
-  return (
-    <>
-      <Banner src={ImgBanner} content='content' title='title' />
+    return (
+        <>
+            <Banner
+                src={ImgBanner}
+                content="content"
+                title="title"
+            />
 
-      <RequestCallback />
+            <RequestCallback />
 
-      <RestaurantAreas />
+            <CorporateEvents />
 
-      <OrganizationBanquets />
+            <RestaurantAreas />
 
-      <BanquetBenefits />
+            <OrganizationBanquets />
 
-      <FormBooking />
-    </>
-  );
+            <FAQs />
+
+            <BanquetBenefits />
+
+            <FormBooking />
+        </>
+    );
 };
