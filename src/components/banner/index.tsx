@@ -1,12 +1,12 @@
 import clsx from 'clsx';
-
+import ImgBanner from '../../assets/img/house.jpg';
 interface IBannerProps {
-  src: string;
+  src?: string;
   title: string;
   content: string;
   className?: string;
 }
-export const Banner = ({ src, title, content, className }: IBannerProps) => {
+export const Banner = ({ src = ImgBanner, title, content, className }: IBannerProps) => {
   return (
     <div
       style={{ backgroundImage: `url(${src})` }}

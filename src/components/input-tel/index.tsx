@@ -1,4 +1,4 @@
-import { ChangeEvent } from 'react';
+import { ChangeEvent, KeyboardEvent } from 'react';
 import { Field, FieldProps } from 'formik';
 import ReactInputMask from 'react-input-mask';
 import { getStyles } from './styles';
@@ -17,6 +17,12 @@ export const InputNumbers = ({ name, type, placeholder, disabled }: IInputTelPro
         const { fieldset, legend, fieldValue } = getStyles({
           disabled: disabled,
         });
+
+        const KeyDown = (e: KeyboardEvent<HTMLInputElement>): void => {
+          if (e.key === 'e' || e.key === 'E') {
+            return;
+          }
+        };
 
         const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
           if (type === 'number' && Number(event.target.value) < 1) {
@@ -45,6 +51,7 @@ export const InputNumbers = ({ name, type, placeholder, disabled }: IInputTelPro
                   type={type}
                   value={field.value}
                   disabled={disabled}
+                  onKeyDown={KeyDown}
                   onChange={handleChange}
                   placeholder={placeholder}
                   className={fieldValue}
