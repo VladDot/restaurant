@@ -28,6 +28,8 @@ export { RestaurantAreas } from "./restaurant-areas";
 export { Spinner } from "./spinner";
 export { SubTitle } from "./subtitle";
 export { Title } from "./title";
+export { CorporateEvents } from "./corporate-events";
+export { FAQs } from "./FAQs";
 export {
     FormBooking,
     FormCallback,

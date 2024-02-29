@@ -8,7 +8,7 @@ export const OrganizationСard: React.FC<IOrganizationСardProps> = ({
     className,
 }) => {
     return (
-        <div className=" relative w-full lg:w-[50%] h-[325px] flex items-center justify-center">
+        <div className=" relative w-full lg:w-[50%] h-[30vh] sm:h-[20vh] lg:h-[30vh] flex items-center justify-center">
             <div
                 className={`absolute w-full z-[100] flex items-center justify-center bg-opacityBg opacity-[0.65] overflow-hidden ${className}`}
             />
