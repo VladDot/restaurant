@@ -11,6 +11,7 @@ export { FAQs } from './FAQs';
 export { FoodGallery } from './food-gallery';
 export { Footer } from './footer';
 export { FormBooking, FormCallback, FormLogin, FormRegistration } from './all-forms';
+export { GallerySwiper } from './gallery-swiper';
 export { GoogleMaps } from './google-maps';
 export { Greetings } from './greetings';
 export { Header } from './header';
