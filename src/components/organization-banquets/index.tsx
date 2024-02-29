@@ -14,12 +14,12 @@ export const OrganizationBanquets = () => {
         </div>
       </div>
       {/* //TODO color bg add tailwind */}
-      <div className='flex [&>*:nth-child(odd)>*:nth-child(2)]:bg-[#382201]'>
+      <div className='flex flex-wrap [&>*:nth-child(odd)>*:nth-child(2)]:bg-[#382201]'>
         {organizationBanquets.map(({ id, imgUrl, altText, title, content }, index) => {
           return (
             <div
               key={`${id}-${index}`}
-              className='w-full max-w-[475px] aspect-[1.3] relative flex items-center justify-center group/item'
+              className='w-full sm:w-[50%] min-w-[320px] aspect-[1.9] lg:aspect-[2.5] xl:flex-nowrap xl:w-[25%] xl:aspect-[1.9] relative flex items-center justify-center group/item '
             >
               <div className='w-[100%] absolute z-0 overflow-hidden h-full'>
                 <img
