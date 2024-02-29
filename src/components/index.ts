@@ -23,6 +23,7 @@ export { MainGallery } from './mainGallery';
 export { MenuCategories } from './menu-categories';
 export { MenuCategory } from './menu-categories/menuCategory';
 export { OrganizationBanquets } from './organization-banquets';
+export { OurContacts } from './our-contacts';
 export { RequestCallback } from './request-callback';
 export { RestaurantAreas } from './restaurant-areas';
 export { Spinner } from './spinner';
