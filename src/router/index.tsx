@@ -16,10 +16,12 @@ import {
     Registration,
     PrivateOffice,
 } from "../pages";
+import { Errors } from "../components";
 
 export const router = createBrowserRouter([
     {
         path: routes.home,
+        errorElement: <Errors />,
         element: <Layout />,
         children: [
             {
