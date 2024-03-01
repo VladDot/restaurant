@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { NavBarLink } from '../../../mock';
 import { getMenuStyles } from '../burger/style';
+import { scrollToTop } from '../../../helpers';
 
 interface ListMenuProps {
   url: string;
@@ -37,11 +38,11 @@ export const DropDownMenu = ({
     }
     setActiveIdx(idx);
   };
-
+//TODO change scrollToTop('auto')
   return (
     <li className='list-none w-full flex flex-col gap-2'>
       <div className='flex w-full justify-between'>
-        <Link to={url} className={link} onClick={() => setIsActiveMenu(false)}>
+        <Link to={url} className={link} onClick={() =>{ setIsActiveMenu(false); scrollToTop()}} >
           {title}
         </Link>
         {categories && (
@@ -63,9 +64,9 @@ export const DropDownMenu = ({
         >
           {categories?.map((category, idx) => (
             <li className='w-full' key={`drop_down_${category.name}_${idx}`}>
-              <Link
+              <Link 
                 to={category.url}
-                onClick={() => setIsActiveMenu(false)}
+                onClick={() => {setIsActiveMenu(false) ; scrollToTop()}}
                 className='w-full block hover:text-secondTextHover  duration-150'
               >
                 {category.title}

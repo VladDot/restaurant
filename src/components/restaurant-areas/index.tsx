@@ -13,7 +13,7 @@ export const RestaurantAreas = () => {
 
             <SubTitle
                 text="Чотири роздільні зони під банкети"
-                className="text-[26px] md:text-[42px] mb-5 md:mb-8 text-black px-1"
+                className=" mb-5 md:mb-8 text-black px-1"
             />
 
             <div className="flex flex-col lg:flex-row w-full flex-wrap">

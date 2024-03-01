@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getStyles } from '../../style';
 import { NavBarLink } from '../../../../mock';
+import { scrollToTop } from '../../../../helpers';
 
 interface IMenuProps {
   idx: number;
@@ -41,7 +42,7 @@ export const NavBarDropMenu = ({ url, title, categories }: IMenuProps) => {
           onMouseLeave={() => setIsActive(false)}
         >
           <div className=' flex  justify-center items-center text-center h-full gap-4  '>
-            <Link
+            <Link onClick={scrollToTop}
               className='w-fit gap-2 items-center flex h-full px-1 transition-all duration-300 easy-in-out group-hover:text-secondTextHover'
               to={url}
             >
@@ -52,7 +53,7 @@ export const NavBarDropMenu = ({ url, title, categories }: IMenuProps) => {
           {isActive && (
             <ul className={drop} style={{ height: heightUl }}>
               {categories?.map(({ name, url }, idx) => (
-                <Link to={url} className={subCategoryLink} key={`drop_down_${name}_${idx}`}>
+                <Link onClick={scrollToTop} to={url} className={subCategoryLink} key={`drop_down_${name}_${idx}`}>
                   {name}
                 </Link>
               ))}

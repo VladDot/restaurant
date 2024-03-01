@@ -10,7 +10,7 @@ interface IFoodGalleryProps {
 
 export const FoodGallery: React.FC<IFoodGalleryProps> = ({ className }) => {
     return (
-        <section className={` pt-20 items-center ${className}`}>
+        <section className={` py-20 items-center ${className}`}>
             <h2 className="mb-5 text-[18px] text-center font-serif text-secondText ">
                 ГАЛЕРЕЯ СТРАВ
             </h2>

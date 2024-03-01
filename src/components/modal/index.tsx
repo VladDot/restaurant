@@ -7,7 +7,6 @@ interface ModalProps {
     isOpen: boolean;
     onClose: (closer: boolean) => void;
 }
-//TODO close modal ESC
 export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
     isOpen,
     onClose,

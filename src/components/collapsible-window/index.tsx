@@ -32,8 +32,6 @@ export const CollapsibleWindow = ({
         }
     }, [isActive, closingHeight, disabled]);
 
-    // TODO Продумать кнопку или друго опазнавательный знак для read more
-
     if (!children) return null;
 
     return (

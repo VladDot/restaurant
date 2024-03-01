@@ -83,6 +83,9 @@ module.exports = {
             backgroundSize: {
                 "100/200": "100% 20%",
             },
+            fontSize: {
+                'subTitleClamp': ['clamp(24px, 4vw, 42px)'],
+              },
         },
     },
     plugins: [],
