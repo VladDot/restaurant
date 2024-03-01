@@ -1,8 +1,8 @@
 interface IGalleryCardProps {
     id: string;
     imgUrl: string;
-    setIsOpen: any,
-    setOpenId: any
+    setIsOpen: any;
+    setOpenId: any;
 }
 
 export const GalleryCard: React.FC<IGalleryCardProps> = ({
@@ -16,14 +16,15 @@ export const GalleryCard: React.FC<IGalleryCardProps> = ({
         setIsOpen(true);
     };
     return (
+        //TODO add animation
         <div
             onClick={() => openModal(id)}
-            className=" max-w-[45%]  sm:max-w-[250px] lg:max-w-[300px] xl:max-w-[350px] "
+            className=" max-w-[45%]  sm:max-w-[250px] lg:max-w-[300px] xl:max-w-[350px] cursor-zoom-in"
         >
             <img
-                className=" aspect-[1.4]"
-                src={imgUrl}
                 alt={id}
+                src={imgUrl}
+                className=" aspect-[1.4]"
             />
         </div>
     );

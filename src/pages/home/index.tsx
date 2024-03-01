@@ -13,7 +13,7 @@ export const Home = () => {
 
       {/* <BasicMenu /> */}
 
-      <FoodGallery />
+      <FoodGallery className='container' />
     </>
   );
 };

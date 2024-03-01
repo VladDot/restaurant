@@ -1,11 +1,20 @@
-import { AboutUsInfo, Banner, FormBooking } from '../../components';
+import {
+    AboutUsInfo,
+    Banner,
+    FoodGallery,
+    FormBooking,
+} from "../../components";
 
 export const About = () => {
-  return (
-    <>
-      <Banner title='title' content='content' />
-      <AboutUsInfo />
-      <FormBooking />
-    </>
-  );
+    return (
+        <>
+            <Banner
+                title="title"
+                content="content"
+            />
+            <AboutUsInfo />
+            <FormBooking />
+            <FoodGallery />
+        </>
+    );
 };
