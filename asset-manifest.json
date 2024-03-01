@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.2cfea910.css",
-    "main.js": "/static/js/main.109ef0d4.js",
+    "main.js": "/static/js/main.14f784b3.js",
     "static/js/787.a25f1f37.chunk.js": "/static/js/787.a25f1f37.chunk.js",
     "static/media/restaurant-seti-17.jpg": "/static/media/restaurant-seti-17.4bcbb2516778a33bba6c.jpg",
     "static/media/restaurant-seti-16.jpg": "/static/media/restaurant-seti-16.d81755825831b1154bbf.jpg",
@@ -30,11 +30,11 @@
     "index.html": "/index.html",
     "static/media/getFetch.cjs": "/static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.2cfea910.css.map": "/static/css/main.2cfea910.css.map",
-    "main.109ef0d4.js.map": "/static/js/main.109ef0d4.js.map",
+    "main.14f784b3.js.map": "/static/js/main.14f784b3.js.map",
     "787.a25f1f37.chunk.js.map": "/static/js/787.a25f1f37.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2cfea910.css",
-    "static/js/main.109ef0d4.js"
+    "static/js/main.14f784b3.js"
   ]
 }
