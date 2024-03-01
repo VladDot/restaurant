@@ -15,3 +15,19 @@ export const useScroll = () => {
 
   return { scrollY: scrollPosition };
 };
+
+export const useWidthResize = () => {
+  const [windowResize, setWindowResize] = useState(window.innerWidth);
+
+  const updateResize = () => {
+    setWindowResize(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', updateResize, { passive: true });
+
+    return;
+  }, []);
+
+  return { innerWidth: windowResize };
+};

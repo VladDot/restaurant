@@ -1,12 +1,9 @@
-import { Banner, GallerySwiper } from "../../components";
+import { GallerySwiper, MainBanner } from "../../components";
 
 export const Gallery = () => {
     return (
         <>
-            <Banner
-                title="Gallery"
-                content="gallery"
-            />
+            <MainBanner />
             <GallerySwiper />
         </>
     );
