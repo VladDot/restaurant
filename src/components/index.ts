@@ -1,6 +1,7 @@
 export { AboutUsInfo } from './about-us-info';
 export { Banner } from './banner';
 export { BanquetBenefits } from './banquet-benefits';
+export { BasicMenu } from './basic-menu';
 export { Button } from './button';
 export { CollapsibleWindow } from './collapsible-window';
 export { CorporateEvents } from './corporate-events';
