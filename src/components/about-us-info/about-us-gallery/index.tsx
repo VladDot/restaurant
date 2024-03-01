@@ -31,7 +31,7 @@ export const AboutUsGallery: React.FC<IAboutUsGallery> = ({ data }) => {
 
     return (
         <>
-            <div className="mt-6 md:mt-0 min-w-[50%] flex gap-1 lg:gap-2 justify-around lg:justify-start flex-wrap [&>div:first-child]:w-full [&>div:first-child]:max-w-full [&>div:first-child]:aspect-[0.75/1] [&>div:first-child]:mb-4">
+            <div className="mt-6 md:mt-0 min-w-[50%] px-2 flex gap-1 lg:gap-2 justify-around lg:justify-start flex-wrap [&>div:first-child]:w-full [&>div:first-child]:max-w-full [&>div:first-child]:aspect-[0.75/1] [&>div:first-child]:mb-4">
                 {data.map(({ imgUrl, id }, idx) => (
                     <div
                         key={`food_img_${id}_${idx}`}

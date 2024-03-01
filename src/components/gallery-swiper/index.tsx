@@ -18,7 +18,7 @@ export const GallerySwiper = () => {
     const imgInModal = interiorGallery.find(({ id }) => id === openId);
 
     return (
-        <section className="container">
+        <section className="container py-10">
             <div className="w-full flex flex-wrap gap-2 lg:gap-5 justify-center items-center ">
                 {interiorGallery.map((props, idx) => (
                     <GalleryCard

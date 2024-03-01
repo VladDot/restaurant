@@ -4,6 +4,8 @@ import { SocialMenu } from "./social-menu";
 
 import { BurgerMenu } from "./burger";
 import { Instagram } from "../../assets/svg";
+import { Link } from "react-router-dom";
+import { LanguageSelector } from "../language-selector";
 
 export const Header = () => {
     return (
@@ -16,8 +18,9 @@ export const Header = () => {
                 <NavBar />
 
                 <SocialMenu className="hidden lg:block" />
-
-                <Instagram className=" w-[40px] hover:text-secondTextHover  xl:w-[50px]" />
+                <Link to={"/"}>
+                    <Instagram className=" w-[40px] fill-white hover:fill-secondTextHover hover:scale-110 xl:w-[50px] transition-all duration-300 ease-out cursor-pointer" />
+                </Link>
 
                 <BurgerMenu />
             </div>

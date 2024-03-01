@@ -12,9 +12,9 @@ export const FAQs = () => {
     const { isVisible } = useVisibleElement({ elementRef });
 
     return (
-        <section className="container flex flex-col justify-center items-center">
+        <section className="container py-10 flex flex-col justify-center items-center">
             <SubTitle
-                className="text-[26px] md:text-[42px] mb-5"
+                className=" mb-5"
                 text="Найчастіші питання"
             />
 

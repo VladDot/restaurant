@@ -5,7 +5,7 @@ import { IsvgBanquet, svgBanquet } from "../../pages/banquet/config";
 
 export const BanquetBenefits = () => {
     return (
-        <section className="w-full ">
+        <section className="w-full">
             <div className="lg:flex lg:flex-wrap w-full lg:[&>div:last-child>div>h2]:max-w-[350px]">
                 <Title text="ЧОМУ САМЕ У РЕСТОРАНІ СЕТИ" />
 
