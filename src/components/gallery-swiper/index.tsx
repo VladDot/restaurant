@@ -10,12 +10,16 @@ import { interiorGallery } from "../../mock";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
+import { useWidthResize } from "../../hook/useScroll";
 
 export const GallerySwiper = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [openId, setOpenId] = useState<string | undefined>(undefined);
 
     const imgInModal = interiorGallery.find(({ id }) => id === openId);
+
+    const { innerWidth } = useWidthResize();
+    console.log(typeof innerWidth);
 
     return (
         <section className="container py-10">
@@ -36,19 +40,37 @@ export const GallerySwiper = () => {
                         effect={"coverflow"}
                         grabCursor={true}
                         centeredSlides={true}
-                        slidesPerView={"auto"}
-                        spaceBetween={100}
+                        autoHeight={true}
+                        breakpoints={{
+                            320: {
+                                slidesPerView: "auto",
+
+                                spaceBetween: 15,
+                            },
+                            768: {
+                                spaceBetween: 30,
+                                slidesPerView: "auto",
+                            },
+                            1024: {
+                                slidesPerView: 2,
+                                spaceBetween: 50,
+                            },
+                            // 1250: {
+                            //     slidesPerView: "auto",
+                            //     spaceBetween: 70,
+                            // },
+                        }}
                         coverflowEffect={{
                             rotate: 50,
                             stretch: 0,
                             depth: 100,
                             modifier: 1,
-                            slideShadows: true,
+                            slideShadows: false,
                         }}
                         pagination={true}
                         modules={[EffectCoverflow, Pagination]}
                         initialSlide={imgInModal ? +imgInModal?.id - 1 : 1}
-                        className="relative top-1/2  -translate-y-1/2 flex justify-center items-center max-w-[90vw] "
+                        className="relative top-1/2 -translate-y-1/2"
                     >
                         {interiorGallery.map(({ imgUrl, id }, index) => {
                             return (
@@ -56,7 +78,7 @@ export const GallerySwiper = () => {
                                     <img
                                         alt={id}
                                         src={imgUrl}
-                                        className="w-[60vw] aspect-[1.2] xl:aspect-[1]  "
+                                        className="w-full object-contain h-[80vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]"
                                     />
                                 </SwiperSlide>
                             );

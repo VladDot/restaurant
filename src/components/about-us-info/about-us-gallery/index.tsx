@@ -36,7 +36,7 @@ export const AboutUsGallery: React.FC<IAboutUsGallery> = ({ data }) => {
                     <div
                         key={`food_img_${id}_${idx}`}
                         onClick={() => openModal(id)}
-                        className={` w-[80px] aspect-[1] bg-cover `}
+                        className={` w-[80px] lg:w-[120px] aspect-square bg-cover `}
                         style={{ backgroundImage: `url(${imgUrl})` }}
                     />
                 ))}
@@ -51,18 +51,22 @@ export const AboutUsGallery: React.FC<IAboutUsGallery> = ({ data }) => {
                     speed={1000}
                     navigation={true}
                     spaceBetween={15}
+                    slidesPerView={1}
                     pagination={true}
                     modules={[Zoom, Navigation, Pagination]}
                     initialSlide={imgInModal ? +imgInModal?.id - 1 : 1}
-                    className="relative top-1/2  -translate-y-1/2 flex justify-center items-center max-w-[90vw] mySwiper"
+                    className="relative top-1/2  -translate-y-1/2 w-full md:w-[90vw] lg:w-[70vw] xl:w-[60vw] h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]"
                 >
                     {data.map(({ imgUrl, id }, index) => {
                         return (
-                            <SwiperSlide key={`img-url-${index}`}>
+                            <SwiperSlide
+                                key={`img-url-${index}`}
+                                className="px-2 w-full md:w-[70vw] h-full lg:w-[70vw] xl:w-[70vw]"
+                            >
                                 <img
                                     alt={id}
                                     src={imgUrl}
-                                    className="w-[80vw] aspect-[1.5] xl:aspect-[1] object-contain"
+                                    className="w-full h-full aspect-[0.8] lg:aspect-video"
                                 />
                             </SwiperSlide>
                         );
