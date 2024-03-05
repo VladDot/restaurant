@@ -1,38 +1,18 @@
-import { useTranslation } from 'react-i18next';
-
+import { Banner } from "../../components";
+import ImgBar from "../../assets/img/bar-1.jpg";
 export const Bar = () => {
-  const { t } = useTranslation();
-  return (
-    <div>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> {t('Welcome to React')}</p>
-      <p>{t('TEST')} </p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-      <p> TEST</p>
-    </div>
-  );
+    return (
+        <>
+            <Banner
+                title="Bar"
+                content="Bar Bar Bar"
+            />
+            <div className="container py-10 flex justify-center">
+                <img
+                    src={ImgBar}
+                    alt=""
+                />
+            </div>
+        </>
+    );
 };

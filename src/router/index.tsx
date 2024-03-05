@@ -13,10 +13,15 @@ import {
     Banquet,
     Gallery,
     Contacts,
+    BanquetMenu,
     Registration,
     PrivateOffice,
+    InteriorOfTheRestaurant,
+    RestaurantMenu,
+    SophisticationInEveryDetail,
 } from "../pages";
 import { Errors } from "../components";
+import { MenuParams } from "../pages/menu-params";
 
 export const router = createBrowserRouter([
     {
@@ -29,83 +34,13 @@ export const router = createBrowserRouter([
                 element: <Home />,
             },
             {
-                path: routes.menu,
-
-                children: [
-                    { index: true, element: <Menu /> },
-                    {
-                        path: routes.menuCategory.banquetMenu,
-                        element: <h1 className=""> BANQUET MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.childrenMenu,
-                        element: <h1 className=""> childrenMenu MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.coldAppetizers,
-                        element: <h1 className=""> coldAppetizers MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.desserts,
-                        element: <h1 className=""> desserts MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.fishDishes,
-                        element: <h1 className=""> fishDishes MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.grillMenu,
-                        element: <h1 className=""> grillMenu MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.hotAppetizers,
-                        element: <h1 className=""> hotAppetizers MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.meatDishes,
-                        element: <h1 className=""> meatDishes MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.pasta,
-                        element: <h1 className=""> pasta MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.pastries,
-                        element: <h1 className=""> pastries MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.rollsAndSpringRolls,
-                        element: (
-                            <h1 className=""> rollsAndSpringRolls MENU</h1>
-                        ),
-                    },
-                    {
-                        path: routes.menuCategory.salads,
-                        element: <h1 className=""> salads MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.sideDishes,
-                        element: <h1 className=""> sideDishes MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.soups,
-                        element: <h1 className=""> soups MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.wok,
-                        element: <h1 className=""> wok MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.garnishes,
-                        element: <h1 className=""> garnishes MENU</h1>,
-                    },
-                    {
-                        path: routes.menuCategory.garnishes,
-                        element: <h1 className=""> garnishes MENU</h1>,
-                    },
-                ],
+                path: "menu/:categories",
+                element: <MenuParams />,
             },
-
+            {
+                path: routes.menu,
+                element: <Menu />,
+            },
             {
                 path: routes.bar,
                 element: <Bar />,
@@ -129,11 +64,38 @@ export const router = createBrowserRouter([
             },
             {
                 path: routes.gallery,
-                element: <Gallery />,
+                children: [
+                    {
+                        index: true,
+                        element: <Gallery />,
+                    },
+                    {
+                        path: routes.galleryCategory.interiorOfTheRestaurant,
+                        element: <InteriorOfTheRestaurant />,
+                    },
+                    {
+                        path: routes.galleryCategory.restaurantMenu,
+                        element: <RestaurantMenu />,
+                    },
+                    {
+                        path: routes.galleryCategory
+                            .sophisticationInEveryDetail,
+                        element: <SophisticationInEveryDetail />,
+                    },
+                ],
             },
             {
                 path: routes.banquet,
-                element: <Banquet />,
+                children: [
+                    {
+                        index: true,
+                        element: <Banquet />,
+                    },
+                    {
+                        path: routes.banquetCategory.banquetMenu,
+                        element: <BanquetMenu />,
+                    },
+                ],
             },
             {
                 path: routes.registration,
