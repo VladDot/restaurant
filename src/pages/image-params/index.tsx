@@ -1,64 +1,53 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-import { mokGallery } from "../../mock/mokGallery";
-import { Banner, Errors, GallerySwiper, Loading } from "../../components";
+import { mokGallery } from '../../mock/mokGallery';
+import { Banner, Errors, GallerySwiper, Loading } from '../../components';
 
 interface IDataImageProps {
-    id: string;
-    banner: {
-        img: string;
-        title: string;
-        subtitle: string;
-    };
-    imgList: { imgUrl: string; id: string }[];
+  id: string;
+  banner: {
+    img: string;
+    title: string;
+    subtitle: string;
+  };
+  imgList: { imgUrl: string; id: string }[];
 }
 
 export const ImageParams = () => {
-    const params = useParams();
-    const [isLoading, setIsLoading] = useState(false);
-    const [data, setData] = useState<IDataImageProps | undefined>(undefined);
+  const params = useParams();
+  const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState<IDataImageProps | undefined>(undefined);
 
-    const dataFind = mokGallery.find((item) => item.id === params.categories);
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                await dataFind;
-                setData(dataFind);
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            } finally {
-                setIsLoading(false);
-            }
-        };
+  const dataFind = mokGallery.find((item) => item.id === params.categories);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await dataFind;
+        setData(dataFind);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-        setIsLoading(true);
-        fetchData();
-    }, [params.categories, dataFind]);
+    setIsLoading(true);
+    fetchData();
+  }, [params.categories, dataFind]);
 
-    console.log(data);
+  return (
+    <>
+      {data?.id !== params.categories && <Errors text='GALLERY' url='/gallery' />}
+      {isLoading && <Loading />}
 
-    return (
+      {data && !!Object.keys(data).length && !isLoading && (
         <>
-            {data?.id !== params.categories && (
-                <Errors
-                    text="GALLERY"
-                    url="/gallery"
-                />
-            )}
-            {isLoading && <Loading />}
+          <Banner src={data.banner.img} title={data.banner.title} content={data.banner.subtitle} />
 
-            {data && !!Object.keys(data).length && !isLoading && (
-                <>
-                    <Banner
-                        src={data.banner.img}
-                        title={data.banner.title}
-                        content={data.banner.subtitle}
-                    />
-
-                    <GallerySwiper {...data} />
-                </>
-            )}
+          <GallerySwiper {...data} />
         </>
-    );
+      )}
+    </>
+  );
 };
