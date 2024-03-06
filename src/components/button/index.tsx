@@ -13,6 +13,7 @@ interface IButtonProps {
   type?: 'button' | 'submit' | 'reset';
 }
 
+//TODO add scroll to top
 export const Button = ({
   type,
   route,

@@ -10,6 +10,8 @@ interface IInputTelProps {
   disabled?: boolean;
 }
 
+//TODO edit arrows in InputNumbers type-number
+
 export const InputNumbers = ({ name, type, placeholder, disabled }: IInputTelProps) => {
   return (
     <Field name={name}>

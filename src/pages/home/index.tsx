@@ -1,4 +1,4 @@
-import { Greetings, MainBanner, FoodGallery, EventsPromotions } from '../../components';
+import { Greetings, MainBanner, FoodGallery, EventsPromotions, BasicMenu } from '../../components';
 
 //TODO  BasicMenu
 
@@ -11,7 +11,7 @@ export const Home = () => {
 
       <EventsPromotions />
 
-      {/* <BasicMenu /> */}
+      <BasicMenu />
 
       <FoodGallery className='container' />
     </>

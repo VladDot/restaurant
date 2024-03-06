@@ -1,10 +1,20 @@
-import { cardCategory } from '../../mock';
-
-export const DishesCategory = () => {
+import { ICardCategoryProps } from '../../mock';
+import { RenderDishes } from '../render-dishes';
+interface IDishesCategoryProps {
+  title: string;
+  subTitle: string;
+  cardCategory: ICardCategoryProps[];
+}
+//TODOtear up the props DishesCategory , change mock
+export const DishesCategory: React.FC<IDishesCategoryProps> = ({
+  title,
+  subTitle,
+  cardCategory,
+}) => {
   return (
     <section className='w-full flex flex-col gap-6 pt-6'>
-      <p className='text-center select-none'>ОСНОВНЕ МЕНЮ</p>
-      <h2 className='text-center select-none'>Холодні закуски</h2>
+      <p className='text-center select-none'>{title}</p>
+      <h2 className='text-center select-none'>{subTitle}</h2>
       {cardCategory.map(({ idCategory, dishes, imgCategory }, indexCardCategory) => {
         return (
           <div
@@ -20,25 +30,14 @@ export const DishesCategory = () => {
             </div>
 
             <div className='flex flex-col gap-y-3 w-full max-w-[700px]'>
-              {dishes.map(({ idDishes, nameDish, prise, weight }, indexDishes) => {
+              {dishes.map((dish, indexDishes) => {
                 return (
-                  <div
-                    key={`${idDishes}-${indexCardCategory}-${indexDishes}`}
-                    className='border-b border-black sm:border-0 bg-transparent '
-                  >
-                    <div className='flex items-center '>
-                      <p className='max-w-[200px] sm:max-w-max select-none'>{nameDish}</p>
-
-                      <span className='border-black sm:border-b border-dotted flex-[1_1] select-none -mb-[5px] mx-2'></span>
-
-                      <span className='select-none'>
-                        {prise}
-
-                        <span className='select-none'>грн.</span>
-                      </span>
-                    </div>
-                    <span className='select-none'>{weight}</span>
-                  </div>
+                  <RenderDishes
+                    {...dish}
+                    indexDishes={indexDishes}
+                    key={dish.idDishes + indexDishes}
+                    indexCardCategory={indexCardCategory}
+                  />
                 );
               })}
             </div>
@@ -48,4 +47,3 @@ export const DishesCategory = () => {
     </section>
   );
 };
-// w-full px-2 flex flex-col items-center gap-3 sm:even:flex-row-reverse mobile:px-5 sm:px-6 sm:flex-row lg:gap-6 lg:px-6 lg:m-auto lg:justify-between xl:gap-10 2xl:p-0 desktopLg:gap-9 desktopLg:m-auto 2xl:max-w-[1440px] md:[&>div:nth-child(odd)]:ml-6 md:[&>div:nth-child(odd)]:mr-6 lg:[&>div:nth-child(odd)]:ml-10 lg:[&>div:nth-child(odd)]:mr-10 xl:[&>div:nth-child(odd)]:ml-20 xl:[&>div:nth-child(odd)]:mr-20
