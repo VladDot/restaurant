@@ -8,8 +8,7 @@ export const routes = {
     login: "/login",
     gallery: "/gallery",
     contacts: "/contacts",
-    banquet: "/banquet:category",
-    menuBanquet: "/menu-banquet",
+    banquet: "/banquet",
     registration: "/registration",
     privateOffice: "/privateOffice",
 
@@ -29,7 +28,6 @@ export const routes = {
         meatDishes: "/menu/meat-dishes",
         fishDishes: "/menu/fish-dishes",
         sideDishes: "/menu/side-dishes",
-        banquetMenu: "/menu/banquet-menu",
         childrenMenu: "/menu/children-menu",
         hotAppetizers: "/menu/hot-appetizers",
         coldAppetizers: "/menu/cold-appetizers",

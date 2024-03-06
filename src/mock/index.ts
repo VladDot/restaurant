@@ -11,7 +11,7 @@ import { routes } from '../constants/routes';
 
 import * as Images from '../assets/img';
 
-const imgSrs = [Img, Img2, Img3, Img4, Img5, Img6, Img7, Img8];
+export const imgSrs = [Img, Img2, Img3, Img4, Img5, Img6, Img7, Img8];
 
 const imgSrsFood = [Img, Img2, Img3, Img4, Img5, Img6, Img7, Img8, Img8, Img8, Img8, Img8];
 const aspectGallery = [
@@ -282,7 +282,7 @@ export const categoriesMenu = [
   },
   {
     name: 'banquetMenu',
-    url: routes.menuCategory.banquetMenu,
+    url: routes.banquetCategory.banquetMenu,
     title: 'BANQUET MENU',
     img: Img,
     id: 'categoriesMenu-11',

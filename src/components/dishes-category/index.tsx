@@ -1,11 +1,20 @@
+import { ICardCategoryProps } from '../../mock';
 import { RenderDishes } from '../render-dishes';
-
+interface IDishesCategoryProps {
+  title: string;
+  subTitle: string;
+  cardCategory: ICardCategoryProps[];
+}
 //TODOtear up the props DishesCategory , change mock
-export const DishesCategory = ({ title, subtitle, cardCategory }) => {
+export const DishesCategory: React.FC<IDishesCategoryProps> = ({
+  title,
+  subTitle,
+  cardCategory,
+}) => {
   return (
     <section className='w-full flex flex-col gap-6 pt-6'>
       <p className='text-center select-none'>{title}</p>
-      <h2 className='text-center select-none'>{subtitle}</h2>
+      <h2 className='text-center select-none'>{subTitle}</h2>
       {cardCategory.map(({ idCategory, dishes, imgCategory }, indexCardCategory) => {
         return (
           <div

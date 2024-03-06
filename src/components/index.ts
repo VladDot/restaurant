@@ -40,3 +40,4 @@ export { Spinner } from "./spinner";
 export { SubTitle } from "./subtitle";
 export { Title } from "./title";
 export { Errors } from "./errorPage";
+export { Loading } from "./loader";
