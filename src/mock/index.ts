@@ -374,7 +374,18 @@ export const navBar: NavBarLink[] = [
   { name: 'contacts', url: routes.contacts, title: 'CONTACTS' },
 ];
 
-export const cardCategory = [
+export interface ICardCategoryProps {
+  idCategory: string;
+  imgCategory: string;
+  dishes: {
+    idDishes: string;
+    nameDish: string;
+    prise: string;
+    weight: string;
+  }[];
+}
+
+export const cardCategory: ICardCategoryProps[] = [
   {
     idCategory: 'card-dish',
     imgCategory: Images.Menu,
