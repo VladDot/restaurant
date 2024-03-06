@@ -1,14 +1,23 @@
-import { filteredCategoriesMenu } from "../../mock";
-
 import { MenuCategory } from "./menuCategory";
 
-export const MenuCategories = () => {
+interface IMenuItem {
+    id: string;
+    url: string;
+    img: string;
+    title: string;
+}
+
+interface IMenuCategoriesProps {
+    data: IMenuItem[];
+}
+
+export const MenuCategories: React.FC<IMenuCategoriesProps> = ({ data }) => {
     return (
         <section className="pb-10">
             <ul className="flex flex-wrap w-full md:[&>li:nth-child(odd)>span]:-translate-x-[60px] md:[&>li:nth-child(even)>span]:translate-x-[60px] ">
-                {filteredCategoriesMenu.map((items, idx) => (
+                {data.map((item, idx) => (
                     <MenuCategory
-                        {...items}
+                        {...item}
                         key={`categoriesMenu_${idx}`}
                     />
                 ))}

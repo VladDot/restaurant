@@ -14,19 +14,23 @@ import {
     Gallery,
     Contacts,
     BanquetMenu,
+    ImageParams,
     Registration,
     PrivateOffice,
-    InteriorOfTheRestaurant,
-    RestaurantMenu,
-    SophisticationInEveryDetail,
 } from "../pages";
+
 import { Errors } from "../components";
 import { MenuParams } from "../pages/menu-params";
 
 export const router = createBrowserRouter([
     {
         path: routes.home,
-        errorElement: <Errors />,
+        errorElement: (
+            <Errors
+                text="HOME"
+                url="/"
+            />
+        ),
         element: <Layout />,
         children: [
             {
@@ -64,26 +68,10 @@ export const router = createBrowserRouter([
             },
             {
                 path: routes.gallery,
-                children: [
-                    {
-                        index: true,
-                        element: <Gallery />,
-                    },
-                    {
-                        path: routes.galleryCategory.interiorOfTheRestaurant,
-                        element: <InteriorOfTheRestaurant />,
-                    },
-                    {
-                        path: routes.galleryCategory.restaurantMenu,
-                        element: <RestaurantMenu />,
-                    },
-                    {
-                        path: routes.galleryCategory
-                            .sophisticationInEveryDetail,
-                        element: <SophisticationInEveryDetail />,
-                    },
-                ],
+                element: <Gallery />,
             },
+            { path: "gallery/:categories", element: <ImageParams /> },
+
             {
                 path: routes.banquet,
                 children: [

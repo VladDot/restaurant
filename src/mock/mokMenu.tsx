@@ -1,13 +1,5 @@
 import { cardCategory } from ".";
 import Img from "../assets/img/mainList/restaurant-seti-01.jpg";
-import Img2 from "../assets/img/mainList/restaurant-seti-02.jpg";
-import Img3 from "../assets/img/mainList/restaurant-seti-03.jpg";
-import Img4 from "../assets/img/mainList/restaurant-seti-04.jpg";
-import Img5 from "../assets/img/mainList/restaurant-seti-05.jpg";
-import Img6 from "../assets/img/mainList/restaurant-seti-06.jpg";
-import Img7 from "../assets/img/mainList/restaurant-seti-16.jpg";
-import Img8 from "../assets/img/mainList/restaurant-seti-17.jpg";
-import food from "../assets/img/vegetarian-big-item4.png";
 
 export const MokMenu = [
     {
@@ -24,6 +16,7 @@ export const MokMenu = [
             cardCategory: cardCategory,
         },
     },
+
     {
         id: "rolls-and-spring-rolls",
         banner: {
@@ -41,7 +34,6 @@ export const MokMenu = [
     {
         id: "hot-appetizers",
         banner: { title: "hot-appetizers", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
-
         content: {
             title: "Холодні закуски",
             subTitle: "ОСНОВНЕ МЕНЮ",
@@ -51,6 +43,116 @@ export const MokMenu = [
     {
         id: "children-menu",
         banner: { title: "children-menu", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
+
+        content: {
+            title: "Холодні закуски",
+            subTitle: "ОСНОВНЕ МЕНЮ",
+            cardCategory: cardCategory,
+        },
+    },
+    {
+        id: "side-dishes",
+        banner: { title: "side-dishes", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
+
+        content: {
+            title: "Холодні закуски",
+            subTitle: "ОСНОВНЕ МЕНЮ",
+            cardCategory: cardCategory,
+        },
+    },
+    {
+        id: "fish-dishes",
+        banner: { title: "fish-dishes", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
+
+        content: {
+            title: "Холодні закуски",
+            subTitle: "ОСНОВНЕ МЕНЮ",
+            cardCategory: cardCategory,
+        },
+    },
+    {
+        id: "meat-dishes",
+        banner: { title: "meat-dishes", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
+
+        content: {
+            title: "Холодні закуски",
+            subTitle: "ОСНОВНЕ МЕНЮ",
+            cardCategory: cardCategory,
+        },
+    },
+    {
+        id: "garnishes",
+        banner: { title: "garnishes", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
+
+        content: {
+            title: "Холодні закуски",
+            subTitle: "ОСНОВНЕ МЕНЮ",
+            cardCategory: cardCategory,
+        },
+    },
+    {
+        id: "grill-menu",
+        banner: { title: "grill-menu", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
+
+        content: {
+            title: "Холодні закуски",
+            subTitle: "ОСНОВНЕ МЕНЮ",
+            cardCategory: cardCategory,
+        },
+    },
+    {
+        id: "pastries",
+        banner: { title: "pastries", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
+
+        content: {
+            title: "Холодні закуски",
+            subTitle: "ОСНОВНЕ МЕНЮ",
+            cardCategory: cardCategory,
+        },
+    },
+    {
+        id: "desserts",
+        banner: { title: "desserts", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
+
+        content: {
+            title: "Холодні закуски",
+            subTitle: "ОСНОВНЕ МЕНЮ",
+            cardCategory: cardCategory,
+        },
+    },
+    {
+        id: "salads",
+        banner: { title: "salads", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
+
+        content: {
+            title: "Холодні закуски",
+            subTitle: "ОСНОВНЕ МЕНЮ",
+            cardCategory: cardCategory,
+        },
+    },
+    {
+        id: "soups",
+        banner: { title: "soups", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
+
+        content: {
+            title: "Холодні закуски",
+            subTitle: "ОСНОВНЕ МЕНЮ",
+            cardCategory: cardCategory,
+        },
+    },
+    {
+        id: "pasta",
+        banner: { title: "pasta", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
+
+        content: {
+            title: "Холодні закуски",
+            subTitle: "ОСНОВНЕ МЕНЮ",
+            cardCategory: cardCategory,
+        },
+    },
+    {
+        id: "wok",
+        banner: { title: "wok", subtitle: "ОСНОВНЕ МЕНЮ", img: Img },
 
         content: {
             title: "Холодні закуски",
