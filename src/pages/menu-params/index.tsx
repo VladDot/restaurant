@@ -1,37 +1,67 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { MokMenu } from "../../mock/mokMenu";
-import { Banner, DishesCategory } from "../../components";
+import { Banner, DishesCategory, Loading } from "../../components";
 
-export const MenuParams = ({}) => {
-    const x = useParams();
-    const [data, setData] = useState<any>({});
+interface IDataProps {
+    id: string;
+    banner: {
+        title: string;
+        subtitle: string;
+        img: string;
+    };
+    content: {
+        title: string;
+        subTitle: string;
+        cardCategory: {
+            idCategory: string;
+            imgCategory: string;
+            dishes: {
+                idDishes: string;
+                nameDish: string;
+                prise: string;
+                weight: string;
+            }[];
+        }[];
+    };
+}
+export const MenuParams = () => {
+    const params = useParams();
+    const [data, setData] = useState<IDataProps | undefined>(undefined);
     const [isLoading, setIsLoading] = useState(false);
-    console.log(x);
+
     useEffect(() => {
-        try {
-            setIsLoading(true);
-        } catch (error) {
-        } finally {
-            setIsLoading(false);
-        }
-        setData(MokMenu.find((item) => item.id === x.categories));
-    }, []);
+        const fetchData = async () => {
+            try {
+                const dataFind = await MokMenu.find(
+                    (item) => item.id === params.categories
+                );
+                setData(dataFind);
+            } catch (error) {
+                console.error("Error fetching data:", error);
+            } finally {
+                setIsLoading(false);
+            }
+        };
+
+        setIsLoading(true);
+        fetchData();
+    }, [params.categories]);
 
     console.log(data);
     return (
         <>
-            {/* {isLoading && <Loader />} */}
-
-            {!!Object.keys(data).length && !isLoading && (
-                <><Banner
-                    src={data?.banner.img}
-                    title={data?.banner.title}
-                    content={data?.banner.text}
-                />
-                <DishesCategory/></>
-                
+            {isLoading && <Loading />}
+            {data && !!Object.keys(data).length && !isLoading && (
+                <>
+                    <Banner
+                        src={data.banner.img}
+                        title={data.banner.title}
+                        content={data.banner.subtitle}
+                    />
+                    <DishesCategory />
+                </>
             )}
         </>
     );
