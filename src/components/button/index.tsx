@@ -28,7 +28,7 @@ export const Button = ({
   return (
     <>
       {route && (
-        <Link to={route} className={link}>
+        <Link to={route} className={link} onClick={onClick}>
           <div className={squareFrame} />
 
           <div className={rectangularFrame} />
