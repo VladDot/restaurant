@@ -1,13 +1,15 @@
-import { Banner,MenuCategories } from "../../components";
+import { categoriesMenu } from "../../mock";
+import { Banner, MenuCategories } from "../../components";
 
-export const BanquetMenu = ({}) => {
+export const BanquetMenu = () => {
     return (
         <>
             <Banner
                 title="BanquetMenu"
                 content="BanquetMenu BanquetMenu BanquetMenu"
             />
-            <MenuCategories/>
+
+            <MenuCategories data={categoriesMenu} />
         </>
     );
 };

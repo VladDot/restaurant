@@ -1,36 +1,25 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import { MokMenu } from "../../mock/mokMenu";
-import { Banner, DishesCategory, Errors, Loading } from "../../components";
+import { mokGallery } from "../../mock/mokGallery";
+import { Banner, Errors, GallerySwiper, Loading } from "../../components";
 
-interface IDataProps {
+interface IDataImageProps {
     id: string;
     banner: {
         img: string;
         title: string;
         subtitle: string;
     };
-    content: {
-        title: string;
-        subTitle: string;
-        cardCategory: {
-            idCategory: string;
-            imgCategory: string;
-            dishes: {
-                prise: string;
-                weight: string;
-                idDishes: string;
-                nameDish: string;
-            }[];
-        }[];
-    };
+    imgList: { imgUrl: string; id: string }[];
 }
-export const MenuParams = () => {
+
+export const ImageParams = () => {
     const params = useParams();
-    const [data, setData] = useState<IDataProps | undefined>(undefined);
     const [isLoading, setIsLoading] = useState(false);
-    const dataFind = MokMenu.find((item) => item.id === params.categories);
+    const [data, setData] = useState<IDataImageProps | undefined>(undefined);
+
+    const dataFind = mokGallery.find((item) => item.id === params.categories);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -47,15 +36,18 @@ export const MenuParams = () => {
         fetchData();
     }, [params.categories, dataFind]);
 
+    console.log(data);
+
     return (
         <>
             {data?.id !== params.categories && (
                 <Errors
-                    text="MENU"
-                    url="/menu"
+                    text="GALLERY"
+                    url="/gallery"
                 />
             )}
             {isLoading && <Loading />}
+
             {data && !!Object.keys(data).length && !isLoading && (
                 <>
                     <Banner
@@ -64,7 +56,7 @@ export const MenuParams = () => {
                         content={data.banner.subtitle}
                     />
 
-                    <DishesCategory {...data.content} />
+                    <GallerySwiper {...data} />
                 </>
             )}
         </>

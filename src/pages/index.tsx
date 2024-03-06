@@ -11,9 +11,6 @@ export { Banquet } from "./banquet";
 export { Contacts } from "./contacts";
 export { Registration } from "./registration";
 export { PrivateOffice } from "./privateOffice";
-export {BanquetMenu} from './banquetMenu'
-export {
-    InteriorOfTheRestaurant,
-    RestaurantMenu,
-    SophisticationInEveryDetail,
-} from "./mok-gallery-page";
+export { BanquetMenu } from "./banquetMenu";
+export { ImageParams } from "./image-params";
+export { MenuParams } from "./menu-params";

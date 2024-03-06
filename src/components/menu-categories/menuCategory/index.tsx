@@ -5,8 +5,8 @@ import { scrollToTop } from '../../../helpers';
 
 interface IMenuCategoryProps {
   img: string;
-  title: string;
   url: string;
+  title: string;
 }
 
 export const MenuCategory: FC<IMenuCategoryProps> = ({ img, title, url }) => {
