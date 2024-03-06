@@ -11,7 +11,6 @@ export const routes = {
     banquet: "/banquet",
     registration: "/registration",
     privateOffice: "/privateOffice",
-
     banquetCategory: {
         banquetMenu: "/banquet/banquet-menu",
     },
