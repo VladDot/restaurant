@@ -47,7 +47,6 @@ export const MenuParams = () => {
     fetchData();
   }, [params.categories]);
 
-  console.log(data);
   return (
     <>
       {isLoading && <Loading />}

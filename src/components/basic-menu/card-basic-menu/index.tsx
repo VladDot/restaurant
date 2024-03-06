@@ -7,8 +7,6 @@ import { routes } from '../../../constants/routes';
 
 export const CardBasicMenu = () => {
   const { innerWidth } = useWidthResize();
-  console.log(innerWidth);
-
   const firstBlock = Math.floor(categoriesMenu.length / 2);
   return (
     <div className='flex flex-col gap-6 w-1/2 lg:max-w-[300px] justify-between'>
