@@ -1,4 +1,5 @@
 import { Greetings, MainBanner, FoodGallery, EventsPromotions, BasicMenu } from '../../components';
+import { categoriesMenu } from '../../mock';
 
 //TODO  BasicMenu
 
@@ -11,7 +12,7 @@ export const Home = () => {
 
       <EventsPromotions />
 
-      <BasicMenu />
+      <BasicMenu categoriesMenu={categoriesMenu} />
 
       <FoodGallery className='container' />
     </>

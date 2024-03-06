@@ -209,7 +209,15 @@ export interface NavBarLink {
   categories?: ISubCategoryLink[];
 }
 
-export const categoriesMenu = [
+export interface ICategoriesMenuProps {
+  name: string;
+  url: string;
+  title: string;
+  img: string;
+  id: string;
+}
+
+export const categoriesMenu: ICategoriesMenuProps[] = [
   {
     name: 'wok',
     url: routes.menuCategory.wok,
