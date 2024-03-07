@@ -22,7 +22,7 @@ export const SocialMenu = ({
             <div className=" flex  border-2 rounded-full ">
                 <div className=" text-base p-2 group/socialIn hover:bg-secondText rounded-l-full lg:p-2 g:text-[14px] border-r-2 w-[100px] sm:w-[100px]  md:w-[120px] lg:w-[120px] xl:w-[120px] xl:p-2 xl:text-[14px] transition-all duration-300 easy-in-out">
                     <Link
-                        to={routes.registration}
+                        to={routes.login}
                         onClick={() => {
                             setIsActive && setIsActive(!isActive);
                         }}

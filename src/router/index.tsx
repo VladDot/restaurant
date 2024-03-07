@@ -15,7 +15,6 @@ import {
     Contacts,
     BanquetMenu,
     ImageParams,
-    Registration,
     PrivateOffice,
 } from "../pages";
 
@@ -84,10 +83,6 @@ export const router = createBrowserRouter([
                         element: <BanquetMenu />,
                     },
                 ],
-            },
-            {
-                path: routes.registration,
-                element: <Registration />,
             },
             {
                 path: routes.privateOffice,
