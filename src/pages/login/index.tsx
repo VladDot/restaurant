@@ -1,10 +1,15 @@
 import { useState } from "react";
-import { Banner, FormLogin, FormRegistration } from "../../components";
-import clsx from "clsx";
+
+import { Banner } from "../../components";
 import { BtnGroup } from "./btnGroup";
+import { ContentRevers } from "./contentRevers";
 
 export const Login = () => {
-    const [isActive, setIsActive] = useState<boolean | null>(null);
+    const [isActive, setIsActive] = useState<boolean>(true);
+
+    const [isRevers, setIsRevers] = useState<boolean | null>(null);
+
+    //TODO you need to edit the code
 
     return (
         <>
@@ -12,51 +17,25 @@ export const Login = () => {
                 title="LOGIN"
                 content="LOGIN LOGIN LOGIN"
             />
-            <section>
-                <div className=" container flex flex-col items-center">
-                    <div className="flex justify-center w-full">
+            <section className=" bg-aqua">
+                <div className=" container flex flex-col items-center py-10 ">
+                    <div className="flex justify-center w-fit border-2  rounded-3xl [&>div:first-child>button]:rounded-l-3xl [&>div:last-child>button]:rounded-r-3xl ">
                         <BtnGroup
                             text="Login"
+                            isActive={isActive}
                             setIsActive={() => setIsActive(true)}
+                            setIsRevers={() => setIsRevers(true)}
                         />
+
                         <BtnGroup
                             text="Registration"
-                            isActive={false}
+                            isActive={!isActive}
+                            isRevers={!isRevers}
                             setIsActive={() => setIsActive(false)}
+                            setIsRevers={() => setIsRevers(false)}
                         />
                     </div>
-
-                    {/* <div className="relative w-[50%] flex justify-center ">
-                        {isActive ? <FormLogin /> : <FormRegistration />}
-                    </div> */}
-                    <div className=" w-[1000px] h-[1000px]">
-                        <div
-                            style={{ transformStyle: "preserve-3d" }}
-                            className={clsx(
-                                "relative h-[550px] duration-500 ease-out",
-                                {
-                                    "animate-rotateY ": isActive === false,
-                                    "animate-reversRotateY": isActive === true,
-                                }
-                            )}
-                        >
-                            <div
-                                style={{
-                                    backfaceVisibility: "hidden",
-                                    transform: "rotateY(180deg) ",
-                                }}
-                                className="absolute w-full h-full  flex items-center justify-center"
-                            >
-                                <FormRegistration />
-                            </div>
-                            <div
-                                style={{ backfaceVisibility: "hidden" }}
-                                className="absolute w-full h-full  flex items-center justify-center bg-black"
-                            >
-                                <FormLogin />
-                            </div>
-                        </div>
-                    </div>
+                    <ContentRevers isRevers={isRevers} />
                 </div>
             </section>
         </>

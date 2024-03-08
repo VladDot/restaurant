@@ -78,6 +78,7 @@ module.exports = {
                     from: { transform: "rotateY(180deg)" },
                     to: { transform: "rotateY(360deg)" },
                 },
+                
             },
             animation: {
                 fadeIn: "fadeIn 600ms ease-in-out forwards",
@@ -88,7 +89,7 @@ module.exports = {
                 rotateBigSpinner: "rotate 2500ms linear infinite",
                 rotateSmallSpinner: "-rotate 2300ms linear infinite",
                 blurBlackFoodMenu: "blurBlackFoodMenu 500ms ease-in forwards",
-                rotateY: "rotateY 600ms ease-in-out forwards",
+                rotateY: "rotateY 600ms ease-in-out forwards ",
                 reversRotateY: "reversRotateY 600ms ease-in-out forwards",
             },
             backgroundImage: {
