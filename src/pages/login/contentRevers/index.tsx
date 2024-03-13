@@ -1,9 +1,9 @@
 import clsx from "clsx";
 
-import { FormLogin, FormRegistration } from "../../../components";
+import { FormLogin, FormRegistration, Title } from "../../../components";
 
 interface IContentReversProps {
-    isRevers: boolean | null;
+    isRevers: boolean | undefined;
 }
 
 export const ContentRevers: React.FC<IContentReversProps> = ({ isRevers }) => {
@@ -21,14 +21,19 @@ export const ContentRevers: React.FC<IContentReversProps> = ({ isRevers }) => {
                         backfaceVisibility: "hidden",
                         transform: "rotateY(180deg) ",
                     }}
-                    className="absolute w-full h-full  flex items-center justify-center z-10"
+                    className="absolute w-full h-full flex flex-col items-center z-10"
                 >
+                    <Title text="Registration" />
+
                     <FormRegistration />
                 </div>
+
                 <div
                     style={{ backfaceVisibility: "hidden" }}
-                    className="absolute w-full h-full  flex items-center justify-center z-1"
+                    className="absolute w-full h-full flex flex-col items-center z-1 "
                 >
+                    <Title text="login" />
+
                     <FormLogin />
                 </div>
             </div>

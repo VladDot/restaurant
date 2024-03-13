@@ -25,7 +25,7 @@ module.exports = {
 
                 mainBg: "#FFFFFF",
                 thirdBg: "#856842",
-                bgA78963: "#A78963",
+                fourthBg: "#A78963",
                 secondBg: "#05090E",
                 opacityBg: "#382201",
                 bgInputForm: "#F9EF9F",
@@ -78,7 +78,10 @@ module.exports = {
                     from: { transform: "rotateY(180deg)" },
                     to: { transform: "rotateY(360deg)" },
                 },
-                
+                bgSlideX: {
+                    from: {transform: "width(50%)"},
+                    to: {transform: "width(0)"},
+                },
             },
             animation: {
                 fadeIn: "fadeIn 600ms ease-in-out forwards",
@@ -89,8 +92,9 @@ module.exports = {
                 rotateBigSpinner: "rotate 2500ms linear infinite",
                 rotateSmallSpinner: "-rotate 2300ms linear infinite",
                 blurBlackFoodMenu: "blurBlackFoodMenu 500ms ease-in forwards",
-                rotateY: "rotateY 600ms ease-in-out forwards ",
-                reversRotateY: "reversRotateY 600ms ease-in-out forwards",
+                rotateY: "rotateY 900ms ease-in-out forwards ",
+                reversRotateY: "reversRotateY 900ms ease-in-out forwards",
+                bgSlideX: "bgSlideX 900ms ease-in-out forwards",
             },
             backgroundImage: {
                 bottomShadow:

@@ -1,40 +1,49 @@
 import { useState } from "react";
 
-import { Banner } from "../../components";
 import { BtnGroup } from "./btnGroup";
+import { Banner } from "../../components";
 import { ContentRevers } from "./contentRevers";
 
+import Img8 from "../../assets/img/mainList/restaurant-seti-17.jpg";
+
 export const Login = () => {
-    const [isActive, setIsActive] = useState<boolean>(true);
+    const [activeId, setActiveId] = useState<number>(0);
 
-    const [isRevers, setIsRevers] = useState<boolean | null>(null);
+    const [isRevers, setIsRevers] = useState<boolean | undefined>(undefined);
 
-    //TODO you need to edit the code
+    //TODO you need to edit the code  в style.ts не приходит bollean
+    console.log(isRevers);
 
     return (
         <>
-            <Banner
+            {/* <Banner
                 title="LOGIN"
                 content="LOGIN LOGIN LOGIN"
-            />
-            <section className=" bg-aqua">
+            /> */}
+            <section
+                className=" bg-aqua h-screen bg-cover bg-no-repeat bg-fixed pt-20"
+                style={{ backgroundImage: `url(${Img8})` }}
+            >
                 <div className=" container flex flex-col items-center py-10 ">
-                    <div className="flex justify-center w-fit border-2  rounded-3xl [&>div:first-child>button]:rounded-l-3xl [&>div:last-child>button]:rounded-r-3xl ">
+                    <div className=" flex justify-center w-fit rounded-3xl [&>div:first-child>button]:rounded-l-3xl [&>div:last-child>button]:rounded-r-3xl ">
                         <BtnGroup
-                            text="Login"
-                            isActive={isActive}
-                            setIsActive={() => setIsActive(true)}
+                            id={0}
+                            text="SING-IN"
+                            isActive={activeId === 0}
+                            setIsActive={() => setActiveId(0)}
                             setIsRevers={() => setIsRevers(true)}
                         />
 
                         <BtnGroup
-                            text="Registration"
-                            isActive={!isActive}
+                            id={1}
+                            text="SING-UP"
                             isRevers={!isRevers}
-                            setIsActive={() => setIsActive(false)}
+                            isActive={activeId === 1}
+                            setIsActive={() => setActiveId(1)}
                             setIsRevers={() => setIsRevers(false)}
                         />
                     </div>
+
                     <ContentRevers isRevers={isRevers} />
                 </div>
             </section>
