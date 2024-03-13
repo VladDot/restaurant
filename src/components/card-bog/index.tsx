@@ -1,40 +1,18 @@
-import { Link } from 'react-router-dom';
+import { CardNews } from '..';
+import { IMokCardNews } from '../../mock/mokCardNews';
 
-interface IMokCardNews {
-  id: string;
-  imgUrl: string;
-  imgAlt: string;
-  title: string;
-  datePublish: string;
-  content: string;
-  subContent: string;
-  secondaryContent: string;
+interface ICardsBlog {
+  cardNews: IMokCardNews[];
 }
 
-export const CardNews: React.FC<IMokCardNews> = ({
-  id,
-  imgUrl,
-  imgAlt,
-  title,
-  datePublish,
-  content,
-  subContent,
-  secondaryContent,
-}) => {
+export const CardsBlog: React.FC<ICardsBlog> = ({ cardNews }) => {
   return (
-    <div>
-      <Link to={id}>
-        <img src={imgUrl} alt={id} />
-      </Link>
-      <div>
-        <Link to={id}>
-          <h3>{title}</h3>
-        </Link>
-        <p>{datePublish}</p>
-        <p>{content}</p>
-        <p>{subContent}</p>
-        <p>{secondaryContent}</p>
+    <section>
+      <div className='container py-4 flex flex-wrap justify-between gap-x-8'>
+        {cardNews.map((cardNew, index) => {
+          return <CardNews key={cardNew.id + index} {...cardNew} />;
+        })}
       </div>
-    </div>
+    </section>
   );
 };

@@ -4,7 +4,7 @@ import { mokCardNews } from '../../mock/mokCardNews';
 export const New = () => {
   const params = useParams();
   const cardNew = mokCardNews.find((card) => card.id === params.new);
-  console.log(cardNew);
+  // console.log(cardNew);
 
   return <>dk;jgfshd fnlgvudbfhlugvksbyreh;ghdluifvk. s.fg</>;
 };

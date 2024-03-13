@@ -1,7 +1,18 @@
 import ImgUrl from '../assets/img/blog/8-march_2023-motion-1080x1080_thumbnail.png';
 import ImgUrl1 from '../assets/img/button-bar.png';
 
-export const mokCardNews = [
+export interface IMokCardNews {
+  id: string;
+  imgUrl: string;
+  imgAlt: string;
+  title: string;
+  datePublish: string;
+  content: string;
+  subContent: string;
+  secondaryContent: string;
+}
+
+export const mokCardNews: IMokCardNews[] = [
   {
     id: 'March_8',
     imgUrl: ImgUrl,

@@ -1,13 +1,11 @@
-import { Banner, CardNews } from '../../components';
+import { Banner, CardsBlog } from '../../components';
 import { mokCardNews } from '../../mock/mokCardNews';
 
 export const Blog = () => {
   return (
     <>
-      <Banner />
-      {mokCardNews.map((cardNew) => {
-        return <CardNews {...cardNew} />;
-      })}
+      <Banner title='Promotions and publications' content='Blog' />
+      <CardsBlog cardNews={mokCardNews} />
     </>
   );
 };

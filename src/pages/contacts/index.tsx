@@ -8,7 +8,6 @@ export const Contacts = () => {
       <Banner content='content' title='title' src={ImgBanner} />
       <OurContacts />
       <FormBooking />
-      <h1>h</h1>
     </>
   );
 };
