@@ -1,3 +1,5 @@
+import { UserIcon } from "./userIcon";
+
 export { AboutUsInfo } from "./about-us-info";
 export { Banner } from "./banner";
 export { BanquetBenefits } from "./banquet-benefits";
@@ -41,3 +43,4 @@ export { SubTitle } from "./subtitle";
 export { Title } from "./title";
 export { Errors } from "./errorPage";
 export { Loading } from "./loader";
+export { UserIcon } from "./userIcon";

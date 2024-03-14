@@ -18,7 +18,7 @@ export const FormRegistration = () => {
             onSubmit={onSubmit}
         >
             {({ isSubmitting }) => (
-                <Form className="w-full bg-black flex flex-col px-3 gap-6 justify-center items-center min-w-[320px] max-w-[568px]">
+                <Form className="w-full text-secondText flex flex-col px-3 gap-6 justify-center items-center min-w-[320px] max-w-[568px]">
                     <InputField
                         type="text"
                         name="firstName"
