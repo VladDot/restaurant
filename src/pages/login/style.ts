@@ -6,7 +6,6 @@ interface IGetStylesProps {
 }
 
 export const getStyles = ({ isActive, isRevers }: IGetStylesProps) => {
-    console.log(isRevers, "7");
     return {
         btnStyle: clsx(
             "relative w-full p-2 px-4 transition-all duration-700 ease-out top-[-2px] mb-5",
