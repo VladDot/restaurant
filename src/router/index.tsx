@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import { routes } from '../constants/routes';
 import {
   Bar,
+  New,
   Blog,
   Home,
   Menu,
@@ -15,9 +16,7 @@ import {
   Contacts,
   BanquetMenu,
   ImageParams,
-  Registration,
   PrivateOffice,
-  New,
 } from '../pages';
 
 import { Errors } from '../components';
@@ -83,10 +82,6 @@ export const router = createBrowserRouter([
             element: <BanquetMenu />,
           },
         ],
-      },
-      {
-        path: routes.registration,
-        element: <Registration />,
       },
       {
         path: routes.privateOffice,

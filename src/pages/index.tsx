@@ -14,4 +14,3 @@ export { Menu } from './main-menu';
 export { MenuParams } from './menu-params';
 export { New } from './new';
 export { PrivateOffice } from './privateOffice';
-export { Registration } from './registration';
