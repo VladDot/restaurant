@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import { BtnGroup } from "./btnGroup";
-import { Banner } from "../../components";
 import { ContentRevers } from "./contentRevers";
 
 import Img8 from "../../assets/img/mainList/restaurant-seti-17.jpg";
@@ -12,18 +11,14 @@ export const Login = () => {
     const [isRevers, setIsRevers] = useState<boolean | undefined>(undefined);
 
     //TODO you need to edit the code  в style.ts не приходит bollean
-    console.log(isRevers);
-
     return (
         <>
-            {/* <Banner
-                title="LOGIN"
-                content="LOGIN LOGIN LOGIN"
-            /> */}
             <section
-                className=" bg-aqua h-screen bg-cover bg-no-repeat bg-fixed pt-20"
+                className=" h-screen bg-cover bg-no-repeat bg-fixed pt-20"
                 style={{ backgroundImage: `url(${Img8})` }}
             >
+                <div className="absolute top-0 w-full h-full bg-black opacity-60 "></div>
+
                 <div className=" container flex flex-col items-center py-10 ">
                     <div className=" flex justify-center w-fit rounded-3xl [&>div:first-child>button]:rounded-l-3xl [&>div:last-child>button]:rounded-r-3xl ">
                         <BtnGroup
@@ -37,7 +32,7 @@ export const Login = () => {
                         <BtnGroup
                             id={1}
                             text="SING-UP"
-                            isRevers={!isRevers}
+                            isRevers={isRevers}
                             isActive={activeId === 1}
                             setIsActive={() => setActiveId(1)}
                             setIsRevers={() => setIsRevers(false)}

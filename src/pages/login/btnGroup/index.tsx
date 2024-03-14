@@ -12,23 +12,22 @@ interface IBtnGroupProps {
 export const BtnGroup: React.FC<IBtnGroupProps> = ({
     text,
     isActive,
-    isRevers = true,
     setIsActive,
     setIsRevers,
+    isRevers = true,
 }) => {
     const handleChange = () => {
         setIsActive(true);
-        setIsRevers(isRevers);
+        setIsRevers(!isRevers);
     };
-    const { btnStyle, textStyle } = getStyles(isActive);
-    console.log(isRevers, "isRevers");
+    const { btnStyle, textStyle } = getStyles({ isActive, isRevers });
 
     return (
         <div className="flex justify-center items-center max-w-[280px] min-w-[130px] w-full ">
             <button
                 disabled={isActive}
-                onClick={() => handleChange()}
                 className={btnStyle}
+                onClick={() => handleChange()}
             >
                 <p className={textStyle}>{text}</p>
             </button>

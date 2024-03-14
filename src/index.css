@@ -19,3 +19,22 @@ body {
 * {
     font-family: inherit;
 }
+
+.shadowBtn {
+    -webkit-box-shadow: 0px 18px 14px -2px #674f31;
+    -moz-box-shadow: 0px 18px 14px -2px #674f31;
+    box-shadow: 0px 18px 14px -2px #674f31;
+}
+
+.backCard {
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+.backFace {
+    backface-visibility: hidden;
+}
+
+.transformStyle {
+    transform-style: preserve-3d;
+}
