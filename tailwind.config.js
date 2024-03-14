@@ -85,7 +85,7 @@ module.exports = {
             },
             animation: {
                 fadeIn: "fadeIn 600ms ease-in-out forwards",
-                fadeOut: "fadeIn 300ms ease-in-out forwards",
+                fadeOut: "fadeOut 600ms ease-in-out forwards",
                 fadeInDropMenu: "fadeIn 1s ease-out forwards",
                 scalePluse: "scalePluse 330ms linear forwards",
                 blurBlack: "blurBlack 330ms ease-in-out forwards",
