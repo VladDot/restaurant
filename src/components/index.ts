@@ -39,3 +39,4 @@ export { Spinner } from './spinner';
 export { SubTitle } from './subtitle';
 export { Title } from './title';
 export { UserIcon } from './userIcon';
+export { EventNews } from './event-news';
