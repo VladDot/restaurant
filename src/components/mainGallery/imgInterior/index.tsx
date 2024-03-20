@@ -19,7 +19,7 @@ export const ImgInterior: React.FC<IImgInteriorProps> = ({
         undefined
     );
 
-    const { blureAnimate, pluseAnimate, borderBefore } = getStyles({
+    const { bluerAnimate, plusAnimate, borderBefore } = getStyles({
         isAnimations,
         className,
         aspect,
@@ -31,11 +31,11 @@ export const ImgInterior: React.FC<IImgInteriorProps> = ({
                 style={{ backgroundImage: `url(${url})` }}
                 onMouseMove={() => setIsAnimations(true)}
                 onMouseLeave={() => setIsAnimations(false)}
-                className={blureAnimate}
+                className={bluerAnimate}
             >
                 <div className={borderBefore}></div>
 
-                <span className={pluseAnimate}></span>
+                <span className={plusAnimate}></span>
             </li>
             <Modal
                 isOpen={isOpen}

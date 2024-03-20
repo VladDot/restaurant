@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-interface IgetStylesProps {
+interface IGetStylesProps {
     className?: string | undefined;
     aspect?: string;
     isAnimations: boolean | undefined;
@@ -10,22 +10,26 @@ export const getStyles = ({
     className,
     aspect,
     isAnimations,
-}: IgetStylesProps) => {
+}: IGetStylesProps) => {
+    console.log(isAnimations);
+
     return {
-        blureAnimate: clsx(
+        bluerAnimate: clsx(
             `relative bg-cover mb-6 items-center flex justify-center transition-all duration-300 easy-in-out group cursor-pointer before:content-['] before:block before:w-full before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:bg-black overflow-hidden group-hover:duration-300 `,
             className,
             aspect,
             {
-                "before:animate-blurBlack": isAnimations,
-                "before:animate-blurBlackReverse": !isAnimations,
+                "before:animate-blurBlack": isAnimations === true,
+                "before:animate-blurBlackReverse": isAnimations === false,
             }
         ),
-        pluseAnimate: clsx(
-            " absolute w-full h-full after:absolute after:contents-[''] after:block after:w-[40px] after:h-[5px] after:bg-secondText after:top-1/2 after:left-1/2 after:-translate-x-1/2 before:absolute before:contents-[''] before:blok before:w-[40px] before:h-[5px] before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:rotate-90 before:bg-secondText  scale-0 ",
+        plusAnimate: clsx(
+            " w-full h-full absolute after:absolute after:contents-[''] after:block  after:bg-secondText after:top-1/2 after:left-1/2 after:-translate-x-1/2 before:absolute before:contents-[''] before:blok before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:rotate-90 before:bg-secondText ",
             {
-                "animate-scalePluse": isAnimations,
-                "animate-scalePluseReverse": !isAnimations,
+                "animate-scalePlus after:w-[40px] after:h-[5px]  before:w-[40px] before:h-[5px]":
+                    isAnimations === true,
+                "animate-scalePlusReverse after:w-[40px] after:h-[5px]  before:w-[40px] before:h-[5px]":
+                    isAnimations === false,
             }
         ),
         borderBefore:
