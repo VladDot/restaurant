@@ -59,12 +59,12 @@ module.exports = {
                     to: { opacity: "0" },
                 },
                 blurBlack: {
-                    from: { opacity: "0" },
+                    from: { opacity: "0.2" },
                     to: { opacity: "0.55" },
                 },
                 blurBlackReverse: {
                     from: { opacity: "0.55" },
-                    to: { opacity: "0" },
+                    to: { opacity: "0.2" },
                 },
                 blurBlackFoodMenu: {
                     from: { opacity: "0" },
