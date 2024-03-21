@@ -5,28 +5,36 @@ interface IDescriptionListProps {
 }
 export interface IMokCardNewsProps {
   id: string;
+  info?: string;
   title?: string;
   imgUrl?: string;
   imgAlt?: string;
   content?: string;
-  restaurantName?: string;
+  eventDate?: string;
+  imgUrlPage?: string;
   datePublish?: string;
   description?: string;
-  eventDate?: string;
+  imgUrlPageAlt?: string;
+  restaurantName?: string;
+  reservationOfTables?: string;
   descriptionContent?: IDescriptionListProps[];
 }
 
 export const mokCardNews: IMokCardNewsProps[] = [
   {
+    imgAlt: '',
+    info: 'info',
     id: 'March_8',
     imgUrl: ImgUrl,
-    imgAlt: '',
-    title: '8 bereznya "International Women`s Day» SETi',
+    imgUrlPage: ImgUrl,
+    imgUrlPageAlt: 'qweqwe',
     datePublish: 'March 05, 2023',
-    content: 'We invite you to the celebration of "International Women`s Day"',
-    restaurantName: 'to the S#TI restaurant',
     eventDate: 'March 8 at 18:00',
+    restaurantName: 'to the S#TI restaurant',
+    reservationOfTables: 'reservationOfTables',
     description: 'The program of the celebration:',
+    title: '8 March "International Women`s Day» SETi',
+    content: 'We invite you to the celebration of "International Women`s Day"',
     descriptionContent: [
       {
         list: '- Well-come drink Decordi Prosecco Frizzante with the opportunity to win a real diamond from Zarina Law Firm @zarina_dnepr;',
@@ -43,26 +51,30 @@ export const mokCardNews: IMokCardNewsProps[] = [
     ],
   },
   {
-    id: 'March_1',
-    imgUrl: ImgUrl,
     imgAlt: '',
-    title: '8 bereznya "International Women`s Day» SETi',
+    info: 'info',
+    id: 'March_81',
+    imgUrl: ImgUrl,
     datePublish: 'March 05, 2023',
-    content: 'We invite you to the celebration of "International Women`s Day"',
-    restaurantName: 'to the S#TI restaurant',
     eventDate: 'March 8 at 18:00',
+    restaurantName: 'to the S#TI restaurant',
+    reservationOfTables: 'reservationOfTables',
     description: 'The program of the celebration:',
+    title: '8 bereznya "International Women`s Day» SETi',
+    content: 'We invite you to the celebration of "International Women`s Day"',
   },
   {
-    id: 'March_2',
-    imgUrl: ImgUrl,
     imgAlt: '',
-    title: '8 bereznya "International Women`s Day» SETi',
+    info: 'info',
+    id: 'March_82',
+    imgUrl: ImgUrl,
     datePublish: 'March 05, 2023',
-    content: 'We invite you to the celebration of "International Women`s Day"',
-    restaurantName: 'to the S#TI restaurant',
     eventDate: 'March 8 at 18:00',
+    restaurantName: 'to the S#TI restaurant',
+    reservationOfTables: 'reservationOfTables',
     description: 'The program of the celebration:',
+    title: '8 bereznya "International Women`s Day» SETi',
+    content: 'We invite you to the celebration of "International Women`s Day"',
     descriptionContent: [
       {
         list: '- Well-come drink Decordi Prosecco Frizzante with the opportunity to win a real diamond from Zarina Law Firm @zarina_dnepr;',
@@ -76,15 +88,17 @@ export const mokCardNews: IMokCardNewsProps[] = [
     ],
   },
   {
-    id: 'March_3',
-    imgUrl: ImgUrl,
     imgAlt: '',
-    title: '8 bereznya "International Women`s Day» SETi',
+    info: 'info',
+    id: 'March_83',
+    imgUrl: ImgUrl,
     datePublish: 'March 05, 2023',
-    content: 'We invite you to the celebration of "International Women`s Day"',
-    restaurantName: 'to the S#TI restaurant',
     eventDate: 'March 8 at 18:00',
+    restaurantName: 'to the S#TI restaurant',
+    reservationOfTables: 'reservationOfTables',
     description: 'The program of the celebration:',
+    title: '8 bereznya "International Women`s Day» SETi',
+    content: 'We invite you to the celebration of "International Women`s Day"',
     descriptionContent: [
       {
         list: '- Well-come drink Decordi Prosecco Frizzante with the opportunity to win a real diamond from Zarina Law Firm @zarina_dnepr;',
@@ -95,15 +109,17 @@ export const mokCardNews: IMokCardNewsProps[] = [
     ],
   },
   {
+    imgAlt: '',
+    info: 'info',
     id: 'March_4',
     imgUrl: ImgUrl,
-    imgAlt: '',
-    title: '8 bereznya "International Women`s Day» SETi',
     datePublish: 'March 05, 2023',
-    content: 'We invite you to the celebration of "International Women`s Day"',
-    restaurantName: 'to the S#TI restaurant',
     eventDate: 'March 8 at 18:00',
+    restaurantName: 'to the S#TI restaurant',
+    reservationOfTables: 'reservationOfTables',
     description: 'The program of the celebration:',
+    title: '8 bereznya "International Women`s Day» SETi',
+    content: 'We invite you to the celebration of "International Women`s Day"',
     descriptionContent: [
       {
         list: '- Well-come drink Decordi Prosecco Frizzante with the opportunity to win a real diamond from Zarina Law Firm @zarina_dnepr;',
