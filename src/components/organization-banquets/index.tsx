@@ -5,12 +5,12 @@ export const OrganizationBanquets = () => {
     <section>
       <div className='container'>
         <div className='flex flex-col gap-6 py-8'>
-          <p className='text-center'>
+          <p className='text-center text-md'>
             Don't let the questions of how to organize a celebration scare you - we can take care of
             most of the responsibilities.
           </p>
-          <Title text='PROVIDE ADDITIONAL SERVICES' uppercase />
-          <SubTitle text='For organizing banquets' />
+          <Title className='sectionTitle' text='PROVIDE ADDITIONAL SERVICES' uppercase />
+          <SubTitle className='sectionSubTitle' text='For organizing banquets' />
         </div>
       </div>
       {/* //TODO color bg add tailwind */}

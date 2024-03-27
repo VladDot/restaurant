@@ -30,9 +30,9 @@ export const PrevueMenu: React.FC<IPrevueMenuProps> = ({
     <>
       <section>
         <div className='container py-8 flex flex-col gap-6'>
-          <Title text={title} />
+          <Title text={title} uppercase className='sectionTitle' />
 
-          <SubTitle text={subTitle} />
+          <SubTitle text={subTitle} className='sectionSubTitle' />
 
           <div className='w-full flex flex-col items-center justify-center sm:gap-4 sm:even:flex-row-reverse md:gap-12  sm:flex-row desktop:justify-between desktop:even:pr-14 desktop:odd:pl-14 container'>
             <div className='max-w-[500px] bg-transparent w-full '>
@@ -57,7 +57,7 @@ export const PrevueMenu: React.FC<IPrevueMenuProps> = ({
               <Button
                 route={route}
                 textContent={textContent}
-                className='max-w-[280px] mx-auto'
+                className='max-w-[280px] mx-auto font-medium font-thirdFont'
                 onClick={() => scrollToTop('auto')}
               />
             </div>

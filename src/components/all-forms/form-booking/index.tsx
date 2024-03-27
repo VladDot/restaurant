@@ -21,7 +21,7 @@ export const FormBooking = () => {
   };
   return (
     <section
-      className='h-lvh bg-no-repeat bg-cover bg-fixed flex items-center justify-center relative'
+      className='min-h-[768px] h-lvh bg-no-repeat bg-cover bg-fixed flex items-center justify-center relative'
       style={{
         background: `url(${ImgBanner})`,
         backgroundAttachment: 'fixed',
@@ -31,7 +31,7 @@ export const FormBooking = () => {
     >
       <div className='absolute z-0 w-full h-full bg-black opacity-75' />
       <div className='relative z-40 w-full py-3 flex flex-col gap-2 text-secondText mobile:flex-row flex-wrap mobile:justify-center mobile:items-center'>
-        <Title uppercase text='reservation' />
+        <Title uppercase className='sectionTitle' text='reservation' />
         <SubTitle text='Order a table or banquet' />
         <Formik
           initialValues={initialValues}

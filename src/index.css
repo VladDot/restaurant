@@ -38,3 +38,26 @@ body {
 .transformStyle {
   transform-style: preserve-3d;
 }
+
+.mainBannerTitle {
+  @apply text-xl text-start font-bold md:text-2xl;
+}
+
+.mainBannerSubTitle {
+  @apply text-start max-w-[690px] text-bannerContent text-subTitleClamp font-thirdFont;
+}
+
+.bannerTitle {
+  @apply text-start font-semibold text-2xl text-secondText;
+}
+.bannerSubTitle {
+  @apply text-start font-secondFont text-subTitleClamp;
+}
+
+.sectionTitle {
+  @apply text-center font-semibold text-lg text-secondText;
+}
+
+.sectionSubTitle {
+  @apply text-center font-secondFont text-black text-4xl;
+}
