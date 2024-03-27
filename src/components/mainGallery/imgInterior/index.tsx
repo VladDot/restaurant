@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import { Modal } from "../../modal";
 import { getStyles } from "../../style";
+/* import { useAspectRatio } from "../../../hook";
+ */ import clsx from "clsx";
 
 interface IImgInteriorProps {
     url: string;
@@ -24,6 +26,13 @@ export const ImgInterior: React.FC<IImgInteriorProps> = ({
         className,
         aspect,
     });
+    /*     const { isToggler, reverseAspect } = useAspectRatio();
+    console.log(reverseAspect, "sdfghjkl;lkjhg");
+
+    const aspectRatio = isToggler;
+    const barada = `aspect-[${reverseAspect}]`;
+    console.log(aspectRatio);
+ */
     return (
         <>
             <li
@@ -42,10 +51,17 @@ export const ImgInterior: React.FC<IImgInteriorProps> = ({
                 onClose={setIsOpen}
             >
                 <div
-                    style={{ backgroundImage: `url(${url})` }}
-                    className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] md:w-[70vw]
-                        file:${aspect}  lg:w-[80vw] sm:aspect-[1] lg:aspect-[0.5] xl:aspect-[1.8] bg-cover bg-center`}
-                />
+                    className={clsx(
+                        ` absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 max-w-[80vw]  md:max-w-[80vw]  lg:max-w-[60vw]  w-full`,
+                        aspect
+                    )}
+                >
+                    <img
+                        src={url}
+                        alt={url}
+                        className={` w-full object-contain`}
+                    />
+                </div>
             </Modal>
         </>
     );

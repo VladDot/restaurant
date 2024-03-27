@@ -13,8 +13,6 @@ export const getStyles = ({
     isAnimations,
     isBluerAnimate,
 }: IGetStylesProps) => {
-    console.log(isAnimations);
-
     return {
         bluerAnimate: clsx(
             `relative bg-cover mb-6 items-center flex justify-center transition-all duration-300 easy-in-out group cursor-pointer before:content-['] before:block before:w-full before:h-full before:absolute before:top-0 before:left-0 before:opacity-0 before:bg-black overflow-hidden group-hover:duration-300 `,
@@ -50,7 +48,14 @@ export const getStyles = ({
             }
         ),
 
-        borderBefore:
-            "relative w-[80%] group-hover:w-[80%] h-[100%] before:border-secondTextHover group-hover:border-2 border-secondTextHover group-hover:before:border-2 group-hover:before:border-secondTextHover before:w-[130%]  before:h-[90%] before:contents-'' before:absolute  before:-left-[15%] before:top-[5%] group-hover:before:top-[5%] group-hover:before:-right-[10%]  transition-all easy-in-out before:transition-all group-hover:before:duration-300 group-hover:duration-300 before:easy-in-out group-hover:before:delay-[100ms] before:duration-300 group-hover:scale-90 group-hover:before:scale-90 border-0 before:border-0 duration-300 opacity-0  group-hover:opacity-100",
+        borderBefore: clsx(
+            'relative w-[80%]  h-[100%] before:border-secondTextHover  border-secondTextHover before:border-secondTextHover before:w-[130%]  before:h-[90%] before:contents-["] before:absolute  before:-left-[15%] before:top-[5%] transition-all easy-in-out before:transition-all  duration-300 before:easy-in-out  before:duration-300    ',
+            {
+                "border-2 before:border-2 before:top-[5%] before:-right-[10%] before:duration-300 before:delay-[100ms] scale-90 before:scale-90 opacity-100":
+                    isAnimations,
+                "border-0 before:border-0 duration-300 opacity-0 ":
+                    !isAnimations,
+            }
+        ),
     };
 };

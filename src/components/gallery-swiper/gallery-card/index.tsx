@@ -29,7 +29,7 @@ export const GalleryCard: React.FC<IGalleryCardProps> = ({
             onClick={() => openModal(id)}
             onMouseMove={() => setIsAnimations(true)}
             onMouseLeave={() => setIsAnimations(false)}
-            className="relative max-w-[45%] group sm:max-w-[250px] lg:max-w-[300px] xl:max-w-[350px] transition-all duration-300 easy-in-out cursor-zoom-in"
+            className="relative max-w-[45%] group sm:max-w-[250px] lg:max-w-[300px] xl:max-w-[350px] cursor-zoom-in"
         >
             <img
                 alt={id}
