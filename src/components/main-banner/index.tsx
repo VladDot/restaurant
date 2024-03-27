@@ -49,7 +49,10 @@ export const MainBanner = ({ className }: IMainBannerProps) => {
                     className='text-xl text-start text-bannerContent text-[16px] md:text-2xl'
                   />
 
-                  <SubTitle text={content} className='text-start font-sourceSerif max-w-[600px]' />
+                  <SubTitle
+                    text={content}
+                    className='text-start max-w-[690px] text-subTitleClamp font-thirdFont'
+                  />
                 </div>
               </div>
             </SwiperSlide>

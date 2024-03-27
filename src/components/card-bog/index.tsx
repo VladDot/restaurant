@@ -1,8 +1,8 @@
 import { CardNews } from '..';
-import { IMokCardNews } from '../../mock/mokCardNews';
+import { IMokCardNewsProps } from '../../mock/mokCardNews';
 
 interface ICardsBlog {
-  cardNews: IMokCardNews[];
+  cardNews: IMokCardNewsProps[];
 }
 
 export const CardsBlog: React.FC<ICardsBlog> = ({ cardNews }) => {
