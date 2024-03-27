@@ -68,10 +68,10 @@ export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
                         "modal-class w-full h-screen fixed top-0 left-0 z-[99999] backdrop-blur-sm animate-fadeIn"
                     )}
                 >
-                    <div className="absolute w-full h-full bg-black opacity-50 "></div>
+                    <div className="absolute w-full h-full  bg-black opacity-50 "></div>
 
                     <button
-                        className="absolute right-[25px] top-[25px] z-[10] text-white capitalize"
+                        className="absolute right-[25px] top-[25px] z-[10] text-xl text-white capitalize"
                         onClick={() => onClose(false)}
                     >
                         close

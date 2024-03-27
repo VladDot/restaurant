@@ -9,7 +9,6 @@ import {
 import { categoriesMenu } from '../../mock';
 
 import Images from '../../assets/img/vegetarian-big-item4.png';
-import { router } from '../../router';
 import { routes } from '../../constants/routes';
 
 export interface IPrevueMenuMockProps {

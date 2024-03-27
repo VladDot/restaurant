@@ -8,9 +8,9 @@ module.exports = {
     extend: {
       ...defaultTheme,
       fontFamily: {
-        raleway: ['"Raleway"', 'sans-serif'],
-        baskerville: ['"Libre Baskerville"', 'serif'],
-        sourceSerif: ['"Source Serif 4"', 'serif'],
+        mainFont: ['"Raleway"', 'sans-serif'],
+        secondFont: ['"Libre Baskerville"', 'serif'],
+        thirdFont: ['"Source Serif 4"', 'serif'],
       },
       colors: {
         ...defaultTheme.colors,
@@ -25,7 +25,7 @@ module.exports = {
 
         mainBg: '#FFFFFF',
         thirdBg: '#856842',
-        bgA78963: '#A78963',
+        fourthBg: '#A78963',
         secondBg: '#05090E',
         opacityBg: '#382201',
         bgInputForm: '#F9EF9F',
@@ -70,16 +70,31 @@ module.exports = {
           from: { transform: 'scale(0)' },
           to: { transform: 'scale(1)' },
         },
+        rotateY: {
+          from: { transform: 'rotateY(0deg)' },
+          to: { transform: 'rotateY(180deg)' },
+        },
+        reversRotateY: {
+          from: { transform: 'rotateY(180deg)' },
+          to: { transform: 'rotateY(360deg)' },
+        },
+        bgSlideX: {
+          from: { transform: 'width(50%)' },
+          to: { transform: 'width(0)' },
+        },
       },
       animation: {
         fadeIn: 'fadeIn 600ms ease-in-out forwards',
-        fadeOut: 'fadeIn 300ms ease-in-out forwards',
+        fadeOut: 'fadeOut 600ms ease-in-out forwards',
         fadeInDropMenu: 'fadeIn 1s ease-out forwards',
         scalePluse: 'scalePluse 330ms linear forwards',
         blurBlack: 'blurBlack 330ms ease-in-out forwards',
         rotateBigSpinner: 'rotate 2500ms linear infinite',
         rotateSmallSpinner: '-rotate 2300ms linear infinite',
         blurBlackFoodMenu: 'blurBlackFoodMenu 500ms ease-in forwards',
+        rotateY: 'rotateY 900ms ease-in-out forwards ',
+        reversRotateY: 'reversRotateY 900ms ease-in-out forwards',
+        bgSlideX: 'bgSlideX 900ms ease-in-out forwards',
       },
       backgroundImage: {
         bottomShadow:
@@ -89,8 +104,9 @@ module.exports = {
         '100/200': '100% 20%',
       },
       fontSize: {
-        subTitleClamp: ['clamp(24px, 4vw, 42px)'],
+        subTitleClamp: ['clamp(24px, 4vw, 72px)'],
       },
+      rotateY180deg: { rotate: 'rotateY(180deg)' },
     },
   },
   plugins: [],

@@ -16,7 +16,7 @@ interface IGallerySwiperProps {
     imgList: { imgUrl: string; id: string }[];
 }
 
-//TODO  ???  const { innerWidth } = useWidthResize(); don't us
+//TODO  ???  const { innerWidth } = useWidthResize(); don't us  height swiper for out click
 
 export const GallerySwiper: React.FC<IGallerySwiperProps> = ({ imgList }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -60,10 +60,11 @@ export const GallerySwiper: React.FC<IGallerySwiperProps> = ({ imgList }) => {
                                 slidesPerView: 2,
                                 spaceBetween: 50,
                             },
-                            // 1250: {
-                            //     slidesPerView: "auto",
-                            //     spaceBetween: 70,
-                            // },
+
+                            1250: {
+                                spaceBetween: 70,
+                                slidesPerView: "auto",
+                            },
                         }}
                         coverflowEffect={{
                             rotate: 50,

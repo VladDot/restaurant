@@ -27,7 +27,7 @@ export const getStyles = (disabled: boolean, className?: string) => ({
   ),
 
   link: clsx(
-    "w-full min-h-[50px] group bg-transparent text-center flex items-center relative before:border-2 before:border-bgA78963 before:w-[100%] before:h-[70%] before:content-[''] before:block before:absolute before:top-[15%] before:bg-transparent",
+    "w-full min-h-[50px] group bg-transparent text-center flex items-center relative before:border-2 before:border-secondTextHover before:w-[100%] before:h-[70%] before:content-[''] before:block before:absolute before:top-[15%] before:bg-transparent",
     className
   ),
 });

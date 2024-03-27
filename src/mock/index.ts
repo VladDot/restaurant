@@ -381,7 +381,6 @@ export const navBar: NavBarLink[] = [
   { name: 'blog', url: routes.blog, title: 'BLOG' },
   { name: 'contacts', url: routes.contacts, title: 'CONTACTS' },
 ];
-
 export interface ICardCategoryProps {
   idCategory: string;
   imgCategory: string;
