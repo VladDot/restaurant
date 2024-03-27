@@ -1,20 +1,26 @@
-import { Greetings, MainBanner, FoodGallery, EventsPromotions, BasicMenu } from '../../components';
-import { categoriesMenu } from '../../mock';
+import {
+    Greetings,
+    MainBanner,
+    FoodGallery,
+    EventsPromotions,
+    BasicMenu,
+} from "../../components";
+import { categoriesMenu } from "../../mock";
 
 //TODO  BasicMenu
 
 export const Home = () => {
-  return (
-    <>
-      <MainBanner />
+    return (
+        <>
+            <MainBanner />
 
-      <Greetings />
+            <Greetings />
 
-      <EventsPromotions />
+            <EventsPromotions />
 
-      <BasicMenu categoriesMenu={categoriesMenu} />
+            <BasicMenu categoriesMenu={categoriesMenu} />
 
-      <FoodGallery className='container' />
-    </>
-  );
+            <FoodGallery className="container" />
+        </>
+    );
 };

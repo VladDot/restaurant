@@ -24,8 +24,7 @@ export const NavBarDropMenu = ({ url, title, categories }: IMenuProps) => {
         ? `${categories && categories?.length * heightLi + 40}px`
         : "0";
 
-    const { arrow, drop, subCategoryLink } = getStyles(
-        isActive,
+    const { arrow, drop, subCategoryLink, styleCategory } = getStyles(
         isBigMenu,
         isReverseAnimate
     );
@@ -43,22 +42,26 @@ export const NavBarDropMenu = ({ url, title, categories }: IMenuProps) => {
 
             {categories && (
                 <div
-                    className="w-fit group text-center hover:text-secondTextHover  duration-150 h-full"
+                    className="w-fit text-center h-full"
                     onMouseEnter={() => {
-                        setIsActive(true);
+                        setTimeout(() => {
+                            setIsActive(true);
+                        }, 200);
+
                         setIsReverseAnimate(false);
                     }}
                     onMouseLeave={() => {
                         setIsReverseAnimate(true);
+                        setIsActive(true);
                         setTimeout(() => {
                             setIsActive(false);
-                        }, 300);
+                        }, 200);
                     }}
                 >
                     <div className="flex justify-center items-center text-center h-full gap-4  ">
                         <Link
                             onClick={() => scrollToTop("auto")}
-                            className="w-fit gap-2 items-center flex h-full px-1 transition-all duration-300 easy-in-out group-hover:text-secondTextHover"
+                            className={styleCategory}
                             to={url}
                         >
                             <p>{title}</p>

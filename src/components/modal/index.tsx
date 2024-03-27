@@ -71,7 +71,7 @@ export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
                     <div className="absolute w-full h-full  bg-black opacity-50 "></div>
 
                     <button
-                        className="absolute right-[25px] top-[25px] z-[10] text-white capitalize"
+                        className="absolute right-[25px] top-[25px] z-[10] text-xl text-white capitalize"
                         onClick={() => onClose(false)}
                     >
                         close
