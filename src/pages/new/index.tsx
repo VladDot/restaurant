@@ -1,7 +1,8 @@
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { IMokCardNewsProps, mokCardNews } from '../../mock/mokCardNews';
 import { Banner, Errors, EventNews, Loading } from '../../components';
-import { useEffect, useState } from 'react';
 
 export const New = () => {
   const params = useParams();
@@ -28,9 +29,9 @@ export const New = () => {
     <>
       {date?.id !== params.new && <Errors text='Home' url='/' />}
       {isLoading && <Loading />}
-      {date && !!Object.keys(date).length && !isLoading && (
+      {!!date && !!Object.keys(date).length && !isLoading && (
         <>
-          <Banner title={date?.title} src={date?.imgUrl} />
+          <Banner title={date.title} src={date.imgUrl} />
           <EventNews {...date} />
         </>
       )}

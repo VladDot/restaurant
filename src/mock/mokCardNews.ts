@@ -6,7 +6,7 @@ interface IDescriptionListProps {
 export interface IMokCardNewsProps {
   id: string;
   info?: string;
-  title?: string;
+  title: string;
   imgUrl?: string;
   imgAlt?: string;
   content?: string;
