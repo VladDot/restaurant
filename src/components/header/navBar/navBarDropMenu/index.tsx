@@ -9,12 +9,23 @@ interface IMenuProps {
     url: string;
     name: string;
     title: string;
+    activeIdxMenu: number;
     categories?: NavBarLink[];
+    setActiveIdxMenu: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export const NavBarDropMenu = ({ url, title, categories }: IMenuProps) => {
+export const NavBarDropMenu = ({
+    url,
+    title,
+    categories,
+    activeIdxMenu,
+    setActiveIdxMenu,
+    idx,
+}: IMenuProps) => {
     const [isActive, setIsActive] = useState(false);
     const [isReverseAnimate, setIsReverseAnimate] = useState(true);
+
+    const activeMenu = idx === activeIdxMenu;
 
     const isBigMenu = !!categories && categories.length > 4;
 
@@ -24,16 +35,30 @@ export const NavBarDropMenu = ({ url, title, categories }: IMenuProps) => {
         ? `${categories && categories?.length * heightLi + 40}px`
         : "0";
 
-    const { arrow, drop, subCategoryLink, styleCategory } = getStyles(
-        isBigMenu,
-        isReverseAnimate
-    );
+    const handlerClick = () => {
+        scrollToTop("auto");
+        if (activeMenu) {
+            setActiveIdxMenu(-1);
+            return;
+        }
+        setActiveIdxMenu(idx);
+    };
+
+    const {
+        drop,
+        arrow,
+        styleCategory,
+        activeCategory,
+        subCategoryLink,
+        styleUnCategorized,
+    } = getStyles(isBigMenu, isReverseAnimate, activeMenu);
+
     return (
         <div className="w-fit text-center h-full">
             {!categories && (
                 <Link
-                    onClick={() => scrollToTop("auto")}
-                    className="px-1 items-center flex w-fit h-full hover:text-secondTextHover duration-150"
+                    onClick={() => handlerClick()}
+                    className={styleUnCategorized}
                     to={url}
                 >
                     {title}
@@ -58,9 +83,9 @@ export const NavBarDropMenu = ({ url, title, categories }: IMenuProps) => {
                         }, 200);
                     }}
                 >
-                    <div className="flex justify-center items-center text-center h-full gap-4  ">
+                    <div className={activeCategory}>
                         <Link
-                            onClick={() => scrollToTop("auto")}
+                            onClick={() => handlerClick()}
                             className={styleCategory}
                             to={url}
                         >

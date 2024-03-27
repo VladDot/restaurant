@@ -1,12 +1,20 @@
 import clsx from "clsx";
 
-export const getStyles = (isBigMenu: boolean, isReverseAnimate: boolean) => ({
+export const getStyles = (
+    isBigMenu: boolean,
+    isActiveMenu: boolean,
+    isReverseAnimate: boolean
+) => ({
     arrow: clsx(
         "w-[10px] h-[10px]  transition-all duration-500  easy-in right-0  border-b-[4px] border-r-[4px] bg-transparent top-[39%] -mt-[7px]",
         {
             "rotate-[225deg] mt-[4px]  group-hover:border-secondTextHover":
                 !isReverseAnimate,
             "rotate-[45deg] ": isReverseAnimate,
+        },
+        {
+            "border-secondTextHover": isActiveMenu,
+            "": !isActiveMenu,
         }
     ),
     drop: clsx(
@@ -26,4 +34,17 @@ export const getStyles = (isBigMenu: boolean, isReverseAnimate: boolean) => ({
     ),
     styleCategory:
         "w-fit gap-2 items-center group flex h-full px-1 transition-all duration-500 easy-in-out hover:text-secondTextHover",
+
+    activeCategory: clsx(
+        "flex justify-center items-center text-center h-full gap-4 ",
+        {
+            "text-secondTextHover": isActiveMenu,
+            "": !isActiveMenu,
+        }
+    ),
+
+    styleUnCategorized: clsx(
+        "px-1 items-center flex w-fit h-full hover:text-secondTextHover duration-150",
+        { "text-secondTextHover": isActiveMenu, "": !isActiveMenu }
+    ),
 });
