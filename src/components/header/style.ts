@@ -1,16 +1,12 @@
 import clsx from "clsx";
 
-export const getStyles = (
-    isActive: boolean,
-    isBigMenu: boolean,
-    isReverseAnimate: boolean
-) => ({
+export const getStyles = (isBigMenu: boolean, isReverseAnimate: boolean) => ({
     arrow: clsx(
-        "w-[10px] h-[10px]  transition-all duration-500 right-0  border-b-[4px] border-r-[4px] bg-transparent top-[39%] -mt-[7px]",
+        "w-[10px] h-[10px]  transition-all duration-500  easy-in right-0  border-b-[4px] border-r-[4px] bg-transparent top-[39%] -mt-[7px]",
         {
             "rotate-[225deg] mt-[4px]  group-hover:border-secondTextHover":
                 !isReverseAnimate,
-            "rotate-[45deg]": isReverseAnimate,
+            "rotate-[45deg] ": isReverseAnimate,
         }
     ),
     drop: clsx(
@@ -28,4 +24,6 @@ export const getStyles = (
             "w-[48%]": isBigMenu,
         }
     ),
+    styleCategory:
+        "w-fit gap-2 items-center group flex h-full px-1 transition-all duration-500 easy-in-out hover:text-secondTextHover",
 });

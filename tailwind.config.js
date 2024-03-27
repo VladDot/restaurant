@@ -59,16 +59,24 @@ module.exports = {
                     to: { opacity: "0" },
                 },
                 blurBlack: {
-                    from: { opacity: "0" },
+                    from: { opacity: "0.2" },
                     to: { opacity: "0.55" },
+                },
+                blurBlackReverse: {
+                    from: { opacity: "0.55" },
+                    to: { opacity: "0.2" },
                 },
                 blurBlackFoodMenu: {
                     from: { opacity: "0" },
                     to: { opacity: "0.4" },
                 },
-                scalePluse: {
+                scalePlus: {
                     from: { transform: "scale(0)" },
                     to: { transform: "scale(1)" },
+                },
+                scalePlusReverse: {
+                    from: { transform: "scale(1)" },
+                    to: { transform: "scale(0)" },
                 },
                 rotateY: {
                     from: { transform: "rotateY(0deg)" },
@@ -79,22 +87,24 @@ module.exports = {
                     to: { transform: "rotateY(360deg)" },
                 },
                 bgSlideX: {
-                    from: {transform: "width(50%)"},
-                    to: {transform: "width(0)"},
+                    from: { transform: "width(50%)" },
+                    to: { transform: "width(0)" },
                 },
             },
             animation: {
-                fadeIn: "fadeIn 600ms ease-in-out forwards",
-                fadeOut: "fadeOut 600ms ease-in-out forwards",
-                fadeInDropMenu: "fadeIn 1s ease-out forwards",
-                scalePluse: "scalePluse 330ms linear forwards",
+                bgSlideX: "bgSlideX 900ms ease-in-out forwards",
                 blurBlack: "blurBlack 330ms ease-in-out forwards",
+                blurBlackFoodMenu: "blurBlackFoodMenu 500ms ease-in forwards",
+                blurBlackReverse: "blurBlackReverse 330ms ease-in-out forwards",
+                fadeIn: "fadeIn 600ms ease-in-out forwards",
+                fadeInDropMenu: "fadeIn 1s ease-out forwards",
+                fadeOut: "fadeOut 300ms ease-in-out forwards",
+                reversRotateY: "reversRotateY 900ms ease-in-out forwards",
                 rotateBigSpinner: "rotate 2500ms linear infinite",
                 rotateSmallSpinner: "-rotate 2300ms linear infinite",
-                blurBlackFoodMenu: "blurBlackFoodMenu 500ms ease-in forwards",
                 rotateY: "rotateY 900ms ease-in-out forwards ",
-                reversRotateY: "reversRotateY 900ms ease-in-out forwards",
-                bgSlideX: "bgSlideX 900ms ease-in-out forwards",
+                scalePlus: "scalePlus 330ms linear forwards",
+                scalePlusReverse: "scalePlusReverse 100ms linear forwards",
             },
             backgroundImage: {
                 bottomShadow:
