@@ -8,9 +8,9 @@ module.exports = {
         extend: {
             ...defaultTheme,
             fontFamily: {
-                raleway: ['"Raleway"', "sans-serif"],
-                baskerville: ['"Libre Baskerville"', "serif"],
-                sourceSerif: ['"Source Serif 4"', "serif"],
+                mainFont: ['"Raleway"', "sans-serif"],
+                secondFont: ['"Libre Baskerville"', "serif"],
+                thirdFont: ['"Source Serif 4"', "serif"],
             },
             colors: {
                 ...defaultTheme.colors,
@@ -18,7 +18,7 @@ module.exports = {
                 mainText: "#4A4A4A",
                 thirdText: "#FFFFFF",
                 secondText: "#A78963",
-                bannerContent: "rgb(161, 161, 161)",
+                bannerContent: "rgba(255, 255, 255, 0.9)",
 
                 mainTextHover: "#674F31",
                 secondTextHover: "#A78963",

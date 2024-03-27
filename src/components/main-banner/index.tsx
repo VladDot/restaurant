@@ -40,16 +40,12 @@ export const MainBanner = ({ className }: IMainBannerProps) => {
                   className
                 )}
               >
-                <div className='w-full absolute z-0 bg-black opacity-30 top-0'></div>
+                <div className='w-full h-full absolute z-0 bg-black opacity-50 top-0' />
 
                 <div className='container relative z-10 mx-auto p-5 flex flex-col gap-[20px] md:gap-[45px] text-white translate-y-[80px]'>
-                  <Title
-                    uppercase
-                    text={title}
-                    className='text-xl text-start text-bannerContent text-[16px] md:text-2xl'
-                  />
+                  <Title uppercase text={title} className='mainBannerTitle' />
 
-                  <SubTitle text={content} className='text-start font-sourceSerif max-w-[600px]' />
+                  <SubTitle text={content} className='mainBannerSubTitle' />
                 </div>
               </div>
             </SwiperSlide>

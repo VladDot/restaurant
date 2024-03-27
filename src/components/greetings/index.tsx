@@ -6,7 +6,7 @@ export const Greetings = () => {
       <div className='px-2 flex flex-col gap-16 py-7 text-center'>
         <div className='text-center w-full px-3 mobile:px-5 flex flex-col gap-4 sm:p-0 sm:max-w-[600px] sm:mx-auto sm:gap-8'>
           <h4 className='text-secondText text-xl sm:text-2xl select-none'>GREETINGS</h4>
-          <h2 className='text-thirdText text-2xl sm:text-5xl select-none'>
+          <h2 className='text-thirdText font-thirdFont text-2xl sm:text-5xl select-none'>
             You in our restaurant SETI
           </h2>
           <p className='text-fourth text-lg sm:text-lg select-none'>

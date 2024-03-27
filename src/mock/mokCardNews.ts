@@ -1,66 +1,132 @@
 import ImgUrl from '../assets/img/blog/8-march_2023-motion-1080x1080_thumbnail.png';
-import ImgUrl1 from '../assets/img/button-bar.png';
 
-export interface IMokCardNews {
+interface IDescriptionListProps {
+  list?: string;
+}
+export interface IMokCardNewsProps {
   id: string;
-  imgUrl: string;
-  imgAlt: string;
+  info?: string;
   title: string;
-  datePublish: string;
-  content: string;
-  subContent: string;
-  secondaryContent: string;
+  imgUrl?: string;
+  imgAlt?: string;
+  content?: string;
+  eventDate?: string;
+  imgUrlPage?: string;
+  datePublish?: string;
+  description?: string;
+  imgUrlPageAlt?: string;
+  restaurantName?: string;
+  reservationOfTables?: string;
+  descriptionContent?: IDescriptionListProps[];
 }
 
-export const mokCardNews: IMokCardNews[] = [
+export const mokCardNews: IMokCardNewsProps[] = [
   {
+    imgAlt: '',
+    info: 'info',
     id: 'March_8',
     imgUrl: ImgUrl,
-    imgAlt: '',
-    title: '8 bereznya "International Women`s Day» SETi',
+    imgUrlPage: ImgUrl,
+    imgUrlPageAlt: 'qweqwe',
     datePublish: 'March 05, 2023',
+    eventDate: 'March 8 at 18:00',
+    restaurantName: 'to the S#TI restaurant',
+    reservationOfTables: 'reservationOfTables',
+    description: 'The program of the celebration:',
+    title: '8 March "International Women`s Day» SETi',
     content: 'We invite you to the celebration of "International Women`s Day"',
-    subContent: 'to the S#TI restaurant',
-    secondaryContent: 'March 8 at 18:00',
+    descriptionContent: [
+      {
+        list: '- Well-come drink Decordi Prosecco Frizzante with the opportunity to win a real diamond from Zarina Law Firm @zarina_dnepr;',
+      },
+      {
+        list: '- author`s set menu from our chef*.',
+      },
+      {
+        list: '- a fun and incendiary program with contests and raffles from the host of the evening, stand-up comedian Roman Khramenkov @roman_khramenkov',
+      },
+      {
+        list: '- exquisite and powerful vocals performed by the cover duo of Vadim Kochetkov and Alina Cherkasova @bodro.artists',
+      },
+    ],
   },
   {
-    id: 'set-menu',
-    imgUrl: ImgUrl1,
-    imgAlt: 'qxfwcserg',
-    title: 'cwef',
-    datePublish: 'cwaef',
-    content: 'aececewf',
-    subContent: 'eawef',
-    secondaryContent: 'wera',
+    imgAlt: '',
+    info: 'info',
+    id: 'March_81',
+    imgUrl: ImgUrl,
+    datePublish: 'March 05, 2023',
+    eventDate: 'March 8 at 18:00',
+    restaurantName: 'to the S#TI restaurant',
+    reservationOfTables: 'reservationOfTables',
+    description: 'The program of the celebration:',
+    title: '8 bereznya "International Women`s Day» SETi',
+    content: 'We invite you to the celebration of "International Women`s Day"',
   },
   {
-    id: 'set-menu',
-    imgUrl: ImgUrl1,
-    imgAlt: 'qxfwcserg',
-    title: 'cwef',
-    datePublish: 'cwaef',
-    content: 'aececewf',
-    subContent: 'eawef',
-    secondaryContent: 'wera',
+    imgAlt: '',
+    info: 'info',
+    id: 'March_82',
+    imgUrl: ImgUrl,
+    datePublish: 'March 05, 2023',
+    eventDate: 'March 8 at 18:00',
+    restaurantName: 'to the S#TI restaurant',
+    reservationOfTables: 'reservationOfTables',
+    description: 'The program of the celebration:',
+    title: '8 bereznya "International Women`s Day» SETi',
+    content: 'We invite you to the celebration of "International Women`s Day"',
+    descriptionContent: [
+      {
+        list: '- Well-come drink Decordi Prosecco Frizzante with the opportunity to win a real diamond from Zarina Law Firm @zarina_dnepr;',
+      },
+      {
+        list: '- author`s set menu from our chef*.',
+      },
+      {
+        list: '- a fun and incendiary program with contests and raffles from the host of the evening, stand-up comedian Roman Khramenkov @roman_khramenkov',
+      },
+    ],
   },
   {
-    id: 'set-menu',
-    imgUrl: ImgUrl1,
-    imgAlt: 'qxfwcserg',
-    title: 'cwef',
-    datePublish: 'cwaef',
-    content: 'aececewf',
-    subContent: 'eawef',
-    secondaryContent: 'wera',
+    imgAlt: '',
+    info: 'info',
+    id: 'March_83',
+    imgUrl: ImgUrl,
+    datePublish: 'March 05, 2023',
+    eventDate: 'March 8 at 18:00',
+    restaurantName: 'to the S#TI restaurant',
+    reservationOfTables: 'reservationOfTables',
+    description: 'The program of the celebration:',
+    title: '8 bereznya "International Women`s Day» SETi',
+    content: 'We invite you to the celebration of "International Women`s Day"',
+    descriptionContent: [
+      {
+        list: '- Well-come drink Decordi Prosecco Frizzante with the opportunity to win a real diamond from Zarina Law Firm @zarina_dnepr;',
+      },
+      {
+        list: '- author`s set menu from our chef*.',
+      },
+    ],
   },
   {
-    id: 'set-menu',
-    imgUrl: ImgUrl1,
-    imgAlt: 'qxfwcserg',
-    title: 'cwef',
-    datePublish: 'cwaef',
-    content: 'aececewf',
-    subContent: 'eawef',
-    secondaryContent: 'wera',
+    imgAlt: '',
+    info: 'info',
+    id: 'March_4',
+    imgUrl: ImgUrl,
+    datePublish: 'March 05, 2023',
+    eventDate: 'March 8 at 18:00',
+    restaurantName: 'to the S#TI restaurant',
+    reservationOfTables: 'reservationOfTables',
+    description: 'The program of the celebration:',
+    title: '8 bereznya "International Women`s Day» SETi',
+    content: 'We invite you to the celebration of "International Women`s Day"',
+    descriptionContent: [
+      {
+        list: '- Well-come drink Decordi Prosecco Frizzante with the opportunity to win a real diamond from Zarina Law Firm @zarina_dnepr;',
+      },
+      {
+        list: '- author`s set menu from our chef*.',
+      },
+    ],
   },
 ];
