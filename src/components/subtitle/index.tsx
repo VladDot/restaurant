@@ -12,7 +12,7 @@ export const SubTitle = ({ text, uppercase, className }: IFormSubTitleProps) => 
   return (
     <h2
       className={clsx(
-        'w-full text-center select-none',
+        'w-full text-center select-none text-subTitleClamp font-baskerville',
         {
           uppercase: uppercase,
         },

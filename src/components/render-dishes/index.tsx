@@ -20,7 +20,7 @@ export const RenderDishes: React.FC<IRenderDishesProps> = ({
       key={`${idDishes}-${indexCardCategory}-${indexDishes}`}
       className='border-b border-black sm:border-0 bg-transparent '
     >
-      <div className='flex items-center '>
+      <div className='flex items-center'>
         <p className='max-w-[200px] sm:max-w-max select-none'>{nameDish}</p>
 
         <span className='border-black sm:border-b border-dotted flex-[1_1] select-none -mb-[5px] mx-2'></span>
