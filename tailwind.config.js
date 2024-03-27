@@ -110,6 +110,7 @@ module.exports = {
                 bottomShadow:
                     "linear-gradient(180deg, rgba(255,255,255,0.22452731092436973) 0%, rgba(255,255,255,0.7847514005602241) 29%, rgba(255,255,255,1) 60%)",
             },
+
             backgroundSize: {
                 "100/200": "100% 20%",
             },

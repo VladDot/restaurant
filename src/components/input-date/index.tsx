@@ -1,64 +1,81 @@
-import { useRef } from 'react';
-import { Field, FieldProps } from 'formik';
-import DatePicker from 'react-datepicker';
+import { useRef, useState } from "react";
 
-import { formatDateToString } from '../../helpers';
+import DatePicker from "react-datepicker";
+import { Field, FieldProps } from "formik";
 
-import { getStyles } from './styles';
+import { formatDateToString } from "../../helpers";
 
-import './style.css';
-import 'react-datepicker/dist/react-datepicker.css';
+import { getStyles } from "./styles";
+
+import "./style.css";
+import "react-datepicker/dist/react-datepicker.css";
 
 interface IInputDateProps {
-  name: string;
-  disabled?: boolean;
+    name: string;
+    disabled?: boolean;
 }
 
 export const InputDate = ({ name, disabled }: IInputDateProps) => {
-  const refPicker = useRef<DatePicker>(null);
+    const [isActive, setIsActive] = useState(false);
 
-  const onClick = () => {
-    if (refPicker.current) {
-      refPicker.current.setOpen(true);
-    }
-  };
+    const refPicker = useRef<DatePicker>(null);
 
-  return (
-    <Field name={name}>
-      {({ form: { setFieldValue }, field, meta }: FieldProps) => {
-        const currentDate = new Date();
-        const nextMonth = new Date(currentDate);
-        nextMonth.setMonth(currentDate.getMonth() + 6);
+    const onClick = () => {
+        if (refPicker.current) {
+            refPicker.current.setOpen(true);
+        }
+    };
 
-        const isValue = formatDateToString(field.value) === 'дд.мм.рррр';
+    return (
+        <Field name={name}>
+            {({ form: { setFieldValue }, field, meta }: FieldProps) => {
+                const currentDate = new Date();
+                const nextMonth = new Date(currentDate);
+                nextMonth.setMonth(currentDate.getMonth() + 6);
 
-        const { fieldset, span, legend } = getStyles({ disabled: disabled, isValue: isValue });
+                const isValue =
+                    formatDateToString(field.value) === "дд.мм.рррр";
 
-        const handleChange = (date: any) => {
-          setFieldValue(name, date);
-        };
+                const { fieldset, span, legend } = getStyles({
+                    disabled: disabled,
+                    isValue: isValue,
+                    isActive,
+                });
 
-        return (
-          <label className='w-full' onClick={onClick}>
-            <fieldset className={fieldset}>
-              <legend className={legend}>{name}</legend>
-              <span className={span}>{formatDateToString(field.value)}</span>
+                const handleChange = (date: any) => {
+                    setFieldValue(name, date);
+                };
 
-              <DatePicker
-                ref={refPicker}
-                disabled={disabled}
-                maxDate={nextMonth}
-                minDate={currentDate}
-                selected={field.value}
-                onChange={handleChange}
-              />
-            </fieldset>
-            {meta.error && meta.touched && (
-              <span className='w-full text-rose-400 pl-3 select-none'>{meta.error}</span>
-            )}
-          </label>
-        );
-      }}
-    </Field>
-  );
+                return (
+                    <label
+                        className="w-full"
+                        onClick={onClick}
+                        onFocus={() => setIsActive(true)}
+                        onBlur={() => setIsActive(false)}
+                    >
+                        <fieldset className={fieldset}>
+                            <legend className={legend}>{name}</legend>
+                            <span className={span}>
+                                {formatDateToString(field.value)}
+                            </span>
+
+                            <DatePicker
+                                ref={refPicker}
+                                disabled={disabled}
+                                maxDate={nextMonth}
+                                minDate={currentDate}
+                                selected={field.value}
+                                onChange={handleChange}
+                            />
+                        </fieldset>
+                        {meta.error && meta.touched && (
+                            <span className="w-full text-rose-400 pl-3 select-none">
+                                {meta.error}
+                            </span>
+                        )}
+                    </label>
+                );
+            }}
+        </Field>
+    );
 };
