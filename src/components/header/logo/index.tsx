@@ -1,21 +1,17 @@
-import { Link } from "react-router-dom";
-/* import { MainLogo } from "../../../assets/svg"; */
+import { Link } from 'react-router-dom';
 
-import logoMain from "../../../assets/img/logo-seti-gold.png";
-import { scrollToTop } from "../../../helpers";
+import { scrollToTop } from '../../../helpers';
+
+import logoMain from '../../../assets/img/logo-seti-gold.png';
 
 export const Logo = () => {
-    return (
-        <Link
-            onClick={() => scrollToTop("auto")}
-            to="/"
-            className="max-w-[140px] md:max-w-[210px] lg:max-w-[210px] xl:max-w-[300px]"
-        >
-            <img
-                className="w-full"
-                src={logoMain}
-                alt="Logo"
-            />
-        </Link>
-    );
+  return (
+    <Link
+      to='/'
+      onClick={() => scrollToTop('auto')}
+      className='max-w-[140px] md:max-w-[210px] lg:max-w-[210px] xl:max-w-[300px]'
+    >
+      <img alt='Logo' src={logoMain} className='w-full' />
+    </Link>
+  );
 };
