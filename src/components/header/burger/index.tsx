@@ -1,27 +1,48 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
-import { BurgerIcon } from './burgerIcon';
-import { BurgerMenuItems } from './burgerMenu';
+import { BurgerIcon } from "./burgerIcon";
+import { BurgerMenuItems } from "./burgerMenu";
 
-import './style.scss';
+import "./style.scss";
+import { useOutsideClick } from "../../../hook";
 
-export const BurgerMenu = () => {
-  const [isActiveBurger, setActiveBurger] = useState<boolean>(false);
+interface IBurgerMenuProps {
+    isActiveMenu: boolean;
+    setIsActiveMenu: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-  useEffect(() => {
-    if (isActiveBurger) {
-      document.body.style.overflow = 'hidden';
-    }
+export const BurgerMenu: React.FC<IBurgerMenuProps> = ({
+    isActiveMenu,
+    setIsActiveMenu,
+}) => {
+    const childRef = useRef<HTMLDivElement>(null);
 
-    if (!isActiveBurger) {
-      document.body.removeAttribute('style');
-    }
-  }, [isActiveBurger]);
+    useOutsideClick(childRef, () => {
+        if (isActiveMenu === true) {
+            setIsActiveMenu(false);
+        }
+    });
 
-  return (
-    <>
-      <BurgerIcon isActive={isActiveBurger} setActive={setActiveBurger} />
-      <BurgerMenuItems isActiveMenu={isActiveBurger} setIsActiveMenu={setActiveBurger} />
-    </>
-  );
+    useEffect(() => {
+        if (isActiveMenu) {
+            document.body.style.overflow = "hidden";
+        }
+
+        if (!isActiveMenu) {
+            document.body.removeAttribute("style");
+        }
+    }, [isActiveMenu]);
+
+    return (
+        <>
+            <BurgerIcon
+                isActive={isActiveMenu}
+                setActive={setIsActiveMenu}
+            />
+            <BurgerMenuItems
+                isActiveMenu={isActiveMenu}
+                setIsActiveMenu={setIsActiveMenu}
+            />
+        </>
+    );
 };

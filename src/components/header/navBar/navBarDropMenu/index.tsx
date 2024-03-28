@@ -51,7 +51,7 @@ export const NavBarDropMenu = ({
         activeCategory,
         subCategoryLink,
         styleUnCategorized,
-    } = getStyles(isBigMenu, isReverseAnimate, activeMenu);
+    } = getStyles(isBigMenu, activeMenu, isReverseAnimate,);
 
     return (
         <div className="w-fit text-center h-full">
@@ -100,7 +100,7 @@ export const NavBarDropMenu = ({
                         >
                             {categories?.map(({ name, url }, idx) => (
                                 <Link
-                                    onClick={() => scrollToTop("auto")}
+                                     onClick={() => handlerClick()}
                                     to={url}
                                     className={subCategoryLink}
                                     key={`drop_down_${name}_${idx}`}

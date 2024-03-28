@@ -37,7 +37,11 @@ export const BurgerMenuItems: React.FC<MyComponentProps> = ({
             </div>
 
             <SocialMenu
-                classname="flex w-full max-w-[250px] m-auto justify-around items-center"
+                setIsActiveMenu={setIsActiveMenu}
+                isActiveMenu={isActiveMenu}
+                activeIdx={activeIdx}
+                setActiveIdx={setActiveIdx}
+                className="flex w-full max-w-[250px] m-auto justify-around items-center"
                 classItems=" w-[40px] hover:scale-110 md:w-[50px] transition-all duration-300 ease-out cursor-pointer"
             />
         </div>

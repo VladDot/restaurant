@@ -43,7 +43,7 @@ export const DropDownMenu = ({
     };
 
     return (
-        <li className="list-none w-full max-w-[90%] flex flex-col gap-2">
+        <li className="list-none w-full max-w-[90%] md:max-w-[80%] flex flex-col gap-2">
             <div className="flex w-full justify-between">
                 <Link
                     to={url}
