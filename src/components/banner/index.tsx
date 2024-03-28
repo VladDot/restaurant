@@ -16,7 +16,7 @@ export const Banner = ({ src = ImgBanner, title, content, className }: IBannerPr
         className
       )}
     >
-      <div className='w-full h-full absolute z-0 bg-black opacity-30 top-0'></div>
+      <div className='w-full h-full absolute z-0 bg-black opacity-30 top-0' />
 
       <div className='container relative z-10 mx-auto p-5p flex flex-col gap-[20px] md:gap-[35px] text-white translate-y-[80px]'>
         <Title className='select-none bannerTitle' text={content} />
