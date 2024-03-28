@@ -24,7 +24,7 @@ export const ExpandingElement: FC<IExpandingElement> = ({
         <div
             ref={elementRef}
             className={clsx(
-                `cursor-default  w-full lg:w-1/4 last:w-full odd:bg-fourthBg last:!bg-thirdBg even:bg-thirdBg p-[30px] group hover:!bg-black ${className} transition-all duration-500 easy-in-out `,
+                `cursor-default  w-full lg:w-1/4 last:w-full odd:bg-fourthBg lg:last:!bg-thirdBg even:bg-thirdBg p-[30px] group hover:!bg-black ${className} transition-all duration-500 easy-in-out `,
                 {
                     "scale-100 animate-fadeIn duration-700": isVisible,
                     "scale-0 ": !isVisible,

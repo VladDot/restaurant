@@ -1,11 +1,11 @@
 import clsx from "clsx";
 
-export const getStyles = (isActiveBurger: boolean) => ({
+export const getStyles = (isActiveMenu: boolean) => ({
     burgerMenu: clsx(
         "fixed top-0 right-0 transition-all duration-[440ms] h-screen  py-14",
         {
-            " p-5 w-full sm:w-[320px] bg-mainBg": isActiveBurger,
-            "w-0 opacity-0": !isActiveBurger,
+            " p-5 w-full sm:w-[350px] bg-mainBg": isActiveMenu,
+            "w-0 opacity-0": !isActiveMenu,
         }
     ),
 });

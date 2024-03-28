@@ -4,9 +4,15 @@ import { navBar } from "../../../mock";
 
 import { NavBarDropMenu } from "./navBarDropMenu";
 
-export const NavBar = () => {
-    const [activeIdxMenu, setActiveIdxMenu] = useState(-1);
+interface INavBarProps {
+    activeIdxMenu: number;
+    setActiveIdxMenu: React.Dispatch<React.SetStateAction<number>>;
+}
 
+export const NavBar: React.FC<INavBarProps> = ({
+    activeIdxMenu,
+    setActiveIdxMenu,
+}) => {
     return (
         <div className=" hidden items-center  h-full desktop:flex justify-center xl:gap-5">
             {navBar.map((items, idx) => {
