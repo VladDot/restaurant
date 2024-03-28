@@ -30,7 +30,9 @@ export const OrganizationBanquets = () => {
               </div>
               <div className='w-full h-full absolute z-10 bg-bgFormRequestCallback opacity-70 group-hover/item:opacity-[.95] transition-all ease-in-out duration-500 group/item' />
               <div className='relative z-40 flex flex-col items-center justify-center gap-4 p-7 text-thirdText group/item'>
-                <h3 className='select-none cursor-auto text-center'>{title}</h3>
+                <h3 className='select-none cursor-auto text-center text-lg font-secondFont'>
+                  {title}
+                </h3>
                 <p className='select-none cursor-auto text-center'>{content}</p>
               </div>
             </div>

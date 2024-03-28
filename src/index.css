@@ -27,7 +27,7 @@ body {
 }
 
 .element {
-    box-shadow: -10px 0px 20px -1px #674f31, 10px 0px 20px -1px #674f31; /* Тени слева и справа готовы! */
+  box-shadow: -10px 0px 20px -1px #674f31, 10px 0px 20px -1px #674f31; /* Тени слева и справа готовы! */
 }
 
 .backCard {
@@ -64,4 +64,9 @@ body {
 
 .sectionSubTitle {
   @apply text-center font-secondFont text-black text-4xl;
+}
+
+.messenger:hover {
+  text-shadow: 1px 1px 2px rgba(167, 137, 99, 0.7), 0 0 1em rgba(167, 137, 99, 0.7),
+    0 0 0.2em rgba(167, 137, 99, 0.7);
 }
