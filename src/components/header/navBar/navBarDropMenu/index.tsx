@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 import { getStyles } from "../../style";
 import { NavBarLink } from "../../../../mock";
 import { scrollToTop } from "../../../../helpers";
@@ -16,16 +17,17 @@ interface IMenuProps {
 
 export const NavBarDropMenu = ({
     url,
+    idx,
     title,
     categories,
     activeIdxMenu,
     setActiveIdxMenu,
-    idx,
 }: IMenuProps) => {
+    const activeMenu = idx === activeIdxMenu;
+    console.log(activeMenu);
+
     const [isActive, setIsActive] = useState(false);
     const [isReverseAnimate, setIsReverseAnimate] = useState(true);
-
-    const activeMenu = idx === activeIdxMenu;
 
     const isBigMenu = !!categories && categories.length > 4;
 
@@ -35,6 +37,15 @@ export const NavBarDropMenu = ({
         ? `${categories && categories?.length * heightLi + 40}px`
         : "0";
 
+    const {
+        arrow,
+        drop,
+        subCategoryLink,
+        styleCategory,
+        styleUnCategorized,
+        activeCategory,
+    } = getStyles(isBigMenu, activeMenu, isReverseAnimate);
+
     const handlerClick = () => {
         scrollToTop("auto");
         if (activeMenu) {
@@ -43,15 +54,6 @@ export const NavBarDropMenu = ({
         }
         setActiveIdxMenu(idx);
     };
-
-    const {
-        drop,
-        arrow,
-        styleCategory,
-        activeCategory,
-        subCategoryLink,
-        styleUnCategorized,
-    } = getStyles(isBigMenu, isReverseAnimate, activeMenu);
 
     return (
         <div className="w-fit text-center h-full">

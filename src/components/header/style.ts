@@ -2,7 +2,7 @@ import clsx from "clsx";
 
 export const getStyles = (
     isBigMenu: boolean,
-    isActiveMenu: boolean,
+    activeMenu: boolean,
     isReverseAnimate: boolean
 ) => ({
     arrow: clsx(
@@ -13,8 +13,8 @@ export const getStyles = (
             "rotate-[45deg] ": isReverseAnimate,
         },
         {
-            "border-secondTextHover": isActiveMenu,
-            "": !isActiveMenu,
+            "border-secondTextHover": activeMenu,
+            "": !activeMenu,
         }
     ),
     drop: clsx(
@@ -38,13 +38,13 @@ export const getStyles = (
     activeCategory: clsx(
         "flex justify-center items-center text-center h-full gap-4 ",
         {
-            "text-secondTextHover": isActiveMenu,
-            "": !isActiveMenu,
+            "text-secondTextHover": activeMenu,
+            "": !activeMenu,
         }
     ),
 
     styleUnCategorized: clsx(
         "px-1 items-center flex w-fit h-full hover:text-secondTextHover duration-150",
-        { "text-secondTextHover": isActiveMenu, "": !isActiveMenu }
+        { "text-secondTextHover": activeMenu, "": !activeMenu }
     ),
 });
