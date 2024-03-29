@@ -42,24 +42,27 @@ export const DropDownMenu = ({
         setActiveIdx(idx);
     };
 
+    const handlerClickGroup = () => {
+        setActiveIdx(-1);
+        scrollToTop("auto");
+        setIsActiveMenu(false);
+    };
+
     return (
         <li className="list-none w-full max-w-[90%] md:max-w-[80%] flex flex-col gap-2">
             <div className="flex w-full justify-between">
                 <Link
                     to={url}
                     className={link}
-                    onClick={() => {
-                        setActiveIdx(-1);
-                        scrollToTop("auto");
-                        setIsActiveMenu(false);
-                    }}
+                    onClick={handlerClickGroup}
                 >
                     {title}
                 </Link>
+                
                 {categories && (
                     <div
-                        className="w-full flex justify-end cursor-pointer hover:bg-gray-200 rounded-full"
                         onClick={() => handlerClick()}
+                        className="w-full flex justify-end cursor-pointer hover:bg-gray-200 rounded-full"
                     >
                         <span className={btn}>{isActive ? "-" : "+"}</span>
                     </div>
@@ -80,11 +83,7 @@ export const DropDownMenu = ({
                         >
                             <Link
                                 to={category.url}
-                                onClick={() => {
-                                    setIsActiveMenu(false);
-                                    setActiveIdx(-1);
-                                    scrollToTop("auto");
-                                }}
+                                onClick={handlerClickGroup}
                                 className="w-full block hover:text-secondTextHover duration-150"
                             >
                                 {category.title}

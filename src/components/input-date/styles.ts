@@ -2,8 +2,8 @@ import clsx from "clsx";
 
 interface IStylesProps {
     isValue?: boolean;
-    disabled?: boolean;
     isActive: boolean;
+    disabled?: boolean;
 }
 
 export const getStyles = ({ disabled, isValue, isActive }: IStylesProps) => ({

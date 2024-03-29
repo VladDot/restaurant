@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from "react";
 
 import { ChildrenProps } from "../../types";
 
-import { getStyles } from "./styles";
 import { TypesCollapsibleWindow } from "./types";
+
+import { getStyles } from "./styles";
 
 export const CollapsibleWindow = ({
     onClick,

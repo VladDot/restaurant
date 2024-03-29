@@ -28,9 +28,12 @@ interface IDataProps {
 }
 export const MenuParams = () => {
     const params = useParams();
+
     const [data, setData] = useState<IDataProps | undefined>(undefined);
     const [isLoading, setIsLoading] = useState(false);
+
     const dataFind = MokMenu.find((item) => item.id === params.categories);
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -55,7 +58,9 @@ export const MenuParams = () => {
                     url="/menu"
                 />
             )}
+            
             {isLoading && <Loading />}
+
             {data && !!Object.keys(data).length && !isLoading && (
                 <>
                     <Banner

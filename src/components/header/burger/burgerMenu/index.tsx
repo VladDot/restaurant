@@ -3,8 +3,9 @@ import { useState } from "react";
 import { SocialMenu } from "../../social-menu";
 import { DropDownMenu } from "../../dropDownMenu";
 
-import { getStyles } from "../style";
 import { navBar } from "../../../../mock";
+
+import { getStyles } from "../style";
 
 interface MyComponentProps {
     isActiveMenu: boolean;
@@ -37,10 +38,10 @@ export const BurgerMenuItems: React.FC<MyComponentProps> = ({
             </div>
 
             <SocialMenu
-                setIsActiveMenu={setIsActiveMenu}
-                isActiveMenu={isActiveMenu}
                 activeIdx={activeIdx}
+                isActiveMenu={isActiveMenu}
                 setActiveIdx={setActiveIdx}
+                setIsActiveMenu={setIsActiveMenu}
                 className="flex w-full max-w-[250px] m-auto justify-around items-center"
                 classItems=" w-[40px] hover:scale-110 md:w-[50px] transition-all duration-300 ease-out cursor-pointer"
             />

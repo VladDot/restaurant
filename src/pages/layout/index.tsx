@@ -1,12 +1,13 @@
-import clsx from "clsx";
 import { Outlet } from "react-router-dom";
 
-// import ImgBanner from '../../assets/img/house.jpg';
+import clsx from "clsx";
 
-import { Up } from "../../assets/svg";
 import { useScroll } from "../../hook";
 import { scrollToTop } from "../../helpers";
+
 import { Footer, Header, GoogleMaps, MainGallery } from "../../components";
+
+import { Up } from "../../assets/svg";
 
 export const Layout = () => {
     const { scrollY } = useScroll();

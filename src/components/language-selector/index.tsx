@@ -10,6 +10,7 @@ export const LanguageSelector = () => {
             >
                 EN
             </option>
+
             <option
                 className="text-black list"
                 value="UA"

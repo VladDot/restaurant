@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { Modal } from "../../modal";
-import { getStyles } from "../../style";
-/* import { useAspectRatio } from "../../../hook";
- */ import clsx from "clsx";
+import clsx from "clsx";
 
+import { Modal } from "../../modal";
+
+import { getStyles } from "../../style";
 interface IImgInteriorProps {
     url: string;
     aspect: string;
@@ -22,29 +22,23 @@ export const ImgInterior: React.FC<IImgInteriorProps> = ({
     );
 
     const { bluerAnimate, plusAnimate, borderBefore } = getStyles({
-        isAnimations,
-        className,
         aspect,
+        className,
+        isAnimations,
     });
-    /*     const { isToggler, reverseAspect } = useAspectRatio();
-    console.log(reverseAspect, "sdfghjkl;lkjhg");
 
-    const aspectRatio = isToggler;
-    const barada = `aspect-[${reverseAspect}]`;
-    console.log(aspectRatio);
- */
     return (
         <>
             <li
-                onClick={() => setIsOpen(true)}
-                style={{ backgroundImage: `url(${url})` }}
-                onMouseMove={() => setIsAnimations(true)}
-                onMouseLeave={() => setIsAnimations(false)}
                 className={bluerAnimate}
+                onClick={() => setIsOpen(true)}
+                onMouseMove={() => setIsAnimations(true)}
+                style={{ backgroundImage: `url(${url})` }}
+                onMouseLeave={() => setIsAnimations(false)}
             >
-                <div className={borderBefore}></div>
+                <div className={borderBefore} />
 
-                <span className={plusAnimate}></span>
+                <span className={plusAnimate} />
             </li>
             <Modal
                 isOpen={isOpen}

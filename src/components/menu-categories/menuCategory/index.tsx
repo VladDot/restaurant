@@ -27,12 +27,14 @@ export const MenuCategory: FC<IMenuCategoryProps> = ({ img, title, url }) => {
                     setIsDisabled(true);
                 }, 200);
             }}
+
             onMouseLeave={() => {
                 setIsBluerAnimate(false);
                 setTimeout(() => {
                     setIsDisabled(false);
                 }, 200);
             }}
+            
             className="relative md:max-w-[50%] w-full h-[230px] md:h-[390px] overflow-hidden group/item "
         >
             <span

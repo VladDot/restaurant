@@ -36,8 +36,8 @@ export const AboutUsGallery: React.FC<IAboutUsGallery> = ({ data }) => {
           <div
             key={`food_img_${id}_${idx}`}
             onClick={() => openModal(id)}
-            className={` w-[80px] lg:w-[120px] aspect-square bg-cover `}
             style={{ backgroundImage: `url(${imgUrl})` }}
+            className={` w-[80px] lg:w-[120px] aspect-square bg-cover `}
           />
         ))}
       </div>

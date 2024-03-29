@@ -1,6 +1,7 @@
 import { Form, Formik, FormikHelpers } from "formik";
 
 import { IValuesProps, initialValues, validationSchema } from "./config";
+
 import { Button, InputField, InputNumbers } from "../../../components";
 
 export const FormCallback = () => {
@@ -14,9 +15,9 @@ export const FormCallback = () => {
     };
     return (
         <Formik
+            onSubmit={onSubmit}
             initialValues={initialValues}
             validationSchema={validationSchema}
-            onSubmit={onSubmit}
         >
             {({ isSubmitting }) => (
                 <Form className="text-secondText w-full max-w-[500px] flex flex-col gap-4 items-end justify-center">
@@ -27,10 +28,10 @@ export const FormCallback = () => {
                         disabled={isSubmitting}
                     />
                     <InputNumbers
-                        name="phone"
                         type="tel"
-                        placeholder="your phone"
+                        name="phone"
                         disabled={isSubmitting}
+                        placeholder="your phone"
                     />
                     <Button
                         type="submit"

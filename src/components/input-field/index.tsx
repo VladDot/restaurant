@@ -44,8 +44,8 @@ export const InputField = ({
         <Field name={name}>
             {({ form: { setFieldValue }, field, meta }: FieldProps) => {
                 const { fieldset, legend, fieldValue } = getStyles({
-                    disabled: disabled,
                     isActive,
+                    disabled: disabled,
                 });
                 return (
                     <label
@@ -87,6 +87,7 @@ export const InputField = ({
                                 </span>
                             )}
                         </fieldset>
+                        
                         {meta.touched && meta.error && (
                             <span className="w-full text-rose-400 pl-3">
                                 {meta.error}

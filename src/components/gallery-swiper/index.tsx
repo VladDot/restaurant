@@ -5,6 +5,7 @@ import { Pagination, EffectCoverflow } from "swiper/modules";
 
 import { Modal } from "../modal";
 import { GalleryCard } from "./gallery-card";
+
 import { interiorGallery } from "../../mock";
 
 import "swiper/css";

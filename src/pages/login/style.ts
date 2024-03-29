@@ -14,10 +14,12 @@ export const getStyles = ({ isActive, isRevers }: IGetStylesProps) => {
                 " before:w-full bg-secondText active:top-[2px] ": !isActive,
             }
         ),
+
         textStyle: clsx("font-bold transition-all duration-700 ease-out", {
             "text-secondText": isActive,
             "text-black": !isActive,
         }),
+
         reversStyle: clsx(
             "relative h-[550px] duration-500 ease-out transformStyle",
             {
