@@ -32,7 +32,7 @@ export const FoodGallery: React.FC<IFoodGalleryProps> = ({ className }) => {
           onClick={() => scrollToTop('auto')}
           route={routes.gallery}
           textContent='Дивитись усю галерею'
-          className='max-w-[250px] mx-auto font-medium font-thirdFont'
+          className='max-w-[250px] mx-auto font-medium'
         />
       </div>
     </section>
