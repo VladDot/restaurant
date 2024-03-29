@@ -1,7 +1,6 @@
 import { ChangeEvent, KeyboardEvent, useState } from "react";
 
 import { Field, FieldProps } from "formik";
-
 import ReactInputMask from "react-input-mask";
 
 import { getStyles } from "./styles";
@@ -26,8 +25,8 @@ export const InputNumbers = ({
         <Field name={name}>
             {({ form, field, meta }: FieldProps) => {
                 const { fieldset, legend, fieldValue } = getStyles({
-                    disabled: disabled,
                     isActive,
+                    disabled: disabled,
                 });
 
                 const KeyDown = (e: KeyboardEvent<HTMLInputElement>): void => {
@@ -61,6 +60,7 @@ export const InputNumbers = ({
                     >
                         <fieldset className={fieldset}>
                             <legend className={legend}>{placeholder}</legend>
+                            
                             {type !== "tel" && (
                                 <input
                                     name={name}
@@ -73,6 +73,7 @@ export const InputNumbers = ({
                                     placeholder={placeholder}
                                 />
                             )}
+
                             {type === "tel" && (
                                 <ReactInputMask
                                     value={field.value}
@@ -84,6 +85,7 @@ export const InputNumbers = ({
                                 />
                             )}
                         </fieldset>
+
                         {meta.error && meta.touched && (
                             <span className="w-full text-rose-400 pl-3  bg-transparent">
                                 {meta.error}

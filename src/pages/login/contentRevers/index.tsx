@@ -1,5 +1,7 @@
-import { getStyles } from "../style";
 import { FormLogin, FormRegistration, Title } from "../../../components";
+
+import { getStyles } from "../style";
+
 interface IContentReversProps {
     isRevers: boolean | undefined;
 }
@@ -13,7 +15,7 @@ export const ContentRevers: React.FC<IContentReversProps> = ({ isRevers }) => {
                 <div className="absolute backCard w-full h-full flex flex-col items-center z-10">
                     <Title
                         text="Registration"
-                        className="text-2xl"
+                        className="select-none font-secondFont sectionTitle py-4"
                     />
 
                     <FormRegistration />
@@ -22,7 +24,7 @@ export const ContentRevers: React.FC<IContentReversProps> = ({ isRevers }) => {
                 <div className="absolute backFace w-full h-full flex flex-col items-center z-1 ">
                     <Title
                         text="login"
-                        className="text-2xl"
+                        className="select-none font-secondFont sectionTitle py-4"
                     />
 
                     <FormLogin />

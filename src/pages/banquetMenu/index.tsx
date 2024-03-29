@@ -1,4 +1,5 @@
 import { categoriesMenu } from "../../mock";
+
 import { Banner, MenuCategories } from "../../components";
 
 export const BanquetMenu = () => {

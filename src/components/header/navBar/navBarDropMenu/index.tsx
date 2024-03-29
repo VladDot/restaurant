@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { getStyles } from "../../style";
+
 import { NavBarLink } from "../../../../mock";
 import { scrollToTop } from "../../../../helpers";
-// TODO break reverseAnimate in setTimeout
+
+import { getStyles } from "../../style";
+
 interface IMenuProps {
     idx: number;
     url: string;
@@ -15,12 +17,12 @@ interface IMenuProps {
 }
 
 export const NavBarDropMenu = ({
+    idx,
     url,
     title,
     categories,
     activeIdxMenu,
     setActiveIdxMenu,
-    idx,
 }: IMenuProps) => {
     const [isActive, setIsActive] = useState(false);
     const [isReverseAnimate, setIsReverseAnimate] = useState(true);
@@ -51,7 +53,7 @@ export const NavBarDropMenu = ({
         activeCategory,
         subCategoryLink,
         styleUnCategorized,
-    } = getStyles(isBigMenu, activeMenu, isReverseAnimate,);
+    } = getStyles(isBigMenu, activeMenu, isReverseAnimate);
 
     return (
         <div className="w-fit text-center h-full">
@@ -93,6 +95,7 @@ export const NavBarDropMenu = ({
                             <span className={arrow}></span>
                         </Link>
                     </div>
+
                     {isActive && (
                         <ul
                             className={drop}
@@ -100,7 +103,7 @@ export const NavBarDropMenu = ({
                         >
                             {categories?.map(({ name, url }, idx) => (
                                 <Link
-                                     onClick={() => handlerClick()}
+                                    onClick={() => handlerClick()}
                                     to={url}
                                     className={subCategoryLink}
                                     key={`drop_down_${name}_${idx}`}

@@ -1,6 +1,8 @@
 import { categoriesMenu } from "../../mock";
-import ImgBanner from "../../assets/img/house.jpg";
+
 import { Banner, MenuCategories } from "../../components";
+
+import ImgBanner from "../../assets/img/house.jpg";
 
 export const Menu = () => {
     return (

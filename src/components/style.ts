@@ -1,15 +1,15 @@
 import clsx from "clsx";
 
 interface IGetStylesProps {
-    className?: string | undefined;
     aspect?: string;
+    className?: string | undefined;
     isAnimations?: boolean | undefined;
     isBluerAnimate?: boolean | undefined;
 }
 
 export const getStyles = ({
-    className,
     aspect,
+    className,
     isAnimations,
     isBluerAnimate,
 }: IGetStylesProps) => {

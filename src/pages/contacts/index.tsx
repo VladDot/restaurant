@@ -1,13 +1,19 @@
-import { Banner, FormBooking, OurContacts } from '../../components';
+import { Banner, FormBooking, OurContacts } from "../../components";
 
-import ImgBanner from '../../assets/img/house.jpg';
+import ImgBanner from "../../assets/img/house.jpg";
 
 export const Contacts = () => {
-  return (
-    <>
-      <Banner content='content' title='title' src={ImgBanner} />
-      <OurContacts />
-      <FormBooking />
-    </>
-  );
+    return (
+        <>
+            <Banner
+                title="title"
+                src={ImgBanner}
+                content="content"
+            />
+
+            <OurContacts />
+
+            <FormBooking />
+        </>
+    );
 };

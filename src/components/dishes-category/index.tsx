@@ -1,4 +1,5 @@
 import { ICardCategoryProps } from "../../mock";
+
 import { RenderDishes } from "../render-dishes";
 import { SubTitle, Title } from "../../components";
 interface IDishesCategoryProps {
@@ -6,7 +7,7 @@ interface IDishesCategoryProps {
     subTitle: string;
     cardCategory: ICardCategoryProps[];
 }
-//TODOtear up the props DishesCategory , change mock
+//TODO tear up the props DishesCategory , change mock
 export const DishesCategory: React.FC<IDishesCategoryProps> = ({
     title,
     subTitle,

@@ -1,8 +1,8 @@
 import clsx from "clsx";
 
 interface IGetStyles {
-    disabled?: boolean;
     isActive: boolean;
+    disabled?: boolean;
 }
 
 export const getStyles = ({ disabled, isActive }: IGetStyles) => ({
@@ -14,7 +14,9 @@ export const getStyles = ({ disabled, isActive }: IGetStyles) => ({
         },
         { element: isActive, "": !isActive }
     ),
+
     legend: clsx("px-2", { "text-disabled": disabled }),
+
     fieldValue: clsx("w-full bg-transparent focus:outline-none", {
         "text-disabled": disabled,
     }),

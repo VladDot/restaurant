@@ -2,8 +2,10 @@ import { useState } from 'react';
 
 import { Modal } from '../../modal';
 import { Button } from '../../button';
-import { getStyles } from '../../style';
+
 import { scrollToTop } from '../../../helpers';
+
+import { getStyles } from '../../style';
 
 interface IAreasCardProps {
   link?: string;
@@ -22,6 +24,7 @@ export const AreasCard: React.FC<IAreasCardProps> = ({
 }) => {
   const [isActive, setIsActive] = useState(false);
   const [isBluerAnimate, setIsBluerAnimate] = useState<boolean | undefined>(undefined);
+  
   const { bluerAnimateFoodMenu } = getStyles({ isBluerAnimate });
   return (
     <div

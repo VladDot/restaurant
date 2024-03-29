@@ -1,106 +1,106 @@
-import {
-  Greetings,
-  MainBanner,
-  FoodGallery,
-  EventsPromotions,
-  BasicMenu,
-  PrevueMenu,
-} from '../../components';
-import { categoriesMenu } from '../../mock';
+import { categoriesMenu } from "../../mock";
 
-import Images from '../../assets/img/vegetarian-big-item4.png';
-import { routes } from '../../constants/routes';
+import { routes } from "../../constants/routes";
+
+import {
+    Greetings,
+    BasicMenu,
+    MainBanner,
+    PrevueMenu,
+    FoodGallery,
+    EventsPromotions,
+} from "../../components";
+
+import Images from "../../assets/img/vegetarian-big-item4.png";
 
 export interface IPrevueMenuMockProps {
-  idCategory: string;
-  imgCategory: string;
-  title: string;
-  subTitle: string;
-  route: string;
-  textContent: string;
-  dishes: {
-    idDishes: string;
-    nameDish: string;
-    prise: string;
-    weight: string;
-  }[];
+    title: string;
+    route: string;
+    subTitle: string;
+    idCategory: string;
+    imgCategory: string;
+    textContent: string;
+    dishes: {
+        prise: string;
+        weight: string;
+        idDishes: string;
+        nameDish: string;
+    }[];
 }
 
 const prevueMenuMock: IPrevueMenuMockProps = {
-  idCategory: 'card-dish',
-  imgCategory: Images,
-  title: 'sweet',
-  subTitle: 'dessert menu',
-  route: routes.menuCategory.desserts,
-  textContent: 'Go to menu',
-  dishes: [
-    {
-      idDishes: 'dish-1',
-      nameDish: 'Бельгійські вафлі з мусом з лососем та авокадо',
-      prise: '249',
-      weight: '215',
-    },
-    {
-      idDishes: 'dish-2',
-      nameDish: 'Ікра щуки з тостами',
-      prise: '650',
-      weight: '150',
-    },
-    {
-      idDishes: 'dish-2',
-      nameDish: 'Ікра щуки з тостами',
-      prise: '650',
-      weight: '150',
-    },
-    {
-      idDishes: 'dish-2',
-      nameDish: 'Ікра щуки з тостами',
-      prise: '650',
-      weight: '150',
-    },
-    {
-      idDishes: 'dish-2',
-      nameDish: 'Ікра щуки з тостами',
-      prise: '650',
-      weight: '150',
-    },
-    {
-      idDishes: 'dish-2',
-      nameDish: 'Ікра щуки з тостами',
-      prise: '650',
-      weight: '150',
-    },
-    {
-      idDishes: 'dish-2',
-      nameDish: 'Ікра щуки з тостами',
-      prise: '650',
-      weight: '150',
-    },
-    {
-      idDishes: 'dish-2',
-      nameDish: 'Ікра щуки з тостами',
-      prise: '650',
-      weight: '150',
-    },
-  ],
+    title: "sweet",
+    imgCategory: Images,
+    idCategory: "card-dish",
+    subTitle: "dessert menu",
+    textContent: "Go to menu",
+    route: routes.menuCategory.desserts,
+    dishes: [
+        {
+            idDishes: "dish-1",
+            nameDish: "Бельгійські вафлі з мусом з лососем та авокадо",
+            prise: "249",
+            weight: "215",
+        },
+        {
+            idDishes: "dish-2",
+            nameDish: "Ікра щуки з тостами",
+            prise: "650",
+            weight: "150",
+        },
+        {
+            idDishes: "dish-2",
+            nameDish: "Ікра щуки з тостами",
+            prise: "650",
+            weight: "150",
+        },
+        {
+            idDishes: "dish-2",
+            nameDish: "Ікра щуки з тостами",
+            prise: "650",
+            weight: "150",
+        },
+        {
+            idDishes: "dish-2",
+            nameDish: "Ікра щуки з тостами",
+            prise: "650",
+            weight: "150",
+        },
+        {
+            idDishes: "dish-2",
+            nameDish: "Ікра щуки з тостами",
+            prise: "650",
+            weight: "150",
+        },
+        {
+            idDishes: "dish-2",
+            nameDish: "Ікра щуки з тостами",
+            prise: "650",
+            weight: "150",
+        },
+        {
+            idDishes: "dish-2",
+            nameDish: "Ікра щуки з тостами",
+            prise: "650",
+            weight: "150",
+        },
+    ],
 };
 
-//TODO  BasicMenu
-
 export const Home = () => {
-  return (
-    <>
-      <MainBanner />
+    return (
+        <>
+            <MainBanner />
 
-      <Greetings />
+            <Greetings />
 
-      <EventsPromotions />
+            <EventsPromotions />
 
-      <BasicMenu categoriesMenu={categoriesMenu} />
+            <BasicMenu categoriesMenu={categoriesMenu} />
 
-      <PrevueMenu {...prevueMenuMock} />
+            <PrevueMenu {...prevueMenuMock} />
 
-      <FoodGallery className='container' />
-    </>
-  );
+            <FoodGallery className="container" />
+        </>
+    );
 };

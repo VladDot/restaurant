@@ -14,29 +14,31 @@ export const MenuCategory: FC<IMenuCategoryProps> = ({ img, title, url }) => {
   const [isDisabled, setIsDisabled] = useState(false);
   const [isBluerAnimate, setIsBluerAnimate] = useState<undefined | boolean>(undefined);
 
-  const { emergingContent, bluerAnimateFoodMenu } = getStyles({
-    isBluerAnimate,
-  });
-  return (
-    <li
-      onMouseEnter={() => {
-        setIsBluerAnimate(true);
-        setTimeout(() => {
-          setIsDisabled(true);
-        }, 200);
-      }}
-      onMouseLeave={() => {
-        setIsBluerAnimate(false);
-        setTimeout(() => {
-          setIsDisabled(false);
-        }, 200);
-      }}
-      className='relative md:max-w-[50%] w-full h-[230px] md:h-[390px] overflow-hidden group/item '
-    >
-      <span
-        style={{ backgroundImage: `url(${img})` }}
-        className='relative scale-[1.5] lg:scale-[1.3] flex bg-cover h-full transition-all duration-700  easy-in-out group-hover/item:-translate-x-0 bg-transparent -translate-x-[60px]'
-      ></span>
+    const { emergingContent, bluerAnimateFoodMenu } = getStyles({
+        isBluerAnimate,
+    });
+    return (
+        <li
+            onMouseEnter={() => {
+                setIsBluerAnimate(true);
+                setTimeout(() => {
+                    setIsDisabled(true);
+                }, 200);
+            }}
+
+            onMouseLeave={() => {
+                setIsBluerAnimate(false);
+                setTimeout(() => {
+                    setIsDisabled(false);
+                }, 200);
+            }}
+            
+            className="relative md:max-w-[50%] w-full h-[230px] md:h-[390px] overflow-hidden group/item "
+        >
+            <span
+                style={{ backgroundImage: `url(${img})` }}
+                className="relative scale-[1.5] lg:scale-[1.3] flex bg-cover h-full transition-all duration-700  easy-in-out group-hover/item:-translate-x-0 bg-transparent -translate-x-[60px]"
+            ></span>
 
       <div className={bluerAnimateFoodMenu} />
 

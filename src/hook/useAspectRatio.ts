@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import { useWindowHeight, useWindowWidth } from ".";
 
 export const useAspectRatio = () => {

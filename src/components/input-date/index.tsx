@@ -31,15 +31,16 @@ export const InputDate = ({ name, disabled }: IInputDateProps) => {
             {({ form: { setFieldValue }, field, meta }: FieldProps) => {
                 const currentDate = new Date();
                 const nextMonth = new Date(currentDate);
+
                 nextMonth.setMonth(currentDate.getMonth() + 6);
 
                 const isValue =
                     formatDateToString(field.value) === "дд.мм.рррр";
 
                 const { fieldset, span, legend } = getStyles({
-                    disabled: disabled,
-                    isValue: isValue,
                     isActive,
+                    isValue: isValue,
+                    disabled: disabled,
                 });
 
                 const handleChange = (date: any) => {
@@ -55,6 +56,7 @@ export const InputDate = ({ name, disabled }: IInputDateProps) => {
                     >
                         <fieldset className={fieldset}>
                             <legend className={legend}>{name}</legend>
+
                             <span className={span}>
                                 {formatDateToString(field.value)}
                             </span>
@@ -68,6 +70,7 @@ export const InputDate = ({ name, disabled }: IInputDateProps) => {
                                 onChange={handleChange}
                             />
                         </fieldset>
+
                         {meta.error && meta.touched && (
                             <span className="w-full text-rose-400 pl-3 select-none">
                                 {meta.error}

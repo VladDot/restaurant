@@ -16,8 +16,8 @@ export const InputTextarea = ({
     placeholder,
 }: IInputTextareaProps) => {
     const [isActive, setIsActive] = useState(false);
-
     const [countValue, setCountValue] = useState(0);
+
     return (
         <Field name={name}>
             {({ form, field, meta }: FieldProps) => {
@@ -25,6 +25,7 @@ export const InputTextarea = ({
                     disabled: disabled,
                     isActive,
                 });
+
                 const handleChange = async (
                     event: ChangeEvent<HTMLTextAreaElement>
                 ) => {
@@ -34,6 +35,7 @@ export const InputTextarea = ({
                         event.target.value.slice(0, 129)
                     );
                 };
+
                 return (
                     <label
                         className="w-full"
@@ -42,6 +44,7 @@ export const InputTextarea = ({
                     >
                         <fieldset className={fieldset}>
                             <legend className={legend}>{name}</legend>
+
                             <textarea
                                 name={name}
                                 disabled={disabled}
@@ -51,11 +54,13 @@ export const InputTextarea = ({
                                 placeholder={placeholder}
                             />
                         </fieldset>
+
                         {countValue !== 0 && (
                             <span className="text-fourth">
                                 symbols left: {130 - countValue} out of 130
                             </span>
                         )}
+                        
                         {meta.error && meta.touched && (
                             <span className="absolute left-2 top-8 select-none">
                                 {meta.error}

@@ -1,6 +1,6 @@
 import {
-    AboutUsInfo,
     Banner,
+    AboutUsInfo,
     FoodGallery,
     FormBooking,
 } from "../../components";
@@ -12,8 +12,11 @@ export const About = () => {
                 title="title"
                 content="content"
             />
+
             <AboutUsInfo />
+
             <FormBooking />
+
             <FoodGallery />
         </>
     );
