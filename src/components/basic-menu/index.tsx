@@ -26,9 +26,9 @@ export const BasicMenu = ({ categoriesMenu }: IBasicMenuProps) => {
         <section>
             <div className="container flex flex-col gap-7 py-6">
                 <Title
+                    uppercase
                     text="basic"
                     className="sectionTitle"
-                    uppercase
                 />
                 <SubTitle
                     text="Restaurant menu"
