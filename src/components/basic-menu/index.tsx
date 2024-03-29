@@ -51,7 +51,7 @@ export const BasicMenu = ({ categoriesMenu }: IBasicMenuProps) => {
                 <Button
                   route={routes.menu}
                   textContent='Watch in full'
-                  className='max-w-[280px] mx-auto font-medium font-thirdFont'
+                  className='max-w-[280px] mx-auto font-medium'
                   onClick={() => scrollToTop('auto')}
                 />
               </>
@@ -86,7 +86,7 @@ export const BasicMenu = ({ categoriesMenu }: IBasicMenuProps) => {
             <Button
               route={routes.menu}
               textContent='Watch in full'
-              className='max-w-[280px] mx-auto font-medium font-thirdFont'
+              className='max-w-[280px] mx-auto font-medium'
               onClick={() => scrollToTop('auto')}
             />
           </div>

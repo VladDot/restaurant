@@ -57,7 +57,7 @@ export const PrevueMenu: React.FC<IPrevueMenuProps> = ({
               <Button
                 route={route}
                 textContent={textContent}
-                className='max-w-[280px] mx-auto font-medium font-thirdFont'
+                className='max-w-[280px] mx-auto font-medium'
                 onClick={() => scrollToTop('auto')}
               />
             </div>
