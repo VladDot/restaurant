@@ -12,5 +12,6 @@
   background-color: white;
 }
 
-.wqe {
+.swiper-wrapper {
+  align-items: center;
 }
