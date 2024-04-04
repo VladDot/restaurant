@@ -52,12 +52,12 @@ export const AboutUsGallery: React.FC<IAboutUsGallery> = ({ data }) => {
           pagination={true}
           modules={[Zoom, Navigation, Pagination]}
           initialSlide={imgInModal ? +imgInModal?.id - 1 : 1}
-          className=' relative top-1/2 -translate-y-1/2 flex items-center justify-center h-screen'
+          className='relative top-1/2 -translate-y-1/2 flex items-center justify-center h-full max-h-[80%]'
         >
           {data.map(({ imgUrl, id }, index) => {
             return (
               <SwiperSlide key={`img-url-${index}`} className='flex items-center justify-center'>
-                <img alt={id} src={imgUrl} className='object-contain aspect-video' />
+                <img alt={id} src={imgUrl} className='max-h-full' />
               </SwiperSlide>
             );
           })}
