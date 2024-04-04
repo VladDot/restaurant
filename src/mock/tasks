@@ -28,8 +28,6 @@
 5) зробити мок мультимовності - *
 14) на Apple ломаєтся бургер-меню при скролі - * 
 
-12) замінити onFocus на onTuch при < lg - 6год ?
-25) бордер на зміну мови ?
 21) отработать поведение  бекграунд форми банкет на ios ?? 
 
 15) images + ???
@@ -45,3 +43,8 @@
 Питання : 
 useEffect  на useAspectRatio 
 excludeEmptyString: false, в регистаии
+
+33) поменять іконки на регистации 
+34) useLocation
+35) разобратся с библиотекой свайпер 
+https://github.com/UkrRebuildAlliance/ura/tree/master/front/src/components/new-header/header-nav - поискать код для фикса бургер меню на телефоне 

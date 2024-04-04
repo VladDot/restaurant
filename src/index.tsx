@@ -4,8 +4,9 @@ import reportWebVitals from "./reportWebVitals";
 import { RouterProvider } from "react-router-dom";
 import { router } from "./router";
 
+import "./i18n/i18n";
+
 import "./index.css";
-import "./i18n";
 
 const root = ReactDOM.createRoot(
     document.getElementById("root") as HTMLElement

@@ -1,16 +1,14 @@
 import { useState } from "react";
 
-import { useWindowWidth } from "../../hook";
+import { useWindowSize } from "../../hook";
+import { interiorGallery, textInfo } from "../../mock";
+import { CollapsibleWindow } from "../collapsible-window";
 
 import { getStyles } from "./style";
 import { AboutUsGallery } from "./about-us-gallery";
-import { CollapsibleWindow } from "../collapsible-window";
-
-import { interiorGallery } from "../../mock";
-import { textInfo } from "../../mock/textMock";
 
 export const AboutUsInfo = () => {
-    const { width } = useWindowWidth();
+    const { width } = useWindowSize();
     const [isActive, setIsActive] = useState(false);
 
     const { continueText } = getStyles(isActive);

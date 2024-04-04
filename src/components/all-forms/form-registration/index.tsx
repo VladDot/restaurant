@@ -1,8 +1,8 @@
 import { Form, Formik, FormikHelpers } from "formik";
 
-import { IValuesProps, initialValues, validationSchema } from "./config";
-
 import { Button, InputField, InputNumbers } from "../../../components";
+
+import { IValuesProps, initialValues, validationSchema } from "./config";
 
 export const FormRegistration = () => {
     const onSubmit = async (

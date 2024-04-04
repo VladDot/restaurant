@@ -1,9 +1,8 @@
 import React, { useEffect, PropsWithChildren, useRef, useState } from "react";
 
-import clsx from "clsx";
+import { useOutsideClick } from "../../hook/useOutsideClick";
 
 import { Portal } from "./portal";
-import { useOutsideClick } from "../../hook/useOutsideClick";
 
 interface ModalProps {
     isOpen: boolean;
@@ -15,7 +14,7 @@ export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
     children,
 }) => {
     const [isTouched, setIsTouched] = useState(false);
-    
+
     const childRef = useRef<HTMLDivElement>(null);
 
     const preventTab = (e: KeyboardEvent): void => {
@@ -67,9 +66,7 @@ export const Modal: React.FC<PropsWithChildren<ModalProps>> = ({
             {isOpen && (
                 <div
                     onKeyDown={() => preventTab}
-                    className={clsx(
-                        "modal-class w-full h-screen fixed top-0 left-0 z-[99999] backdrop-blur-sm animate-fadeIn"
-                    )}
+                    className="modal-class w-full h-screen fixed top-0 left-0 z-[99999] transition-all duration-500 ease-in-out backdrop-blur-sm animate-fadeIn cursor-zoom-out"
                 >
                     <div className="absolute w-full h-full  bg-black opacity-50 "></div>
 

@@ -1,17 +1,18 @@
 import Cookies from "js-cookie";
 
-import i18n from "../../i18n";
+import i18n from "../../i18n/i18n";
 
 export const LngSwitcher = () => {
     const activeLanguage = Cookies.get("i18next");
 
-    const changeLng = (lng: string) => {
-        i18n.changeLanguage(activeLanguage === "ua" ? "en" : "ua");
+    const changeLng = () => {
+        const changedLang = activeLanguage === "ua" ? "en" : "ua";
+        i18n.changeLanguage(changedLang);
 
         window.location.reload();
     };
     return (
-        <button onClick={() => changeLng("ua")}>
+        <button onClick={() => changeLng()}>
             {activeLanguage === "ua" ? "ua" : "en"}
         </button>
     );

@@ -1,3 +1,5 @@
+import { changeLanguage } from "i18next";
+import Cookies from "js-cookie";
 import { Link } from "react-router-dom";
 
 import { scrollToTop } from "../../../helpers";
@@ -20,12 +22,17 @@ export const SocialMenu: React.FC<ISocialMenuProps> = ({
     setActiveIdx,
     setIsActiveMenu,
 }) => {
+    const activeLanguage = Cookies.get("i18next");
+
     const handleClick = () => {
         setActiveIdx(-1);
         scrollToTop("auto");
         setIsActiveMenu(false);
     };
-    
+    const changeLng = () => {
+        const changedLng = activeLanguage === "ua" ? "en" : "ua";
+        changeLanguage(changedLng);
+    };
     return (
         <div className={className}>
             <Link
@@ -46,11 +53,12 @@ export const SocialMenu: React.FC<ISocialMenuProps> = ({
                 to={"/"}
                 onClick={handleClick}
             >
-                <h1
-                    className={`${classItems} text-fourthBg font-bold text-2xl`}
+                <span
+                    onClick={changeLng}
+                    className={`${classItems} text-fourthBg font-bold text-2xl uppercase`}
                 >
-                    UA
-                </h1>
+                    {activeLanguage}
+                </span>
             </Link>
         </div>
     );

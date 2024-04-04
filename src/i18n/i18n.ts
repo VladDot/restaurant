@@ -3,8 +3,8 @@ import Backend from "i18next-http-backend";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
-import { en } from "./i18n/en";
-import { ua } from "./i18n/ua";
+import { en } from "./en";
+import { ua } from "./ua";
 
 i18n.use(Backend)
     .use(LanguageDetector)
@@ -12,10 +12,10 @@ i18n.use(Backend)
     .init({
         resources: {
             en: { translation: en },
-            ua: { translation: ua },
+            uk: { translation: ua },
         },
-        supportedLngs: ["ua", "en"],
-        fallbackLng: "ua",
+        supportedLngs: ["uk", "en"],
+        fallbackLng: "uk",
         detection: {
             order: ["cookie", "navigator"],
             caches: ["cookie"],
