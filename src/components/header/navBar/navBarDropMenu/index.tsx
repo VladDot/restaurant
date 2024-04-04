@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { NavBarLink } from "../../../../mock";
 import { scrollToTop } from "../../../../helpers";
@@ -24,6 +24,11 @@ export const NavBarDropMenu = ({
     activeIdxMenu,
     setActiveIdxMenu,
 }: IMenuProps) => {
+    const { pathname } = useLocation();
+    console.log(pathname);
+const x = {
+    0 : 'about us'
+}
     const [isActive, setIsActive] = useState(false);
     const [isReverseAnimate, setIsReverseAnimate] = useState(true);
 

@@ -3,6 +3,9 @@ import clsx from "clsx";
 import ImgBanner from "../../assets/img/house.jpg";
 
 import { SubTitle, Title } from "../../components";
+
+import { useTranslation } from "react-i18next";
+
 interface IBannerProps {
     src?: string;
     title: string;
@@ -15,6 +18,8 @@ export const Banner = ({
     content,
     className,
 }: IBannerProps) => {
+    const { t } = useTranslation();
+
     return (
         <div
             style={{ backgroundImage: `url(${src})` }}

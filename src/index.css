@@ -1,72 +1,88 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .container {
-  @apply px-4 max-w-[1440px] mx-auto w-full md:px-8 desktop:px-0;
+    @apply px-4 max-w-[1440px] mx-auto w-full md:px-8 desktop:px-0;
 }
 .main-text {
-  @apply text-[18px];
+    @apply text-[18px];
 }
 
-body {
-  font-family: 'Raleway', sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
+.scrollbar {
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 * {
-  font-family: inherit;
+    font-family: inherit;
 }
 
 .shadowBtn {
-  -webkit-box-shadow: 0px 18px 14px -2px #674f31;
-  -moz-box-shadow: 0px 18px 14px -2px #674f31;
-  box-shadow: 0px 18px 14px -2px #674f31;
+    -webkit-box-shadow: 0px 18px 14px -2px #674f31;
+    -moz-box-shadow: 0px 18px 14px -2px #674f31;
+    box-shadow: 0px 18px 14px -2px #674f31;
 }
 
 .element {
-  box-shadow: -10px 0px 20px -1px #674f31, 10px 0px 20px -1px #674f31; /* Тени слева и справа готовы! */
+    box-shadow: -10px 0px 20px -1px #674f31, 10px 0px 20px -1px #674f31; /* Тени слева и справа готовы! */
 }
 
 .backCard {
-  backface-visibility: hidden;
-  transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
 }
 
 .backFace {
-  backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .transformStyle {
-  transform-style: preserve-3d;
+    transform-style: preserve-3d;
 }
 
 .mainBannerTitle {
-  @apply text-xl text-start font-bold md:text-2xl;
+    @apply text-xl text-start font-bold md:text-2xl;
 }
 
 .mainBannerSubTitle {
-  @apply text-start max-w-[690px] text-bannerContent text-subTitleClamp font-thirdFont;
+    @apply text-start max-w-[690px] text-bannerContent text-subTitleClamp font-thirdFont;
 }
 
 .bannerTitle {
-  @apply text-start font-semibold text-2xl text-secondText;
+    @apply text-start font-semibold text-2xl text-secondText;
 }
 .bannerSubTitle {
-  @apply text-start font-secondFont text-subTitleClamp;
+    @apply text-start font-secondFont text-subTitleClamp;
 }
 
 .sectionTitle {
-  @apply text-center font-semibold text-lg text-secondText;
+    @apply text-center font-semibold text-lg text-secondText;
 }
 
 .sectionSubTitle {
-  @apply text-center font-secondFont text-black text-4xl;
+    @apply text-center font-secondFont text-black text-4xl;
 }
 
 .messenger:hover {
-  text-shadow: 1px 1px 2px rgba(167, 137, 99, 0.7), 0 0 1em rgba(167, 137, 99, 0.7),
-    0 0 0.2em rgba(167, 137, 99, 0.7);
+    text-shadow: 1px 1px 2px rgba(167, 137, 99, 0.7),
+        0 0 1em rgba(167, 137, 99, 0.7), 0 0 0.2em rgba(167, 137, 99, 0.7);
+}
+
+.scrollbar::-webkit-scrollbar {
+    width: 8px;
+    background: black;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: #a78963;
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover {
+    border: 1px solid black;
 }

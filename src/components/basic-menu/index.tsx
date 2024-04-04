@@ -6,11 +6,10 @@ import ImgBanner from "../../assets/img/chingri3.png";
 
 import { Button, SubTitle, Title } from "../../components";
 
-import { useWidthResize } from "../../hook/useScroll";
-
 import { ICategoriesMenuProps } from "../../mock";
 
 import { scrollToTop } from "../../helpers";
+import { useWindowSize } from "../../hook";
 
 interface IBasicMenuProps {
     categoriesMenu: ICategoriesMenuProps[];
@@ -18,7 +17,7 @@ interface IBasicMenuProps {
 
 //TODO to think about  responding to the elements
 export const BasicMenu = ({ categoriesMenu }: IBasicMenuProps) => {
-    const { innerWidth } = useWidthResize();
+    const { width } = useWindowSize();
 
     const firstBlock = Math.floor(categoriesMenu.length / 2);
 
@@ -60,7 +59,7 @@ export const BasicMenu = ({ categoriesMenu }: IBasicMenuProps) => {
                                 })}
                         </ul>
 
-                        {innerWidth > 1024 && (
+                        {width > 1024 && (
                             <>
                                 <p className="px-2 hidden select-none lg:block font-secondFont text-fourth">
                                     The menu of SETI restaurant is designed with

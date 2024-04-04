@@ -1,22 +1,21 @@
+import { RequestCallback, SubTitle, Title } from "../../components";
+
 import { organizationBanquets } from "./mock";
 
-import { RequestCallback, SubTitle, Title } from "../../components";
+const e =
+    "Don't let the questions of how to organize a celebration scare you - we can take care of most of the responsibilities.";
 
 export const OrganizationBanquets = () => {
     return (
         <section>
             <div className="container">
                 <div className="flex flex-col gap-6 py-8">
-                    <p className="text-center text-md">
-                        Don't let the questions of how to organize a celebration
-                        scare you - we can take care of most of the
-                        responsibilities.
-                    </p>
+                    <p className="text-center text-md">{e}</p>
 
                     <Title
+                        uppercase
                         className="sectionTitle"
                         text="PROVIDE ADDITIONAL SERVICES"
-                        uppercase
                     />
 
                     <SubTitle

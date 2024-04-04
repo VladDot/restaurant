@@ -11,7 +11,6 @@ import { interiorGallery } from "../../mock";
 import "swiper/css";
 import "swiper/css/effect-cube";
 import "swiper/css/pagination";
-import { useWidthResize } from "../../hook/useScroll";
 
 interface IGallerySwiperProps {
     imgList: { imgUrl: string; id: string }[];
@@ -24,8 +23,6 @@ export const GallerySwiper: React.FC<IGallerySwiperProps> = ({ imgList }) => {
     const [openId, setOpenId] = useState<string | undefined>(undefined);
 
     const imgInModal = interiorGallery.find(({ id }) => id === openId);
-
-    const { innerWidth } = useWidthResize();
 
     return (
         <section className="container py-10">
@@ -77,7 +74,7 @@ export const GallerySwiper: React.FC<IGallerySwiperProps> = ({ imgList }) => {
                         pagination={true}
                         modules={[EffectCoverflow, Pagination]}
                         initialSlide={imgInModal ? +imgInModal?.id - 1 : 1}
-                        className="relative top-1/2 -translate-y-1/2"
+                        className="relative top-1/2 -translate-y-1/2 "
                     >
                         {imgList.map(({ imgUrl, id }, index) => {
                             return (
