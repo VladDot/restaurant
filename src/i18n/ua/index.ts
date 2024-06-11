@@ -1,3 +1,3 @@
 export const ua = {
-    readMore: "Сосать",
+    readMore: "Лорем Тест",
 };
